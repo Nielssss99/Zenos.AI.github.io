@@ -1,111 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zenos.AI</title>
-  <style>
-    /* Reset default margins/paddings */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenos.AI</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
 
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    
-    .accent {
-      color: #00d8ff; /* current accent color */
-    }
+  .accent { color: #00d8ff; }
+  .main-text {
+    color: white;
+  }
 
-    .main-text {
-      color: black;
-      text-shadow:
-        -1px -1px 0 white,
-         1px -1px 0 white,
-        -1px  1px 0 white,
-         1px  1px 0 white;
-    }
+  p { font-size: 1.5rem; margin-bottom: 2rem; color: #ccc; }
 
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: #ccc;
-    }
+  img { width: 200px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); margin-bottom: 1rem; }
 
-    img {
-      width: 200px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      margin-bottom: 1rem;
-    }
+  /* Container for the button + input */
+  .notify-container {
+    position: relative;
+    display: inline-block;
+  }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 1.5rem;
-    }
+  /* Hidden input by default */
+  .notify-container input[type="email"] {
+    opacity: 0;
+    width: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: -50px; /* position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    border: none;
+  }
 
-    input[type="email"] {
-      padding: 0.8rem;
-      width: 250px;
-      border-radius: 8px;
-      border: none;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
+  /* Show input when hovering the container */
+  .notify-container:hover input[type="email"] {
+    opacity: 1;
+    width: 250px;
+    padding: 0.8rem;
+  }
 
-    button {
-      padding: 0.8rem 2rem;
-      background-color: #00d8ff;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
+  button {
+    padding: 0.8rem 2rem;
+    background-color: #00d8ff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
 
-    button:hover {
-      transform: scale(1.05);
-    }
+  button:hover { transform: scale(1.05); }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2.5rem; }
-      p { font-size: 1.2rem; }
-      img { width: 150px; }
-      input[type="email"] { width: 200px; }
-    }
-  </style>
+  @media (max-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    p { font-size: 1.2rem; }
+    img { width: 150px; }
+    .notify-container:hover input[type="email"] { width: 200px; }
+  }
+</style>
 </head>
 <body>
-  <img src="Images/Logo.png" alt="Zenos.AI Logo">
-  <h1>
-    <span class="main-text">Zenos</span><span class="accent">.AI</span>
-  </h1>
-  <p>Something exciting in the world of Computational Physiology is coming soon!</p>
+<img src="Images/Logo.png" alt="Zenos.AI Logo">
+<h1><span class="main-text">Zenos</span><span class="accent">.AI</span></h1>
+<p>Something exciting in the world of Computational Physiology is coming soon!</p>
 
-  <!-- Formspree email signup form -->
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <input type="email" name="email" placeholder="Enter your email" required>
-    <button type="submit">Notify Me</button>
-  </form>
+<!-- Notify Me container -->
+<form class="notify-container" action="https://formspree.io/f/xzzvnayy" method="POST">
+  <input type="email" name="email" placeholder="Enter your email" required>
+  <button type="submit">Notify Me</button>
+</form>
+
 </body>
 </html>

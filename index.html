@@ -34,13 +34,13 @@
       color: #00d8ff; /* current accent color */
     }
 
-    main-text {
+    .main-text {
       color: black;
-        text-shadow:
-          -1px -1px 0 white,
-           1px -1px 0 white,
-          -1px  1px 0 white,
-           1px  1px 0 white;
+      text-shadow:
+        -1px -1px 0 white,
+         1px -1px 0 white,
+        -1px  1px 0 white,
+         1px  1px 0 white;
     }
 
     p {
@@ -56,9 +56,23 @@
       margin-bottom: 1rem;
     }
 
-    /* Optional: add a button for email signup */
-    .button {
-      margin-top: 2rem;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+
+    input[type="email"] {
+      padding: 0.8rem;
+      width: 250px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    button {
       padding: 0.8rem 2rem;
       background-color: #00d8ff;
       color: #000;
@@ -66,19 +80,18 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      text-decoration: none;
       transition: transform 0.2s;
     }
 
-    .button:hover {
+    button:hover {
       transform: scale(1.05);
     }
 
-    /* Make it responsive */
     @media (max-width: 600px) {
       h1 { font-size: 2.5rem; }
       p { font-size: 1.2rem; }
       img { width: 150px; }
+      input[type="email"] { width: 200px; }
     }
   </style>
 </head>
@@ -88,6 +101,11 @@
     <span class="main-text">Zenos</span><span class="accent">.AI</span>
   </h1>
   <p>Something exciting in the world of Computational Physiology is coming soon!</p>
-  <a href="mailto:nafontijne@gmail.com" class="button">Notify Me</a>
+
+  <!-- Formspree email signup form -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Notify Me</button>
+  </form>
 </body>
 </html>

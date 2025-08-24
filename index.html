@@ -96,6 +96,42 @@ p {
     margin: 0;
 }
 
+/* --- Cards for Physiological Modeling Section --- */
+.card {
+    background-color: #222;
+    border-left: 4px solid #00d8ff;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.card.highlight {
+    border-left-color: #ff4d4d;
+    background-color: #2a1e1e;
+}
+
+.card h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.card ul {
+    padding-left: 1.2rem;
+    list-style: none;
+}
+
+.card li {
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+.card li::before {
+    content: "❗ ";
+    color: #ff4d4d;
+}
+    
 /* --- Call to Action --- */
 .notify-container {
     position: relative;
@@ -157,23 +193,25 @@ p {
     <section class="content-section">
         <h2>Limits on Physiological Modeling</h2>
         <p>Current methods for modeling human physiology are <strong>severely limited</strong>. They often rely on purely statistically derived and isolated physiological principles.<p> 
-        <p>Such an approach is problematic, as within physiology we have to deal with:</p>
+
+        <div class="card">
+            <h3>❓ Why is this a problem?</h3>
             <ul>
                 <li><strong>Highly integrated systems</strong> with many interdependencies</li>
                 <li><strong>Small, noisy datasets</strong> that reduce reliability</li>
                 <li><strong>Few measured scenarios</strong> that limit applicability</li>
                 <li><strong>Unmeasurable variables</strong> that leave critical gaps</li>
             </ul>
+        </div>
         
-        <h3>The impact</h3>
-          <p>The resulting models suffer from low generalizability and a high abstraction level. As a result, many models:</p>
-          <ul>
-            <li>Are <strong>built on incomplete or inaccurate data</strong></li>
-            <li>Offer <strong>limited actionable insights</strong></li>
-          </ul>
-
-        This poses risks for critical projects, whether it's engineering the next generation of human-centric products, developing safer protective gear, or designing a more efficient physical training program.
-        
+        <div class="card highlight">
+            <h3>⚠ The Impact</h3>
+            <ul>
+                <li>Built on incomplete or inaccurate data</li>
+                <li>Limited actionable insights</li>
+            </ul>
+            <p>This poses risks for critical projects, whether it's engineering the next generation of human-centric products, developing safer protective gear, or designing a more efficient physical training program.</p>
+    </div>
         <h2>Our Solution</h2>
         <p>
             <strong>Zenos.AI offers a powerful, integrated model that changes the game</strong>. We've combined statistical methods with multidimensional data and domain knowledge to create an

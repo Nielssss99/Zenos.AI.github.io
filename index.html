@@ -66,12 +66,14 @@ p {
     margin-bottom: 1rem;
 }
 
-.tagline-box {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #00d8ff;
-    font-size: 2rem;
-    margin-top: 1rem;
+.tagline {
+    font-size: 1.2rem;
+    line-height: 1.5; /* Ensure there is a good space between the two lines */
+}
+
+.accent-tagline {
+    color: #00d8ff; /* Your accent color */
+    font-weight: 500;
 }
 
 /* --- Content Sections --- */
@@ -195,9 +197,9 @@ p {
 <header class="hero-section">
     <img src="Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">
     <h1><span class="main-text">Zenos</span><span class="accent">.AI</span></h1>
-    <div class="tagline-box">
-        Physiological Simulation Environment for Health Care, Engineering, Sports and Research
-    </div>
+    <p class="tagline">
+        Physiological Simulation Environment for <br><span class="accent-tagline">Health Care, Engineering, Sports and Research</span>
+    </p>
 </header>
 
 <main>

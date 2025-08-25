@@ -171,8 +171,19 @@ p {
   margin-right: 10px;
 }
 
+.grey-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #a6a6a6; /* The grey color */
+  margin-left: 0px;
+  margin-right: 10px;
+}
+
 .warning-box {
-  background-color: #e8fbff; /* A light yellow background */
+  background-color: #a6a6a6; /* A light yellow background */
   border-left: 5px solid #00d8ff; /* A bold left border for emphasis */
   border-radius: 4px; /* Softly rounded corners */
   padding: 15px;
@@ -263,18 +274,18 @@ p {
             <ul>
                 <li>
                     <i class="blue-arrow"></i>
-                    <strong>The body is a highly complex and integrated system</strong>
+                    <strong>The body is a highly complex and integrated</strong>
                 </li>
                 <li>
                     <i class="blue-arrow"></i>
                     <strong>Datasets are small and noisy</strong>
                 </li>
                 <li> 
-                    <i class="fas fa-exclamation bullet-icon"></i>
+                    <i class="grey-arrow"></i>
                     <strong>Few measured scenarios</strong> limit applicability
                 </li>
                 <li> 
-                    <i class="fas fa-exclamation bullet-icon"></i>
+                    <i class="grey-arrow"></i>
                     <strong>Unmeasurable variables</strong> leave critical gaps
                 </li>
             </ul>

@@ -151,6 +151,17 @@ p {
     vertical-align: middle;
 }
 
+.warning-box {
+  background-color: #fff3cd; /* A light yellow background */
+  border: 1px solid #ffeeba; /* A slightly darker yellow border */
+  border-left: 5px solid #ffc107; /* A bold left border for emphasis */
+  border-radius: 4px; /* Softly rounded corners */
+  padding: 15px;
+  margin: 20px 0;
+  color: #664d03; /* A dark color for the text */
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
     
 /* --- Call to Action --- */
 .notify-container {
@@ -243,8 +254,10 @@ p {
             </ul>
             <p>⚠️ This poses considerable <strong>risks and limitations for critical projects</strong>. ⚠️</p>
         </div>
-
-        <p style="color: #FFD700;">* For predictions of core and skin temperatures, errors increase by factors of 2.8 and 1.7 when ONLY shifting from light to moderate exercise!</p>
+        
+        <div class="warning-box">
+          <p>For predictions of core and skin temperatures, errors increase by factors of 2.8 and 1.7 when ONLY shifting from light to moderate exercise!</p>
+        </div>
         
         <div class="section-separator"></div>
         

@@ -151,6 +151,15 @@ p {
     vertical-align: middle;
 }
 
+.yellow-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #FFC107; /* The yellow color */
+}
+
 .warning-box {
   background-color: #fae6a7; /* A light yellow background */
   border: 1px solid #ffeeba; /* A slightly darker yellow border */
@@ -233,21 +242,21 @@ p {
     </p>
     <section class="content-section">
         <div class="section-separator"></div>
-        <h2>A Lack of Appropriate Products</h2>
+        <h2>💔🔧 A Lack of Appropriate Products 🔧💔<</h2>
         <p>However, current methods for modeling human physiology are <strong>severely limited</strong>. They often rely on purely statistically derived and isolated physiological principles.<p> 
 
         <div class="card">
-            <h3>Why is this a problem?</h3>
+            <h3>Why is this a problem?/h3>
             <ul>
                 <li>❗️<strong>The body is a highly complex and integrated system</strong> with many interdependencies</li>
                 <li>❗️<strong>Small, noisy datasets</strong> that reduce reliability</li>
-                <li>❗️<strong>Few measured scenarios</strong> that limit applicability</li>
-                <li>❗️<strong>Unmeasurable variables</strong> that leave critical gaps</li>
+                <li><span class="yellow-arrow"></span><strong>Few measured scenarios</strong> that limit applicability</li>
+                <li><span class="yellow-arrow"></span><strong>Unmeasurable variables</strong> that leave critical gaps</li>
             </ul>
         </div>
         
         <div class="card highlight">
-            <h3>The Consequences</h3>
+            <h3>Consequences</h3>
             <ul>
                 <li>🚫 Models have low generalizability*</li>
                 <li>🚫 Models provide limited actionable insights</li>

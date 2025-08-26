@@ -121,7 +121,7 @@
     .section-grid {
         display: grid;
         gap: 40px;
-        grid-template-columns: 1fr; /* Default: 1 column for mobile */
+        grid-template-columns: 1fr 1fr; /* Default: 2 columns for desktop */
     }
 
     .grid-item {
@@ -248,7 +248,7 @@
         h3 { font-size: 1.25rem; }
         p { font-size: 1rem; }
         feature-grid {
-            grid-template-columns: 1fr 1fr; /* Override: 2 columns for larger screens */
+            grid-template-columns: 1fr; /* Default: 1 column for mobile */
             gap: 40px; /* Adjust spacing for desktop */
           }
     }

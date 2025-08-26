@@ -237,15 +237,33 @@
 }
     /* --- Media Queries --- */
     @media (min-width: 768px) {
-        .h1 { font-size: 3rem; }
-        .h2 { font-size: 2.5rem; }
-        .h3 { font-size: 1.5rem; }
-        .p { font-size: 1.1rem; }
-        .section-grid {
-            grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
-            gap: 40px; /* Adjust spacing for desktop */
-          }
-        .pjust{
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+    
+        h2 {
+            font-size: 2.5rem;
+            margin: 1.5rem 0 1.5rem;
+            font-weight: 700;
+        }
+    
+        h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0 0.5rem;
+            font-weight: 700;
+        }
+    
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--subtle-text-color);
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+    
+        .pjust {
             font-size: 1rem;
             line-height: 1.8;
             color: var(--subtle-text-color);
@@ -253,6 +271,11 @@
             margin: 0 auto 1.5rem;
             text-align: center; /* For phone justify, desktop not */
         }
+        
+        .section-grid {
+            grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
+            gap: 40px; /* Adjust spacing for desktop */
+          }
     }
 
 
@@ -279,7 +302,7 @@
             Whether it's engineering the next generation of human-centric products, developing safer protective gear, or designing more efficient 
             physical training programs, models of human physiology can provide you with <span class="white-bold">new insights</span>, while <span class="white-bold">limiting the need for resource-intensive 
             experimental testing</span>.
-        </p>
+        </pjust>
     </section>
 
     <div class="section-separator"></div>
@@ -288,7 +311,7 @@
         <h2>Lack of Alternatives</h2>
         <pjust>
             However, current methods for modeling human physiology are <span class="white-bold">severely limited</span>. They often rely on <span class="white-bold">purely statistically derived</span> and <span class="white-bold">isolated</span> physiological principles.
-        </p>
+        </pjust>
 
         <div class="card">
             <h3>Why this is a problem?</h3>
@@ -335,7 +358,7 @@
             <br>
             In this way <span class="white-bold">Zenos.AI</span> will not become just another mediocre research tool, but a 
             <span class="white-bold">holistic framework</span> that gives you a complete and accurate picture of human physiology.
-        </p>
+        </pjust>
     </section>
 
     <div class="section-separator"></div>

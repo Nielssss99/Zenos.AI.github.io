@@ -34,25 +34,25 @@
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-bottom: 0.5rem;
         font-weight: 700;
     }
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin: 1.5rem 0 1.5rem;
         font-weight: 700;
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         margin: 1rem 0 0.5rem;
         font-weight: 700;
     }
 
     p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.8;
         color: var(--subtle-text-color);
         max-width: 900px;
@@ -121,7 +121,7 @@
     .section-grid {
         display: grid;
         gap: 40px;
-        grid-template-columns: 1fr 1fr; /* Default: 2 columns for desktop */
+        grid-template-columns: 1fr; /* Default: 1 column */
     }
 
     .grid-item {
@@ -242,13 +242,13 @@
     background-color: #00b3cc;
 }
     /* --- Media Queries --- */
-    @media (max-width: 768px) {
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; }
-        h3 { font-size: 1.25rem; }
-        p { font-size: 1rem; }
+    @media (min-width: 768px) {
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+        p { font-size: 1.1rem; }
         feature-grid {
-            grid-template-columns: 1fr; /* Default: 1 column for mobile */
+            grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
             gap: 40px; /* Adjust spacing for desktop */
           }
     }

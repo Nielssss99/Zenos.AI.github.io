@@ -9,261 +9,240 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-/* --- General Body and Typography --- */
-body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
-}
+    /* --- CSS Variables --- */
+    :root {
+        --primary-color: #00d8ff;
+        --dark-background: #1a1a1a;
+        --light-background: #0d0d0d;
+        --card-background: #222;
+        --text-color: #fff;
+        --subtle-text-color: #ccc;
+    }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
+    /* --- General Body and Typography --- */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, var(--dark-background), var(--light-background));
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
-h2 {
-    font-size: 2.5rem;
-    margin: 4rem 0 1.5rem;
-    font-weight: 700;
-}
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
 
-h3 {
-    font-size: 1.5rem;
-    margin: 1rem 0 0.5rem;
-    font-weight: 700;
-}
+    h2 {
+        font-size: 2.5rem;
+        margin: 4rem 0 1.5rem;
+        font-weight: 700;
+    }
 
-p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #ccc;
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
-    align: justify;
-}
-.accent {
-    color: #00d8ff;
-}
+    h3 {
+        font-size: 1.5rem;
+        margin: 1rem 0 0.5rem;
+        font-weight: 700;
+    }
 
-.white-bold {
-  color: white;
-  font-weight: bold;
-}
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--subtle-text-color);
+        max-width: 700px;
+        margin: 0 auto 1.5rem;
+    }
 
-.section-separator {
-  border: none; /* Remove the default border */
-  height: 1px; /* Set a thin height */
-  background-color: #b0b0b0; /* Use a light gray */
-  opacity: 0.5;
-  margin: 0rem 0; /* Add some space above and below */
-  width: 100%; /* Make it shorter than the full width to look more elegant */
-}
+    .accent {
+        color: var(--primary-color);
+    }
 
-.blue-icon {
-  color: #00d8ff; /* A professional blue hex code */
-}
+    .white-bold {
+        color: white;
+        font-weight: bold;
+    }
 
-.darkblue-icon {
-  color: #1a73e8; /* A professional blue hex code */
-}
+    .section-separator {
+        border: none;
+        height: 1px;
+        background-color: #b0b0b0;
+        opacity: 0.5;
+        margin: 2rem 0;
+        width: 100%;
+        max-width: 900px; /* Aligns with content sections */
+    }
 
-/* --- Hero Section --- */
-.hero-section {
-    padding: 40px 20px 10px;
-    width: 100%;
-    max-width: 900px;
-}
-
-.hero-image {
-    width: 400px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1rem;
-}
-
-.tagline {
-    font-size: 1.2rem;
-    line-height: 1.5; /* Ensure there is a good space between the two lines */
-}
-
-
-/* --- Content Sections --- */
-.content-section {
-    padding: 10px 20px 20px;
-    max-width: 900px;
-    width: 100%;
-    text-align: center;
-}
-
-.section-grid {
-    display: grid;
-    gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.grid-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.grid-item img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
-}
-
-.grid-item h3 {
-    margin: 0;
-}
-
-/* --- Cards for Physiological Modeling Section --- */
-.card {
-    background-color: #222;
-    border-left: 4px solid #00d8ff;
-    border-right: 1px solid #00d8ff;
-    border-top: 1px solid #00d8ff;
-    border-bottom: 1px solid #00d8ff;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    text-align: left;
-    line-height: 2;
-}
-
-.card.highlight {
-    background-color: #222;
-    border-left: 4px solid #00d8ff;
-    border-right: 1px solid #00d8ff;
-    border-top: 1px solid #00d8ff;
-    border-bottom: 1px solid #00d8ff;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    text-align: left;
-    line-height: 2;
-}
-
-.card h3 {
-    color: #fff;
-    margin-top: 0;
-}
-
-.card ul {
-    padding-left: 1.2rem;
-    list-style: none;
-}
-
-.card li {
-    margin-bottom: 0.5rem;
-    color: #ccc;
-}
-
-.bullet-icon {
-    width: 0;
-    height: 0;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-.blue-arrow {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #00d8ff; /* The blue color */
-  margin-left: 0px;
-  margin-right: 10px;
-}
-
-.blue-ban {
-  display: inline-block;
-  margin-left: 0px;
-  margin-right: 10px;
-  color: #00d8ff;
-}
-
+    .blue-icon {
+        color: var(--primary-color);
+    }
     
-.warning-box {
-    background-color: #222;
-    border-left: 4px solid #00d8ff;
-    border-right: 1px solid #00d8ff;
-    border-top: 1px solid #00d8ff;
-    border-bottom: 1px solid #00d8ff;
-    border-style: dashed;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    text-align: left;
-    line-height: 2;
-}
+    .darkblue-icon {
+        color: #1a73e8;
+    }
+
+    /* --- Hero Section --- */
+    .hero-section {
+        padding: 40px 20px 10px;
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .hero-image, .Roadmap-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+    }
     
-/* --- Call to Action --- */
-.notify-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-}
+    .hero-image {
+        width: 300px; /* Set a max-width for desktop, but let it scale down */
+    }
 
-.notify-container input[type="email"] {
-    width: 280px;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+    .tagline {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
 
-.notify-container button {
-    padding: 1rem 2.5rem;
-    background-color: #00d8ff;
-    color: #000;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-}
+    /* --- Content Sections --- */
+    .content-section {
+        padding: 10px 20px 20px;
+        max-width: 900px;
+        width: 100%;
+        text-align: center;
+    }
 
-.notify-container button:hover {
-    transform: scale(1.05);
-    background-color: #00b3cc;
-}
+    .section-grid {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
-.Roadmap-image {
-    width: 400px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1rem;
-}
-/* --- Media Queries --- */
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    p { font-size: 1rem; }
-    .hero-image { width: 300px; }
-    .section-grid { grid-template-columns: 1fr; }
-}
+    .grid-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
+    .grid-item img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .grid-item h3 {
+        margin: 0;
+    }
+
+    /* --- Cards for Physiological Modeling Section --- */
+    .card {
+        background-color: var(--card-background);
+        border: 1px solid var(--primary-color);
+        border-left: 4px solid var(--primary-color);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        text-align: left;
+    }
+
+    .card h3 {
+        color: var(--text-color);
+        margin-top: 0;
+    }
+
+    .card ul {
+        padding-left: 1.2rem;
+        list-style-type: none;
+    }
+
+    .card li {
+        margin-bottom: 0.5rem;
+        color: var(--subtle-text-color);
+        line-height: 1.5;
+        position: relative;
+    }
+    
+    .card li::before {
+        content: '\203A'; /* Unicode for single right-pointing angle quotation mark */
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 1.5rem;
+        position: absolute;
+        left: -1.2rem;
+        top: 0;
+        line-height: 1;
+    }
+
+    .warning-box {
+        background-color: var(--card-background);
+        border: 1px dashed var(--primary-color);
+        border-left: 4px dashed var(--primary-color);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        text-align: left;
+    }
+    
+    .warning-box p {
+        margin: 0;
+    }
+
+    /* --- Call to Action --- */
+    .notify-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .notify-container input[type="email"] {
+        width: 100%;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        background-color: #333;
+        color: var(--text-color);
+        text-align: center;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .notify-container button {
+        padding: 1rem 2.5rem;
+        background-color: var(--primary-color);
+        color: #000;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .notify-container button:hover {
+        transform: scale(1.05);
+        background-color: #00b3cc;
+    }
+
+    /* --- Media Queries --- */
+    @media (max-width: 768px) {
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.25rem; }
+        p { font-size: 1rem; }
+    }
 </style>
 </head>
 <body>
@@ -277,78 +256,73 @@ p {
 </header>
 
 <main>
-    
     <div class="section-separator"></div>
     
-    <h2>
-        <i class="fa-solid fa-heart blue-icon"></i> 
-        Models of Human Physiology 
-        <i class="fa-solid fa-lungs blue-icon"></i>
-    </h2>
-    <p>
-        Whether it's engineering the next generation of human-centric products, developing safer protective gear, or designing more efficient 
-        physical training programs, models of human physiology can provide you with <span class="white-bold">new insights</span>, while <span class="white-bold">limiting the need for resource-intensive 
-        experimental testing</span>.
-        <br>
-    </p>
+    <section class="content-section">
+        <h2>
+            <i class="fa-solid fa-heart blue-icon"></i> 
+            Models of Human Physiology 
+            <i class="fa-solid fa-lungs blue-icon"></i>
+        </h2>
+        <p>
+            Whether it's engineering the next generation of human-centric products, developing safer protective gear, or designing more efficient 
+            physical training programs, models of human physiology can provide you with <span class="white-bold">new insights</span>, while <span class="white-bold">limiting the need for resource-intensive 
+            experimental testing</span>.
+        </p>
+    </section>
 
     <div class="section-separator"></div>
     
     <section class="content-section">
         <h2>Lack of Alternatives</h2>
         <p>
-            However, current methods for modeling human physiology are <span class="white-bold">severely limited</span>. 
-            They often rely on <span class="white-bold">purely statistically derived</span> and <span class="white-bold">isolated</span> physiological principles.
-        <p> 
+            However, current methods for modeling human physiology are <span class="white-bold">severely limited</span>. They often rely on <span class="white-bold">purely statistically derived</span> and <span class="white-bold">isolated</span> physiological principles.
+        </p>
 
         <div class="card">
             <h3>Why this is a problem?</h3>
             <ul>
                 <li>
-                    <i class="blue-arrow"></i>
                     The body is complex and integrated
                 </li>
                 <li>
-                    <i class="blue-arrow"></i>
                     Datasets are small and noisy
                 </li>
-                <li> 
-                    <i class="blue-arrow"></i>
+                <li>
                     Few scenarios are measured
                 </li>
-                <li> 
-                    <i class="blue-arrow"></i>
+                <li>
                     Some variables are non-measurable
                 </li>
             </ul>
         </div>
         
-        <div class="card highlight">
+        <div class="card">
             <h3>Consequences</h3>
             <ul>
-                <li><i class="fa-solid fa-ban blue-ban"></i>  Low generalizability<span class="white-bold">*</span></li>
-                <li><i class="fa-solid fa-ban blue-ban"></i>  Limited actionable insights</li>
+                <li><i class="fa-solid fa-ban blue-icon"></i> Low generalizability<span class="white-bold">*</span></li>
+                <li><i class="fa-solid fa-ban blue-icon"></i> Limited actionable insights</li>
             </ul>
             <p>⚠️ This poses considerable risks and limitations ⚠️</p>
         </div>
         
         <div class="warning-box">
-          <p>
-              <span class="white-bold">*</span> Body temperature prediction errors increase <span class="white-bold">1.7-2.8</span> 
-              times when progressing from <span class="white-bold">ONLY</span> light to moderate exercise (Psikuta et al., 2011)! 
-          </p>
+            <p>
+                <span class="white-bold">*</span> Body temperature prediction errors increase <span class="white-bold">1.7-2.8</span> 
+                times when progressing from <span class="white-bold">ONLY</span> light to moderate exercise (Psikuta et al., 2011)! 
+            </p>
         </div>
-        
-        <div class="section-separator"></div>
-        
+    </section>
+    
+    <div class="section-separator"></div>
+    
+    <section class="content-section">
         <h2> <i class="fa-solid fa-bolt blue-icon"></i> Our Solution <i class="fa-solid fa-bolt blue-icon"></i> </h2>
         <p>
             <span class="white-bold">Zenos.AI will offer a model that changes the game</span>. We will combine statistical methods, multidimensional data and 
-            huge amounts of domain knowledge to create a  <span class="white-bold">more informative and better generalizable model</span> of the human body. 
-            
+            huge amounts of domain knowledge to create a <span class="white-bold">more informative and better generalizable model</span> of the human body. 
             <br>
             <br>
-            
             In this way <span class="white-bold">Zenos.AI</span> will not become just another mediocre research tool, but a 
             <span class="white-bold">holistic framework</span> that gives you a complete and accurate picture of human physiology.
         </p>
@@ -359,7 +333,6 @@ p {
     <section class="content-section">
         <h2>Key Features</h2>
         <div class="section-grid">
-
             <div class="grid-item">
                 <img src="Images/Arrow.png" alt="Arrow Icon">
                 <h3>Improved Accuracy</h3>
@@ -383,7 +356,6 @@ p {
                 <h3>Save Resources</h3>
                 <p>Test new hypotheses, and save resources by optimizing products and plans in simulation. </p>
             </div>
-
         </div>
     </section>
 
@@ -426,7 +398,6 @@ p {
         <h2>Roadmap</h2>
         <img src="Images/TimeLine.png" alt="Timeline" class="Roadmap-image">
     </section>
-
 
     <div class="section-separator"></div>
     

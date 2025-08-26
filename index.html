@@ -128,7 +128,6 @@ p {
 
 /* --- Cards for Physiological Modeling Section --- */
 .card {
-    color: white;
     background-color: #222;
     border-left: 4px solid #00d8ff;
     border-right: 1px solid #00d8ff;
@@ -143,7 +142,6 @@ p {
 }
 
 .card.highlight {
-    color: white;
     border-left: 4px solid #00d8ff;
     border-right: 1px solid #00d8ff;
     border-top: 1px solid #00d8ff;
@@ -183,20 +181,8 @@ p {
   margin-left: 0px;
   margin-right: 10px;
 }
-
-.grey-arrow {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #a6a6a6; /* The grey color */
-  margin-left: 0px;
-  margin-right: 10px;
-}
-
+    
 .warning-box {
-  color: white;
   background-color: #222; /* A light blue background */
   border-left: 4px solid #00d8ff;
   border-right: 1px solid #00d8ff;
@@ -321,10 +307,10 @@ p {
         <div class="card highlight">
             <h3>Consequences</h3>
             <ul>
-                <li>🚫 Low generalizability<span class="white-bold">*</span></li>
-                <li>🚫 Limited actionable insights</li>
+                <li><span class="blue-icon">🚫</span> Low generalizability<span class="white-bold">*</span></li>
+                <li><span class="blue-icon">🚫</span> Limited actionable insights</li>
             </ul>
-            <p>⚠️ This poses considerable <span class="white-bold">risks and limitations</span> ⚠️</p>
+            <p>⚠️ This poses considerable risks and limitations ⚠️</p>
         </div>
         
         <div class="warning-box">

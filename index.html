@@ -245,7 +245,14 @@
             grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
             gap: 40px; /* Adjust spacing for desktop */
           }
-        pjust{text-align: center;}
+        pjust{
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--subtle-text-color);
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            text-align: center; /* For phone justify, desktop not */
+        }
     }
 
 

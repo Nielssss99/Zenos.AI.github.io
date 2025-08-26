@@ -196,46 +196,51 @@
         margin: 0;
     }
 
-    /* --- Call to Action --- */
-    .notify-container {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 2rem;
-        width: 100%;
-        max-width: 400px;
-    }
+/* --- Call to Action --- */
+.notify-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the form element */
+    margin-top: 2rem;
+}
 
-    .notify-container input[type="email"] {
-        width: 100%;
-        padding: 0.8rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        background-color: #333;
-        color: var(--text-color);
-        text-align: center;
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+.notify-container form {
+    display: flex; /* Make the form a flex container */
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Horizontally center the input and button */
+    width: 100%;
+    max-width: 400px;
+}
 
-    .notify-container button {
-        padding: 1rem 2.5rem;
-        background-color: var(--primary-color);
-        color: #000;
-        font-weight: bold;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: transform 0.2s, background-color 0.2s;
-    }
+.notify-container input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center; /* Still needed to center placeholder text */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-    .notify-container button:hover {
-        transform: scale(1.05);
-        background-color: #00b3cc;
-    }
+.notify-container button {
+    padding: 1rem 2.5rem;
+    background-color: #00d8ff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
 
+.notify-container button:hover {
+    transform: scale(1.05);
+    background-color: #00b3cc;
+}
     /* --- Media Queries --- */
     @media (max-width: 768px) {
         h1 { font-size: 2.5rem; }

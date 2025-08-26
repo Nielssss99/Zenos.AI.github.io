@@ -59,6 +59,15 @@
         margin: 0 auto 1.5rem;
     }
 
+    .pjust {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--subtle-text-color);
+        max-width: 900px;
+        margin: 0 auto 1.5rem;
+        text-align: justify; /* For phone justify, desktop not */
+    }
+
     .accent {
         color: var(--primary-color);
     }
@@ -236,6 +245,7 @@
             grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
             gap: 40px; /* Adjust spacing for desktop */
           }
+        pjust{text-align: center;}
     }
 
 
@@ -258,7 +268,7 @@
         <h2>
             Models of Physiology 
         </h2>
-        <p style = "text-align: justify;">
+        <pjust>
             Whether it's engineering the next generation of human-centric products, developing safer protective gear, or designing more efficient 
             physical training programs, models of human physiology can provide you with <span class="white-bold">new insights</span>, while <span class="white-bold">limiting the need for resource-intensive 
             experimental testing</span>.
@@ -269,7 +279,7 @@
     
     <section class="content-section">
         <h2>Lack of Alternatives</h2>
-        <p style = "text-align: justify;">
+        <pjust>
             However, current methods for modeling human physiology are <span class="white-bold">severely limited</span>. They often rely on <span class="white-bold">purely statistically derived</span> and <span class="white-bold">isolated</span> physiological principles.
         </p>
 
@@ -298,8 +308,8 @@
                 <li><i class="fa-solid fa-ban blue-icon"></i> Low generalizability⚠️</li>
             </ul>
             <p>
-                ⚠️ <span class="white-bold">1.7-2.8</span> times increase in error when progressing from 
-                <span class="white-bold">ONLY</span> light to moderate exercise (Psikuta et al., 2011)! 
+                ⚠️ <span class="white-bold">1.7-2.8</span>x increase in error with 
+                <span class="white-bold">ONLY</span> slight shifts in exercise intensity (Psikuta et al., 2011)! 
             </p>
 
         </div>
@@ -311,7 +321,7 @@
     
     <section class="content-section">
         <h2> <i class="fa-solid fa-bolt blue-icon"></i> Our Solution <i class="fa-solid fa-bolt blue-icon"></i> </h2>
-        <p style = "text-align: justify;">
+        <pjust>
             <span class="white-bold">Zenos.AI will offer a model that changes the game</span>. We will combine statistical methods, multidimensional data and 
             huge amounts of domain knowledge to create a <span class="white-bold">more informative and better generalizable model</span> of the human body. 
             <br>

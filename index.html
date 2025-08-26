@@ -191,14 +191,11 @@ p {
 
     
 .warning-box {
-  background-color: #222; /* A light blue background */
-  border-left: 4px solid #00d8ff;
-  border-right: 1px solid #00d8ff;
-  border-top: 1px solid #00d8ff;
-  border-bottom: 1px solid #00d8ff;
-  border-radius: 4px; /* Softly rounded corners */
-  border-style: solid; /* This is necessary for border-image to work */
-  border-image: repeating-linear-gradient(90deg, black, black 10px, transparent 10px, transparent 20px) 1;
+  background-color: #222;
+  border-width: 4px; /* A single declaration for all sides */
+  border-style: solid;
+  border-image: repeating-linear-gradient(90deg, #00d8ff, #00d8ff 10px, transparent 10px, transparent 20px) 1;
+  border-radius: 4px;
   padding: 15px;
   margin: 20px 0;
   position: relative;

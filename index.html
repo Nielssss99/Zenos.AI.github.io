@@ -240,7 +240,7 @@ nav {
     display: flex; /* Arranges children (the links) horizontally */
     gap: 20px;     /* Adds space between the links */
     padding: 10px 20px; /* Adds padding around the nav bar */
-    background-color: #333; /* Use a variable if available, e.g., var(--card-background) */
+    background-color: #000; /* Use a variable if available, e.g., var(--card-background) */
     width: 100%;
     max-width: 900px; /* Align with your content sections */
     justify-content: center; /* Center the links within the nav bar */
@@ -309,6 +309,10 @@ nav a:hover {
 <body>
 
 <header class="hero-section">
+    <nav>
+        <a href="./">Home</a>
+        <a href="./body/">Body</a>
+    </nav>
     <img src="Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">
     <h1><span class="main-text">Zenos</span><span class="accent">.AI</span></h1>
     <p class="tagline">
@@ -316,10 +320,7 @@ nav a:hover {
     </p>
 </header>
 
-<nav>
-    <a href="./">Home</a>
-    <a href="./body/">Body</a>
-</nav>
+
     
 <main>
     <div class="section-separator"></div>

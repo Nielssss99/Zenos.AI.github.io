@@ -240,31 +240,29 @@
 
 /* --- FULL-WIDTH NAVIGATION BAR STYLE --- */
 nav.full-width-nav {
-    display: flex;
-    justify-content: center; /* Center the links */
-    align-items:center;
+    display: none; /* SET TO NONE BY DEFAULT (Mobile First) */
+    justify-content: center; /* Center the links */
+    align-items:center;
 
-    margin: 0; 
-    padding: 0;
+    margin: 0; 
+    padding: 0;
 
-    min-height: 5.0rem;
-    
-    /* Key properties for full-width bar: */
-    width: 100%; 
-    background-color: var(--primary-color);
-    box-sizing: border-box; /* Include padding in the width calculation */
+    min-height: 5.0rem;
+    
+    width: 100%; 
+    background-color: var(--primary-color);
+    box-sizing: border-box;
 }
 
 /* --- Wrapper for the navigation bar --- */    
 .nav-content-wrapper {
-    display: flex;
-    align-items: center; /* Vertically align the logo and links */
-    justify-content: flex-start; /* Start content from the left edge of the wrapper */
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
 
-    /* Align content with the rest of your page layout */
-    max-width: 900px;
-    width: 100%;
-    padding: 0 20px; /* Add padding inside the wrapper for mobile views */
+    max-width: 900px; /* THIS LIMITS THE CONTENT WIDTH */
+    width: 100%;
+    padding: 0 20px;
 }
     
 /* --- Link Appearance for High Contrast --- */
@@ -297,20 +295,6 @@ nav a:hover {
     /* Crucial: Set initial margin-left to 0 and allow transition */
     margin-left: 0; 
     transition: margin-left 0.5s; 
-}
-
-/* --- FULL-WIDTH NAVIGATION BAR STYLE (Default: Hidden for Mobile) --- */
-nav.full-width-nav {
-    display: none; /* HIDE the desktop nav by default */
-    /* ... rest of existing full-width-nav styles ... */
-    justify-content: center;
-    align-items: center;
-    margin: 0; 
-    padding: 0;
-    min-height: 5.0rem;
-    width: 100%; 
-    background-color: var(--primary-color);
-    box-sizing: border-box;
 }
 
 /* --- MOBILE NAVIGATION BAR (Default: Visible for Mobile) --- */
@@ -420,11 +404,16 @@ nav.full-width-nav {
             z-index: auto;
         }
         
+        /* Ensure desktop logo uses shadow for aesthetic */
+        nav.full-width-nav .nav-image {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        
         /* ------------------------------------- */
         /* OVERRIDE FOR DESKTOP: HIDE MOBILE NAV */
         /* ------------------------------------- */
         .mobile-nav-bar {
-            display: none; /* Hide the mobile nav bar and hamburger button */
+            display: none !important; /* Use !important to ensure it overrides the global flex rule if necessary */
         }
         
         /* Reset body padding for desktop */

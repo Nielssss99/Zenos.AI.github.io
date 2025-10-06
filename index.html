@@ -238,6 +238,15 @@
     background-color: #00b3cc;
 }
 
+/* --- Wrapper for the navigation bar --- */    
+.nav-content-wrapper {
+    display: none;
+    align-items: center; 
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+}
+    
 /* --- FULL-WIDTH NAVIGATION BAR STYLE --- */
 nav.full-width-nav {
     display: none; /* SET TO NONE BY DEFAULT (Mobile First) */
@@ -254,17 +263,16 @@ nav.full-width-nav {
     box-sizing: border-box;
 }
 
-/* --- Wrapper for the navigation bar --- */    
-.nav-content-wrapper {
-    display: flex;
-    align-items: center; 
-    justify-content: flex-start;
-
-    max-width: 900px; /* THIS LIMITS THE CONTENT WIDTH */
-    width: 100%;
-    padding: 0 20px;
+/* --- Navigation Bar Image --- */
+.nav-image {
+    max-width: 4rem;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Desktop shadow */
+    margin-right: 20px;
+    margin-bottom: 0;
 }
-    
+
 /* --- Link Appearance for High Contrast --- */
 nav a {
     color: var(--dark-background);
@@ -283,15 +291,6 @@ nav a {
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Subtle white hover highlight */
     color: var(--dark-background); 
-}
-
-.nav-image {
-    max-width: 4rem;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Desktop shadow */
-    margin-right: 20px;
-    margin-bottom: 0;
 }
 
 /* --- MOBILE NAVIGATION BAR (Default: Visible for Mobile) --- */
@@ -395,6 +394,10 @@ nav a:hover {
         /* ------------------------------------- */
         /* OVERRIDE FOR DESKTOP: SHOW DESKTOP NAV */
         /* ------------------------------------- */
+        nav-content-wrapper {
+            display: flex !important;
+        }
+             
         nav.full-width-nav {
             display: flex !important; /* Make the desktop nav visible */
             position: static; /* Ensure it's not fixed */

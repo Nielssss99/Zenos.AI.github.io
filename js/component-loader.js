@@ -1,7 +1,7 @@
 // Function to load the navigation bar
 function loadNavigation() {
     // 1. Fetch the content of the separate HTML file
-    fetch('/nav.html') 
+    fetch('/Zenos.AI.github.io/nav.html') 
         .then(response => {
             // Check if the request was successful
             if (!response.ok) {

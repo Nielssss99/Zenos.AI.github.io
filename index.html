@@ -308,6 +308,8 @@ nav a:hover {
 /* Sidebar structure (Modified from your provided code to match Zenos.AI) */
 .sidebar {
     height: 100%;
+    max-width: 80vw; /* Prevents off-screen width on tiny phones */
+    overflow-y: auto;
     width: 0;
     position: fixed;
     z-index: 100; /* Must be high to cover all content */
@@ -429,6 +431,9 @@ function openNav() {
   // Shift the logo to the right for visibility (adjust '50px' as needed)
   mobileLogo.style.marginLeft = "50px";
   mobileLogo.style.transition = "margin-left 0.5s"; // Smooth transition
+
+  document.body.style.overflow = "hidden";
+  document.getElementById("mySidebar").style.width = "250px";
 }
 
 function closeNav() {
@@ -440,6 +445,9 @@ function closeNav() {
 
   // Reset the logo position
   mobileLogo.style.marginLeft = "0";
+
+  document.body.style.overflow = "";
+  document.getElementById("mySidebar").style.width = "0";
 }
 </script>
     

@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/typography.css">
     
 <style>
     main {
@@ -17,49 +18,10 @@
       align-items: center;
     }
 
-    h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-    }
 
-    h2 {
-        font-size: clamp(2rem, 5vw, 3rem);
-        margin: 1.5rem 0 1.5rem;
-        font-weight: 700;
-    }
 
-    h3 {
-        font-size: clamp(1.25rem, 4vw, 2.25rem);
-        margin: 1rem 0 0.5rem;
-        font-weight: 700;
-    }
 
-    p {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        line-height: 1.8;
-        color: var(--subtle-text-color);
-        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
-        margin: 0 auto 1.5rem;
-    }
 
-    .pjust {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        line-height: 1.8;
-        color: var(--subtle-text-color);
-        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
-        margin: 0 auto 1.5rem;
-        text-align: justify; /* For phone justify, desktop not */
-    }
-
-    .accent {
-        color: var(--primary-color);
-    }
-
-    .white-bold {
-        color: white;
-        font-weight: bold;
-    }
 
     .section-separator {
         border: none;
@@ -71,19 +33,17 @@
         max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
     }
 
-    .blue-icon {
-        color: var(--primary-color);
-    }
+
     
-    .darkblue-icon {
-        color: #1a73e8;
-    }
+
 
     /* --- Hero Section --- */
     .hero-section {
         padding: 40px 20px 10px;
         width: 100%;
         max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
+        margin: 0 auto;
+        text-align: center; 
     }
 
     .hero-image, .Roadmap-image {
@@ -98,10 +58,7 @@
         width: 300px; /* Set a max-width for desktop, but let it scale down */
     }
 
-    .tagline {
-        font-size: clamp(1.2rem, 4vw, 2.2rem);
-        line-height: 1.5;
-    }
+
 
     /* --- Content Sections --- */
     .content-section {
@@ -332,41 +289,6 @@ nav a:hover {
 
 /* --- Media Queries --- */
 @media (min-width: 768px) {
-    h1 {
-        font-size: clamp(3rem, 5vw, 4rem);
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-    }
-
-    h2 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        margin: 1.5rem 0 1.5rem;
-        font-weight: 700;
-    }
-
-    h3 {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        margin: 1rem 0 0.5rem;
-        font-weight: 700;
-    }
-
-    p {
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
-        line-height: 1.8;
-        color: var(--subtle-text-color);
-        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
-        margin: 0 auto 1.5rem;
-    }
-
-    .pjust {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        line-height: 1.8;
-        color: var(--subtle-text-color);
-        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
-        margin: 0 auto 1.5rem;
-        text-align: center; /* For phone justify, desktop not */
-    }
-    
     .section-grid {
         grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
         gap: 40px; /* Adjust spacing for desktop */

@@ -57,7 +57,7 @@
         font-size: 1rem;
         line-height: 1.8;
         color: var(--subtle-text-color);
-        max-width: 900px;
+        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
         margin: 0 auto 1.5rem;
     }
 
@@ -65,7 +65,7 @@
         font-size: 1rem;
         line-height: 1.8;
         color: var(--subtle-text-color);
-        max-width: 900px;
+        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
         margin: 0 auto 1.5rem;
         text-align: justify; /* For phone justify, desktop not */
     }
@@ -86,7 +86,7 @@
         opacity: 0.5;
         margin: 1rem 0;
         width: 100%;
-        max-width: 900px; /* Aligns with content sections */
+        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
     }
 
     .blue-icon {
@@ -101,7 +101,7 @@
     .hero-section {
         padding: 40px 20px 10px;
         width: 100%;
-        max-width: 900px;
+        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
     }
 
     .hero-image, .Roadmap-image {
@@ -124,7 +124,7 @@
     /* --- Content Sections --- */
     .content-section {
         padding: 10px 20px 20px;
-        max-width: 900px;
+        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
         width: 100%;
         text-align: center;
     }
@@ -370,7 +370,7 @@ nav a:hover {
         font-size: 1.1rem;
         line-height: 1.8;
         color: var(--subtle-text-color);
-        max-width: 900px;
+        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
         margin: 0 auto 1.5rem;
     }
 
@@ -378,7 +378,7 @@ nav a:hover {
         font-size: 1rem;
         line-height: 1.8;
         color: var(--subtle-text-color);
-        max-width: 900px;
+        max-width: min(90%, 1000px); /* Scales smoothly between phone and desktop */
         margin: 0 auto 1.5rem;
         text-align: center; /* For phone justify, desktop not */
     }
@@ -461,7 +461,7 @@ function closeNav() {
         <a href="./body/">Body</a>
         <a href="./scaling/">Scaling</a>
         <a href="./heat equation/">Heat Equation</a>
-        <a href="./active control system/">Active Control System</a>
+        <a href="./control system/">Control System</a>
     </div>
 </nav>
 

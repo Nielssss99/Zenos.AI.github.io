@@ -8,35 +8,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="./css/base.css">
-<link rel="stylesheet" href="./css/typography.css">
-<link rel="stylesheet" href="./css/components.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/typography.css">
+<link rel="stylesheet" href="css/components.css">
     
 </head>
-<script src="/js/nav.js"></script>
     
 <body>
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="./">Home</a>
-    <a href="./zenos/">Why Zenos?</a>
-    <a href="./body/">Body</a>
-    <a href="./scaling/">Scaling</a>
-    <a href="./heat equation/">Heat Equation</a>
-    <a href="./control system/">Control System</a>
-</div>
-
-<nav class="full-width-nav">
-    <div class="nav-content-wrapper">
-        <img src="Images/Logo.png" alt="Zenos.AI Logo" class="nav-image">
-        <a href="./">Home</a>
-        <a href="./zenos/">Why Zenos?</a>
-        <a href="./body/">Body</a>
-        <a href="./scaling/">Scaling</a>
-        <a href="./heat equation/">Heat Equation</a>
-        <a href="./control system/">Control System</a>
-    </div>
-</nav>
+<div id="nav-placeholder"></div>
+<script src="js/component-loader.js"></script>
+<script src="js/nav.js"></script> 
 
 <header class="hero-section">
     <img src="../Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">

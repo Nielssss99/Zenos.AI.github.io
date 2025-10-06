@@ -30,6 +30,7 @@
         text-align: center;
         min-height: 100vh;
         padding: 0;
+        padding-top: 5.0rem;
         margin: 0;
         box-sizing: border-box;
     }
@@ -296,29 +297,36 @@ nav a:hover {
     margin-bottom: 0; /* Remove the incorrect bottom margin */
 }
 
-/* --- MOBILE NAVIGATION (Hamburger Menu) --- */
+/* --- FULL-WIDTH NAVIGATION BAR STYLE (Default: Hidden for Mobile) --- */
+nav.full-width-nav {
+    display: none; /* HIDE the desktop nav by default */
+    /* ... rest of existing full-width-nav styles ... */
+    justify-content: center;
+    align-items: center;
+    margin: 0; 
+    padding: 0;
+    min-height: 5.0rem;
+    width: 100%; 
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+}
+
+/* --- MOBILE NAVIGATION BAR (Default: Visible for Mobile) --- */
 .mobile-nav-bar {
-    display: none; /* Hidden by default */
+    display: flex; /* SHOW the mobile nav by default */
     width: 100%;
     background-color: var(--primary-color);
     padding: 0 20px;
-    height: 5.0rem; /* Match desktop nav height */
+    height: 5.0rem;
     box-sizing: border-box;
     align-items: center;
     justify-content: flex-start;
+    /* Add this if you want it sticky on mobile */
+    position: fixed; 
+    top: 0;
+    z-index: 50; 
 }
-
-.mobile-nav-bar .openbtn {
-    font-size: 2rem;
-    cursor: pointer;
-    background-color: transparent;
-    color: var(--dark-background);
-    padding: 0;
-    border: none;
-    margin-right: 15px;
-    font-weight: 700;
-}
-
+    
 /* Sidebar structure (Modified from your provided code to match Zenos.AI) */
 .sidebar {
     height: 100%;
@@ -359,34 +367,6 @@ nav a:hover {
     line-height: 1;
 }
 
-    /* Add this new media query, or place these rules in your existing global styles if they don't have a min-width constraint */
-    @media (max-width: 767px) {
-        /* Hide the full desktop navigation bar */
-        .full-width-nav {
-            display: none;
-        }
-        /* Show the mobile hamburger button bar */
-        .mobile-nav-bar {
-            display: flex;
-        }
-        
-        /* Ensure the logo in the mobile nav is sized correctly */
-        .mobile-nav-bar .nav-image {
-            max-width: 4rem;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: none; /* No shadow on mobile nav logo */
-            margin-right: 0;
-            margin-bottom: 0;
-        }
-    
-        /* Adjust main content spacing if needed when the mobile nav bar is fixed at the top */
-        body {
-            /* Add top padding to body to prevent content from going under the fixed mobile nav */
-            padding-top: 5.0rem; 
-        }
-    }
-        
     /* --- Media Queries --- */
     @media (min-width: 768px) {
         h1 {
@@ -429,19 +409,26 @@ nav a:hover {
             gap: 40px; /* Adjust spacing for desktop */
           }
 
-        /* Ensure the hamburger button is hidden on desktop */
-        .mobile-nav-bar {
-            display: none;
-        }
-        /* Ensure the desktop navigation is visible */
-        .full-width-nav {
-            display: flex; /* Or whatever display property you need for desktop */
+        /* ------------------------------------- */
+        /* OVERRIDE FOR DESKTOP: SHOW DESKTOP NAV */
+        /* ------------------------------------- */
+        nav.full-width-nav {
+            display: flex; /* Make the desktop nav visible */
+            position: static; /* Ensure it's not fixed */
+            z-index: auto;
         }
         
-        /* Reset body padding for desktop if you added it for mobile */
+        /* ------------------------------------- */
+        /* OVERRIDE FOR DESKTOP: HIDE MOBILE NAV */
+        /* ------------------------------------- */
+        .mobile-nav-bar {
+            display: none; /* Hide the mobile nav bar and hamburger button */
+        }
+        
+        /* Reset body padding for desktop */
         body {
             padding-top: 0;
-    }
+        }
     }
 
 

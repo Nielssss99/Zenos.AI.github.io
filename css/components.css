@@ -22,6 +22,10 @@ main {
 /* ==================================== */
 /* 02. Navigation & Sidebar Components */
 /* ==================================== */
+/* This rule ensures the container spans the full width of the screen */
+#nav-placeholder {
+    width: 100%;
+}
 
 /* --- FULL-WIDTH NAVIGATION BAR (Desktop) --- */
 nav.full-width-nav {

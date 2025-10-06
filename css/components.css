@@ -137,7 +137,9 @@ nav a:hover {
     width: 100%;
     max-width: min(90%, 1000px);
     margin: 0 auto;
-    text-align: center;
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack the items vertically (logo, h1, p) */
+    align-items: center; /* THIS CENTERS THEM HORIZONTALLY */
 }
 
 .hero-image, .Roadmap-image {

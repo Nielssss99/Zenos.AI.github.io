@@ -295,7 +295,98 @@ nav a:hover {
     margin-right: 20px; /* Space between the logo and the 'Home' link */
     margin-bottom: 0; /* Remove the incorrect bottom margin */
 }
+
+/* --- MOBILE NAVIGATION (Hamburger Menu) --- */
+.mobile-nav-bar {
+    display: none; /* Hidden by default */
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 0 20px;
+    height: 5.0rem; /* Match desktop nav height */
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mobile-nav-bar .openbtn {
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--dark-background);
+    padding: 0;
+    border: none;
+    margin-right: 15px;
+    font-weight: 700;
+}
+
+/* Sidebar structure (Modified from your provided code to match Zenos.AI) */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100; /* Must be high to cover all content */
+    top: 0;
+    left: 0;
+    background-color: var(--dark-background); /* Use your dark background */
+    overflow-x: hidden;
+    padding-top: 5rem; /* Space for the close button */
+    transition: 0.5s;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--subtle-text-color);
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.sidebar a:hover {
+    color: var(--primary-color);
+    background-color: #2e2e2e;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 3rem;
+    margin-left: 50px;
+    color: var(--primary-color); /* Match your accent color */
+    line-height: 1;
+}
+
+    /* Add this new media query, or place these rules in your existing global styles if they don't have a min-width constraint */
+    @media (max-width: 767px) {
+        /* Hide the full desktop navigation bar */
+        .full-width-nav {
+            display: none;
+        }
+        /* Show the mobile hamburger button bar */
+        .mobile-nav-bar {
+            display: flex;
+        }
+        
+        /* Ensure the logo in the mobile nav is sized correctly */
+        .mobile-nav-bar .nav-image {
+            max-width: 4rem;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: none; /* No shadow on mobile nav logo */
+            margin-right: 0;
+            margin-bottom: 0;
+        }
     
+        /* Adjust main content spacing if needed when the mobile nav bar is fixed at the top */
+        body {
+            /* Add top padding to body to prevent content from going under the fixed mobile nav */
+            padding-top: 5.0rem; 
+        }
+    }
+        
     /* --- Media Queries --- */
     @media (min-width: 768px) {
         h1 {
@@ -337,14 +428,52 @@ nav a:hover {
             grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
             gap: 40px; /* Adjust spacing for desktop */
           }
+
+        /* Ensure the hamburger button is hidden on desktop */
+        .mobile-nav-bar {
+            display: none;
+        }
+        /* Ensure the desktop navigation is visible */
+        .full-width-nav {
+            display: flex; /* Or whatever display property you need for desktop */
+        }
+        
+        /* Reset body padding for desktop if you added it for mobile */
+        body {
+            padding-top: 0;
+    }
     }
 
 
 </style>
 </head>
+    
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px"; // Adjust width as needed
+  // Optional: Push the main content to the right (remove if you prefer overlay)
+  // document.getElementById("main").style.marginLeft = "250px"; 
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  // Optional: Reset main content margin
+  // document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+    
 <body>
     
-<nav class="full-width-nav"> 
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="./">Home</a>
+    <a href="./body/">Body</a>
+    <a href="./scaling/">Scaling</a>
+    <a href="./heat equation/">Heat Equation</a>
+    <a href="./active control system/">Active Control System</a>
+</div>
+
+<nav class="full-width-nav desktop-nav-only"> 
     <div class="nav-content-wrapper">
         <img src="Images/Logo.png" alt="Zenos.AI Logo" class="nav-image">
         <a href="./">Home</a>
@@ -354,6 +483,11 @@ nav a:hover {
         <a href="./active control system/">Active Control System</a>
     </div>
 </nav>
+
+<div class="mobile-nav-bar">
+    <button class="openbtn" onclick="openNav()">&#9776;</button>
+    <img src="Images/Logo.png" alt="Zenos.AI Logo" class="nav-image">
+</div>
     
 <header class="hero-section">
     <img src="Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">

@@ -167,6 +167,7 @@ nav a:hover {
     max-width: min(90%, 1000px);
     width: 100%;
     text-align: center;
+    align-items: center; /* THIS CENTERS THEM HORIZONTALLY */
 }
 
 

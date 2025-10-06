@@ -146,7 +146,7 @@ nav a:hover {
     align-items: center; /* THIS CENTERS THEM HORIZONTALLY */
 }
 
-.hero-image, .Roadmap-image {
+.hero-image, .Roadmap-image,  .title-image {
     max-width: 100%;
     height: auto;
     border-radius: 15px;
@@ -154,7 +154,7 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-.hero-image {
+.hero-image, .title-image {
     width: 300px;
 }
 
@@ -164,6 +164,7 @@ nav a:hover {
     width: 100%;
     text-align: center;
 }
+
 
 /* ==================================== */
 /* 04. Grid and Card Modules */

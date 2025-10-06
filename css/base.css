@@ -1,0 +1,90 @@
+/* --- CSS Variables --- */
+:root {
+    --primary-color: #00d8ff;
+    --dark-background: #1a1a1a;
+    --light-background: #0d0d0d;
+    --card-background: #222;
+    --text-color: #fff;
+    --subtle-text-color: #ccc;
+}
+
+/* --- CSS Reset/Normalization (Eric Meyer's or similar is often used) --- */
+/* 1. Basic Reset - Simplifies cross-browser consistency */
+*,
+*::before,
+*::after {
+    /* Critical for consistent layout calculations */
+    box-sizing: border-box; 
+    /* Remove default margins/paddings from all elements */
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Remove default list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* 3. Better default for images */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 4. Inheritance for form elements */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 5. Accessibility and Performance */
+/* Allows easy keyboard focus management */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* --- Base Typography and Body Styles (Fonts) --- */
+body {
+    /* The font is loaded via the HTML <link> tag */
+    font-family: 'Roboto', sans-serif; 
+    
+    /* Apply background and text colors from variables */
+    background: linear-gradient(135deg, var(--dark-background), var(--light-background));
+    color: var(--text-color);
+    
+    /* Essential layout properties */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    /* Remove padding/margin/box-sizing already handled in the reset
+       You can keep the flex-related styles if they are truly global
+       and not just for a specific layout on the home page.
+    */
+    align-items: center; 
+    text-align: center; 
+    
+    /* Only keep padding-top if the mobile-nav-bar is NOT a fixed/sticky
+       navigation, otherwise, this should be removed and handled by
+       a header/main tag padding. Since you have a sticky nav,
+       you might adjust this. For a simple base, keep only the essentials.
+    */
+    padding: 0; 
+    margin: 0; 
+}
+
+/* --- Base Heading and Paragraph Styles --- */
+/* Set a consistent line-height and color for general text */
+p {
+    line-height: 1.8;
+    color: var(--subtle-text-color);
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}

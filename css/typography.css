@@ -1,0 +1,101 @@
+/* ==================================== */
+/* 01. Global Headings (h1, h2, h3) */
+/* ==================================== */
+h1 {
+    /* Responsive sizing using clamp for smooth scaling */
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 1.5rem 0 1.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: clamp(1.25rem, 4vw, 2.25rem);
+    margin: 1rem 0 0.5rem;
+    font-weight: 700;
+}
+
+/* ==================================== */
+/* 02. Paragraph and General Text */
+/* ==================================== */
+
+p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--subtle-text-color);
+    /* Sets the maximum comfortable reading width */
+    max-width: min(90%, 1000px);
+    margin: 0 auto 1.5rem;
+}
+
+.pjust {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--subtle-text-color);
+    max-width: min(90%, 1000px);
+    margin: 0 auto 1.5rem;
+    /* Specific override for text alignment */
+    text-align: justify; 
+}
+
+.tagline {
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
+    line-height: 1.5;
+}
+
+/* ==================================== */
+/* 03. Text Utility/Modifier Classes */
+/* ==================================== */
+
+.accent {
+    color: var(--primary-color);
+}
+
+.white-bold {
+    color: white;
+    font-weight: bold;
+}
+
+.blue-icon {
+    /* Icon color, which is a text property */
+    color: var(--primary-color);
+}
+
+.darkblue-icon {
+    /* Another icon color */
+    color: #1a73e8;
+}
+
+/* ==================================== */
+/* 04. Typography Media Queries */
+/* ==================================== */
+
+@media (min-width: 768px) {
+    /* Desktop heading sizes */
+    h1 {
+        font-size: clamp(3rem, 5vw, 4rem);
+    }
+
+    h2 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    h3 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    /* Desktop paragraph size (slightly smaller based on your code) */
+    p {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+    }
+
+    .pjust {
+        /* Desktop alignment change */
+        text-align: center;
+    }
+}

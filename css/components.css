@@ -1,0 +1,312 @@
+/* ==================================== */
+/* 01. Main Layout & Separators */
+/* ==================================== */
+
+/* Global container for main content structure */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-separator {
+    border: none;
+    height: 1px;
+    background-color: #b0b0b0;
+    opacity: 0.5;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: min(90%, 1000px);
+}
+
+/* ==================================== */
+/* 02. Navigation & Sidebar Components */
+/* ==================================== */
+
+/* --- FULL-WIDTH NAVIGATION BAR (Desktop) --- */
+nav.full-width-nav {
+    display: none; /* Mobile default */
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    min-height: 5rem;
+    width: 100%;
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+}
+
+.nav-content-wrapper {
+    display: none; /* Mobile default */
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.nav-image {
+    max-width: 4rem;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+
+nav a {
+    color: var(--dark-background);
+    text-decoration: none;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-weight: 700;
+    padding: 10px 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--dark-background);
+}
+
+/* --- MOBILE NAVIGATION BAR --- */
+.mobile-nav-bar {
+    display: flex; /* SHOW the mobile nav by default */
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 0 20px;
+    height: 5.0rem;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    height: 100%;
+    max-width: 80vw;
+    overflow-y: auto;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-background);
+    overflow-x: hidden;
+    padding-top: 5rem;
+    transition: 0.5s;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--subtle-text-color);
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.sidebar a:hover {
+    color: var(--primary-color);
+    background-color: #2e2e2e;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: clamp(3rem, 5vw, 4rem);
+    margin-left: 50px;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+/* ==================================== */
+/* 03. Section and Hero Components */
+/* ==================================== */
+
+.hero-section {
+    padding: 40px 20px 10px;
+    width: 100%;
+    max-width: min(90%, 1000px);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-image, .Roadmap-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.hero-image {
+    width: 300px;
+}
+
+.content-section {
+    padding: 10px 20px 20px;
+    max-width: min(90%, 1000px);
+    width: 100%;
+    text-align: center;
+}
+
+/* ==================================== */
+/* 04. Grid and Card Modules */
+/* ==================================== */
+
+/* --- Card Component (.card) --- */
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.card h3 {
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+.card ul {
+    padding-left: 1.2rem;
+    list-style-type: none;
+}
+
+.card li {
+    margin-bottom: 0.5rem;
+    color: var(--subtle-text-color);
+    line-height: 1.5;
+    position: relative;
+}
+
+.card li::before {
+    content: '\203A';
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    position: absolute;
+    left: -1.2rem;
+    top: 0;
+    line-height: 1;
+}
+
+/* --- Section Grid Layout (.section-grid) --- */
+.section-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Default: 1 column for mobile */
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.grid-item h3 {
+    margin: 0;
+}
+
+/* ==================================== */
+/* 05. Call to Action (CTA) Component */
+/* ==================================== */
+
+.notify-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.notify-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.notify-container input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 1rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.notify-container button {
+    padding: 1rem 2.5rem;
+    background-color: #00d8ff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.notify-container button:hover {
+    transform: scale(1.05);
+    background-color: #00b3cc;
+}
+
+/* ==================================== */
+/* 06. Media Queries (Desktop Overrides) */
+/* ==================================== */
+
+@media (min-width: 768px) {
+    /* --- Grid Layout Adjustment --- */
+    .section-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
+        gap: 40px;
+    }
+
+    /* --- Navigation Bar Switch --- */
+    .mobile-nav-bar {
+        display: none !important;
+    }
+
+    nav.full-width-nav {
+        display: flex !important;
+    }
+    
+    .nav-content-wrapper {
+        display: flex !important;
+    }
+
+    nav.full-width-nav .nav-image {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* --- Layout Adjustment --- */
+    /* Reset body padding for desktop (since the desktop nav isn't sticky by default) */
+    body {
+        padding-top: 0;
+    }
+}

@@ -287,14 +287,16 @@ nav a:hover {
     color: var(--dark-background); 
 }
 
-.nav-image {
+.mobile-nav-bar .nav-image {
     max-width: 4rem;
     height: auto;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    /* REMOVE float: left; */
-    margin-right: 20px; /* Space between the logo and the 'Home' link */
-    margin-bottom: 0; /* Remove the incorrect bottom margin */
+    box-shadow: none;
+    margin-right: 0;
+    margin-bottom: 0;
+    /* Crucial: Set initial margin-left to 0 and allow transition */
+    margin-left: 0; 
+    transition: margin-left 0.5s; 
 }
 
 /* --- FULL-WIDTH NAVIGATION BAR STYLE (Default: Hidden for Mobile) --- */
@@ -437,15 +439,26 @@ nav.full-width-nav {
     
 <script>
 function openNav() {
-  document.getElementById("mySidebar").style.width = "250px"; // Adjust width as needed
-  // Optional: Push the main content to the right (remove if you prefer overlay)
-  // document.getElementById("main").style.marginLeft = "250px"; 
+  const sidebar = document.getElementById("mySidebar");
+  const mobileLogo = document.querySelector(".mobile-nav-bar .nav-image");
+
+  // Open the sidebar
+  sidebar.style.width = "250px"; 
+
+  // Shift the logo to the right for visibility (adjust '50px' as needed)
+  mobileLogo.style.marginLeft = "50px";
+  mobileLogo.style.transition = "margin-left 0.5s"; // Smooth transition
 }
 
 function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  // Optional: Reset main content margin
-  // document.getElementById("main").style.marginLeft = "0";
+  const sidebar = document.getElementById("mySidebar");
+  const mobileLogo = document.querySelector(".mobile-nav-bar .nav-image");
+
+  // Close the sidebar
+  sidebar.style.width = "0";
+
+  // Reset the logo position
+  mobileLogo.style.marginLeft = "0";
 }
 </script>
     

@@ -81,7 +81,6 @@ body {
 p {
     line-height: 1.8;
     color: var(--subtle-text-color);
-    text-align: justify;
 }
 
 /* Remove default link styles */

@@ -293,61 +293,7 @@ nav a:hover {
     color: var(--dark-background); 
 }
 
-/* /* /* --- MOBILE NAVIGATION BAR (Default: Visible for Mobile) --- */
-/* .mobile-nav-bar {
-    display: flex; /* SHOW the mobile nav by default */
-    width: 100%;
-    background-color: var(--primary-color);
-    padding: 0 20px;
-    height: 5.0rem;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: flex-start;
-    /* Add this if you want it sticky on mobile */
-    position: fixed; 
-    top: 0;
-    z-index: 50; 
-} */ */
-    
-/* /* Sidebar structure (Modified from your provided code to match Zenos.AI) */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 100; /* Must be high to cover all content */
-    top: 0;
-    left: 0;
-    background-color: var(--dark-background); /* Use your dark background */
-    overflow-x: hidden;
-    padding-top: 5rem; /* Space for the close button */
-    transition: 0.5s;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
-} */
 
-/* .sidebar a {
-    padding: 15px 32px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: var(--subtle-text-color);
-    display: block;
-    transition: 0.3s;
-    text-align: left;
-} */
-
-/* .sidebar a:hover {
-    color: var(--primary-color);
-    background-color: #2e2e2e;
-} */
-
-/* .sidebar .closebtn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 3rem;
-    margin-left: 50px;
-    color: var(--primary-color); /* Match your accent color */
-    line-height: 1;
-} */ */
 
     /* --- Media Queries --- */
     @media (min-width: 768px) {
@@ -391,30 +337,7 @@ nav a:hover {
             gap: 40px; /* Adjust spacing for desktop */
           }
 
-        /* ------------------------------------- */
-        /* OVERRIDE FOR DESKTOP: SHOW DESKTOP NAV */
-        /* ------------------------------------- */
-        /* nav-content-wrapper {
-            display: flex !important;
-        } */
-             
-        /* nav.full-width-nav {
-            display: flex !important; /* Make the desktop nav visible */
-            position: static; /* Ensure it's not fixed */
-            z-index: auto;
-        } */
-        
-        /* /* Ensure desktop logo uses shadow for aesthetic */
-        /* nav.full-width-nav .nav-image {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        } */ */
-        
-        /* ------------------------------------- */
-        /* OVERRIDE FOR DESKTOP: HIDE MOBILE NAV */
-        /* ------------------------------------- */
-        /* .mobile-nav-bar {
-            display: none !important; /* Use !important to ensure it overrides the global flex rule if necessary */
-        } */
+
         
         /* Reset body padding for desktop */
         body {
@@ -426,41 +349,11 @@ nav a:hover {
 </style>
 </head>
     
-<!-- <script>
-function openNav() {
-  const sidebar = document.getElementById("mySidebar");
-  const mobileLogo = document.querySelector(".mobile-nav-bar .nav-image");
 
-  // Open the sidebar
-  sidebar.style.width = "250px"; 
-
-  // Shift the logo to the right for visibility (adjust '50px' as needed)
-  mobileLogo.style.marginLeft = "50px";
-  mobileLogo.style.transition = "margin-left 0.5s"; // Smooth transition
-}
-
-function closeNav() {
-  const sidebar = document.getElementById("mySidebar");
-  const mobileLogo = document.querySelector(".mobile-nav-bar .nav-image");
-
-  // Close the sidebar
-  sidebar.style.width = "0";
-
-  // Reset the logo position
-  mobileLogo.style.marginLeft = "0";
-}
-</script> -->
     
 <body>
     
-<!-- <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="./">Home</a>
-    <a href="./body/">Body</a>
-    <a href="./scaling/">Scaling</a>
-    <a href="./heat equation/">Heat Equation</a>
-    <a href="./active control system/">Active Control System</a>
-</div> -->
+
 
 <nav class="full-width-nav">
     <div class="nav-content-wrapper">
@@ -473,10 +366,7 @@ function closeNav() {
     </div>
 </nav>
 
-<div class="mobile-nav-bar">
-    <button class="openbtn" onclick="openNav()">&#9776;</button>
-    <img src="Images/Logo.png" alt="Zenos.AI Logo" class="nav-image">
-</div>
+
     
 <header class="hero-section">
     <img src="Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">

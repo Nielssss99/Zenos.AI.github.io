@@ -252,6 +252,9 @@ nav.full-width-nav {
     width: 100%; 
     background-color: var(--primary-color);
     box-sizing: border-box;
+
+    position: relative;
+    z-index: 9999;
 }
 
 /* --- Wrapper for the navigation bar --- */    
@@ -338,12 +341,12 @@ nav a:hover {
           }
 
         /* --- Navigation Bar --- */
-        nav-content-wrapper {
-            display: flex !important;
-        }
-             
         nav.full-width-nav {
             display: flex !important; /* Make the desktop nav visible */
+        }
+
+        nav-content-wrapper {
+            display: flex !important;
         }
 
         

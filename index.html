@@ -237,19 +237,10 @@
     transform: scale(1.05);
     background-color: #00b3cc;
 }
-
-/* --- Wrapper for the navigation bar --- */    
-.nav-content-wrapper {
-    display: none;
-    align-items: center; 
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0;
-}
     
 /* --- FULL-WIDTH NAVIGATION BAR STYLE --- */
 nav.full-width-nav {
-    display: none; /* SET TO NONE BY DEFAULT (Mobile First) */
+    display: flex; /* SET TO NONE BY DEFAULT (Mobile First) */
     justify-content: center; /* Center the links */
     align-items:center;
 
@@ -263,6 +254,15 @@ nav.full-width-nav {
     box-sizing: border-box;
 }
 
+/* --- Wrapper for the navigation bar --- */    
+.nav-content-wrapper {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+}
+    
 /* --- Navigation Bar Image --- */
 .nav-image {
     max-width: 4rem;

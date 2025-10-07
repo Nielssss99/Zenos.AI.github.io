@@ -30,12 +30,22 @@
     <div class="section-separator"></div>
     
     <section class="content-section">
-        <h2>
+        <p class="pjust">
             For the modeled body to be accurate we can derive our data from modern imaging techniques such as 
             Magnetic Resonance Imaging (MRI). The IT'IS foundation has such models available for researchers, namely Duke, 
-            Billie, Thelonious and Ella. For our proof of concept we make use of Duke.
-        </h2>
+            Billie, Thelonious and Ella. For our Proof of Concept we make use of Duke.
+        </p>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section class="content-section">
+        <h2>The Duke Model</h2>
         <p class="pjust">
+            The Duke model consists of 610 x 310 x 1860 voxels of 1mm. The voxels are labeled for the
+            tissues. As a first step of preprocessing, a boundary detection algorithm is applied to the 
+            slices to detect possible missing labels. Upon subjective manual confirmation, voxels are 
+            imputed based on the surrounding voxels.
         </p>
     </section>
 </main>

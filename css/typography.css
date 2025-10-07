@@ -94,8 +94,5 @@ p {
         font-size: clamp(0.9rem, 2vw, 1.1rem);
     }
 
-    .pjust {
-        /* Desktop alignment change */
-        text-align: center;
-    }
+
 }

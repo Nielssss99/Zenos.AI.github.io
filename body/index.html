@@ -44,10 +44,24 @@
         <p class="pjust">
             The Duke model consists of 610 x 310 x 1860 voxels of 1mm. The voxels are labeled for the
             tissues. As a first step of preprocessing, a boundary detection algorithm is applied to the 
-            slices to detect possible missing labels. Upon subjective manual confirmation, voxels are 
-            imputed based on the surrounding voxels.
+            slices to detect possible missing labels. Upon subjective manual confirmation, the missing voxels are 
+            imputed based on the surrounding labels.
         </p>
     </section>
+
+    <div class="section-separator"></div>
+
+    <section class="content-section">
+        <h2>Segmentation</h2>
+        <p class="pjust">
+            The voxels are allocated to various body segments, namely: Feet, Legs, Thighs, Pelvis, Abdomen, Thorax, 
+            Hands, Fore Arms, Arms, Neck, Lower Head, and Upper Head. The allocation is performed by a combination of
+            automatic processing (boundary detection) and manual seperation.
+        </p>
+    </section>
+
+    <img src="/Zenos.AI.github.io/Images/Allocation.png" alt="Allocation of Segments" class="allo-image">
+    
 </main>
 
 </body>

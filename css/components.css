@@ -288,7 +288,20 @@ nav a:hover {
 }
 
 /* ==================================== */
-/* 06. Media Queries (Desktop Overrides) */
+/* 06. Videos */
+/* ==================================== */
+
+video {
+  width: 600px;  /* Set a fixed width for the video */
+  height: auto;  /* Set height to auto to maintain the aspect ratio */
+  /* OR */
+  max-width: 90%; /* For a video that scales well on different screen sizes */
+  display: block; /* To treat the video as a block element for better layout control */
+  margin: 0 auto; /* To center the video horizontally */
+}
+
+/* ==================================== */
+/* 07. Media Queries (Desktop Overrides) */
 /* ==================================== */
 
 @media (min-width: 768px) {

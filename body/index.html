@@ -42,9 +42,9 @@
     <section class="content-section">
         <h2>The Duke Model</h2>
         <p class="pjust">
-            The Duke model consists of 610 x 310 x 1860 voxels of 1mm. The voxels are labeled for the
-            tissues. As a first step of preprocessing, a boundary detection algorithm is applied to the 
-            slices to detect possible missing labels. Upon subjective manual confirmation, the missing voxels are 
+            The Duke model consists of 610 x 310 x 1860 voxels of 1mm, which are labeled for the
+            tissue types. In order to preprocess the model, a boundary detection algorithm is applied to
+            detect any missing labels. Upon subjective manual confirmation, the missing voxels are 
             imputed based on the surrounding labels.
         </p>
     </section>
@@ -54,7 +54,7 @@
     <section class="content-section">
         <h2>Segmentation</h2>
         <p class="pjust">
-            The voxels are allocated to various body segments, namely: Feet, Legs, Thighs, Pelvis, Abdomen, Thorax, 
+            Subsequently, he voxels are allocated to various body segments, namely: Feet, Legs, Thighs, Pelvis, Abdomen, Thorax, 
             Hands, Fore Arms, Arms, Neck, Lower Head, and Upper Head. The allocation is performed by a combination of
             automatic processing (boundary detection) and manual seperation.
         </p>
@@ -62,7 +62,25 @@
 
     <figure>
       <img src="/Zenos.AI.github.io/Images/Allocation.png" alt="Allocation of Segments" class="allo-image">
-      <figcaption>Figure 1: The left side shows a MRI slice, and the right side the labeling for the abdomen (blue) and fore arms (red).</figcaption>
+      <figcaption>Figure 1: The left side shows a MRI slice with tissues, and the right side the labeling for the abdomen (blue) and fore arms (red).</figcaption>
+    </figure>
+
+    <div class="section-separator"></div>
+    
+    <section class="content-section">
+        <h2>Surface Extraction</h2>
+        <p class="pjust">
+            After the segmentation has been performed (Figure 2), the marching cube algorithm is applied 
+            to the 3D voxel model. The produced triangle surfaces are allocated to the segment of the neirest voxel.
+        </p>
+    </section>
+
+    <figure>
+        <video autoplay loop muted playsinline>
+            <source src="/Zenos.AI.github.io/Images/Voxel3D.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <figcaption>Figure 2: The surface of the 3D voxel model
     </figure>
     
     

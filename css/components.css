@@ -146,11 +146,14 @@ nav a:hover {
     align-items: center; /* THIS CENTERS THEM HORIZONTALLY */
 }
 
-.hero-image, .Roadmap-image, .title-image, .allo-image {
+.hero-image, .Roadmap-image, .allo-image {
     max-width: 100%;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: block; /* Ensure it behaves as a block element */
+    margin-left: auto; 
+    margin-right: auto;
     margin-bottom: 1rem;
 }
 
@@ -158,7 +161,7 @@ nav a:hover {
     width: 300px;
 }
 
-.title-image, .allo-image {
+.allo-image {
     width: 600px;
 }
 
@@ -292,7 +295,7 @@ nav a:hover {
 /* ==================================== */
 
 video {
-  max-width: 90%; /* For a video that scales well on different screen sizes */
+  max-width: 50%; /* For a video that scales well on different screen sizes */
   display: block; /* To treat the video as a block element for better layout control */
   margin: 0 auto; /* To center the video horizontally */
   border-radius: 50%;

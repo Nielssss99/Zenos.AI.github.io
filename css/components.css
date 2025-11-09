@@ -216,7 +216,7 @@ nav a:hover {
 .card li {
     position: relative;
     padding-left: 2.2rem;          /* space for the bullet */
-    margin-bottom: .4rem;
+    margin-bottom: .2rem;
     line-height: 1.6;              /* the line-height of the text */
     color: var(--subtle-text-color);
     font-size: 1.1rem;

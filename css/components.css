@@ -237,7 +237,7 @@ nav a:hover {
     position: absolute;
     left: 0;
     top: 0;                        /* align with the text baseline */
-    height: 1.6em;                 /* EXACTLY the same height as one line */
+    height: 0em;                 /* EXACTLY the same height as one line */
     line-height: 1.6;              /* SAME line-height as the <li> */
     font-size: clamp(1.6rem, 4.5vw, 2.4rem);
     color: var(--primary-color);

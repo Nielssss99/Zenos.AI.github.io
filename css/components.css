@@ -230,11 +230,27 @@ nav a:hover {
 /* -------------------------------------------------
    Bullet
    ------------------------------------------------- */
+/* -------------------------------------------------
+   1. Base list item – tight spacing
+   ------------------------------------------------- */
+.card li {
+    position: relative;
+    padding-left: 2.2rem;          /* bullet space */
+    margin-bottom: 0.15rem;        /* tight gap */
+    line-height: 1.6;
+    color: var(--subtle-text-color);
+    font-size: 1.1rem;
+    text-align: left;
+    transition: color .2s ease;
+}
+
+/* -------------------------------------------------
+   2. Bullet
+   ------------------------------------------------- */
 .card li::before {
     content: '\203A';
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 0; top: 0;
     height: 0.8em;
     line-height: 1.6;
     font-size: clamp(1.6rem, 4.5vw, 2.4rem);
@@ -247,23 +263,26 @@ nav a:hover {
 }
 
 /* -------------------------------------------------
-   HOVER (TAP) – Works on ALL items, ALL devices
+   3. HOVER / TAP – works on **every** item, every device
    ------------------------------------------------- */
-.card li:hover {
+.card li:hover,
+.card li:focus-visible {          /* keyboard / touch */
     color: var(--text-color, #fff);
 }
-.card li:hover::before {
+.card li:hover::before,
+.card li:focus-visible::before {
     transform: translateX(4px);
     color: var(--text-color);
 }
-.has-details:hover .details-content {
+.has-details:hover .details-content,
+.has-details:focus-visible .details-content {
     max-height: 500px;
     opacity: 1;
     margin-top: 0.8em;
 }
 
 /* -------------------------------------------------
-   Details – hidden by default
+   4. Details – hidden by default (no layout impact)
    ------------------------------------------------- */
 .details-content {
     margin-top: 0;
@@ -274,16 +293,18 @@ nav a:hover {
     border-left: 4px solid var(--primary-color);
     border-radius: 0 6px 6px 0;
     box-shadow: var(--detail-shadow);
-    font-size: 0.95rem;
+    font-size: .95rem;
     line-height: 1.8;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, margin-top 0.4s ease-out;
+    transition: max-height .4s ease-out,
+                opacity .4s ease-out,
+                margin-top .4s ease-out;
 }
 
 /* -------------------------------------------------
-   DEFAULT ACTIVE: Desktop ONLY
+   5. DEFAULT ACTIVE – **DESKTOP ONLY**
    ------------------------------------------------- */
 @media (min-width: 768px) {
     .card li:first-child {
@@ -297,24 +318,6 @@ nav a:hover {
         max-height: 500px;
         opacity: 1;
         margin-top: 0.8em;
-    }
-}
-
-/* -------------------------------------------------
-   MOBILE: Reset first-child to normal (but hover still works!)
-   ------------------------------------------------- */
-@media (max-width: 767px) {
-    .card li:first-child {
-        color: var(--subtle-text-color);
-    }
-    .card li:first-child::before {
-        transform: none;
-        color: var(--primary-color);
-    }
-    .card li:first-child .details-content {
-        max-height: 0;
-        opacity: 0;
-        margin-top: 0;
     }
 }
 

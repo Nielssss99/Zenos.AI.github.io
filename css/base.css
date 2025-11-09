@@ -6,6 +6,9 @@
     --card-background: #222;
     --text-color: #fff;
     --subtle-text-color: #ccc;
+    
+    --card-shadow-color: rgba(0, 230, 230, 0.4);
+    --card-border-color: #00d8ff;
 }
 
 /* --- CSS Reset/Normalization (Eric Meyer's or similar is often used) --- */

@@ -259,7 +259,6 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    word-wrap: break-word;
     transition: transform .2s ease, color .2s ease;
 }
 
@@ -302,6 +301,7 @@ nav a:hover {
     transition: max-height .4s ease-out,
                 opacity .4s ease-out,
                 margin-top .4s ease-out;
+    word-wrap: break-word;
 }
 
 /* -------------------------------------------------

@@ -172,7 +172,7 @@ nav a:hover {
 }
 
 /* -------------------------------------------------
-   Card & Layout
+   Card & container
    ------------------------------------------------- */
 .card-container {
     display: flex;
@@ -188,97 +188,94 @@ nav a:hover {
     padding: 1.8rem 2.5rem;
     margin: 1.5rem 0;
     border-radius: 12px;
-    box-shadow: 0 0 15px var(--card-shadow-color, rgba(0, 200, 255, 0.2));
-    transition: all 0.3s ease-in-out;
-    text-align: left; /* ← ENSURE LEFT ALIGN */
+    box-shadow: 0 0 15px var(--card-shadow-color, rgba(0,0,0,.5));
+    transition: all .3s ease;
 }
 .card:hover {
-    box-shadow: 0 0 25px var(--card-shadow-color, rgba(0, 200, 255, 0.3)), 0 0 5px var(--primary-color, #00c8ff);
+    box-shadow: 0 0 25px var(--card-shadow-color, rgba(0,0,0,.5)), 0 0 5px var(--primary-color, #00d8ff);
     transform: translateY(-3px);
 }
 .card h3 {
     color: var(--text-color, #fff);
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--primary-color, #00c8ff);
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--primary-color, #00d8ff);
     letter-spacing: .05em;
     width: fit-content;
-    font-weight: 700;
 }
 .card ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
+/* -------------------------------------------------
+   List item
+   ------------------------------------------------- */
+.card li {
+    position: relative;
+    padding-left: 2.2rem;          /* room for bullet + a little extra */
+    margin-bottom: .8rem;
+    line-height: 1.6;              /* needed for bullet centering */
+    color: var(--subtle-text-color, #ccc);
+    font-size: 1.1rem;
+    text-align: left;              /* <-- keep left-aligned */
+    transition: color .2s ease;
+}
 .card li:hover {
     color: var(--text-color, #fff);
 }
 
 /* -------------------------------------------------
-   List Item
-   ------------------------------------------------- */
-.card li {
-    margin-bottom: .8rem;
-    color: var(--subtle-text-color, #aaa);
-    line-height: 1.6;
-    position: relative;
-    padding-left: 2.4rem;           /* ← MORE room for bullet */
-    font-size: 1.1rem;
-    transition: color .2s ease;
-    text-align: left;               /* ← FORCE LEFT */
-    display: flex;                  /* ← FLEX for perfect alignment */
-    align-items: flex-start;        /* ← align bullet & text top */
-}
-
-/* -------------------------------------------------
-   Custom Bullet (›) — Perfectly Centered
-   ------------------------------------------------- */
+   Bullet (you can swap '\203A' → '-' if you prefer) */
 .card li::before {
-    content: '\203A';
-    color: var(--primary-color, #00c8ff);
+    content: '\203A';              /* ›  (change to '-' for a dash) */
+    /* content: '-'; */            /* <-- uncomment for dash */
+    color: var(--primary-color, #00d8ff);
     font-weight: bold;
-    font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+    font-size: clamp(1.6rem, 4.5vw, 2.4rem);
     position: absolute;
     left: 0;
-    top: 0.1em;                     /* ← fine-tune to match text baseline */
-    line-height: 1;
+    top: 50%;                      /* centre vertically */
+    transform: translateY(-50%);
+    line-height: inherit;          /* match li line-height */
     transition: transform .2s ease, color .2s ease;
 }
 .card li:hover::before {
-    transform: translateX(4px);
+    transform: translateY(-50%) translateX(4px);
     color: var(--text-color, #fff);
 }
 
 /* -------------------------------------------------
-   Hover Details (data-details)
-   ------------------------------------------------- */
+   Hover-details block (appears *below* the line) */
 .card li::after {
     content: attr(data-details);
     display: block;
-    margin-left: 2.4rem;            /* ← match padding-left */
-    margin-top: 0.4em;
+    margin-left: 2.2rem;           /* same indent as the text start */
+    margin-top: .4em;              /* small gap – same in both states */
     padding: 6px 12px;
-    background: var(--primary-color, #00c8ff);
+    background: var(--primary-color, #00d8ff);
     color: #111;
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: .95rem;
-    font-weight: 500;
     line-height: 1.4;
+
+    /* collapsed */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+
+    /* smooth expand **and** collapse */
     transition:
-        max-height .35s ease,
-        opacity .35s ease,
-        margin-top .35s ease,
-        padding .35s ease;
+        max-height .3s ease,
+        opacity    .3s ease,
+        margin-top .3s ease;
 }
 .card li:hover::after {
-    max-height: 300px;
+    max-height: 500px;             /* any value larger than content */
     opacity: 1;
-    margin-top: 0.4em;
-    padding: 6px 12px;
+    margin-top: .4em;              /* keep identical gap */
 }
 
 .warning-icon {

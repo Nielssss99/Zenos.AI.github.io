@@ -258,7 +258,7 @@ nav a:hover {
    Hover-details – unchanged, just kept for completeness
    ------------------------------------------------- */
 .card li::after {
-    content: attr(data-details);
+    content: attr(data-details-text);
     display: block;
     margin-left: 2.2rem;
     margin-top: .4em;

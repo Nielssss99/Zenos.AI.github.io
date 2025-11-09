@@ -288,6 +288,30 @@ nav a:hover {
     opacity: 1;
 }
 
+
+
+/* 1. Set the initial 'hovered' state for the first card */
+.card-container .card:first-child {
+    /* Use the same styles as your existing .card:hover */
+    box-shadow: 0 0 25px var(--card-shadow-color, rgba(0,0,0,.5)), 0 0 5px var(--primary-color, #00d8ff);
+    transform: translateY(-3px);
+}
+
+/* 2. When the mouse hovers over the card container, remove the default hover state from the first card */
+.card-container:hover .card:first-child {
+    /* Reset to the normal state of the card */
+    box-shadow: 0 0 15px var(--card-shadow-color, rgba(0,0,0,.5));
+    transform: none;
+}
+
+/* 3. Re-apply the hover state to the currently hovered card */
+/* NOTE: Your existing .card:hover rule already does this, but we redefine it
+   here to ensure it overrides the container:hover rule for *this* element. */
+.card-container .card:hover {
+    box-shadow: 0 0 25px var(--card-shadow-color, rgba(0,0,0,.5)), 0 0 5px var(--primary-color, #00d8ff);
+    transform: translateY(-3px);
+}
+
 .warning-icon {
     color: var(--warning-color); /* Yellow for the warning icon */
     margin-left: 0 rem;

@@ -41,6 +41,7 @@ p {
     margin: 0 auto 1.5rem;
     /* Specific override for text alignment */
     text-align: justify; 
+    word-wrap: break-word;
 }
 
 .tagline {

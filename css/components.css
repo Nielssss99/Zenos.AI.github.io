@@ -266,6 +266,10 @@ nav a:hover {
     font-style: italic; /* Emphasize the detail */
 }
 
+.warning-detail::before {
+    /* 💥 Fix 2: Explicitly remove the content/bullet */
+    **content: none;** }
+
 .warning-detail .warning-icon {
     font-size: 1.3em; /* Slightly larger icon for this detail */
     margin-right: 0.5rem;

@@ -171,118 +171,111 @@ nav a:hover {
     width: 100%;
 }
 
-
-/* ==================================== */
-/* 04. Grid and Card Modules */
-/* ==================================== */
-
-/* --- Card Component (.card) --- */
+/* -------------------------------------------------
+   Card container & card
+   ------------------------------------------------- */
 .card-container {
     display: flex;
-    flex-direction: column; /* Stacks cards vertically */
-    gap: 2rem; /* Space between cards */
-    max-width: 800px; /* Max width for content area */
-    margin: 0 auto; /* Center the card container */
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 .card {
-    background-color: linear-gradient(145deg, var(--card-background) 0%, #111 100%);
+    background: linear-gradient(145deg, var(--card-background) 0%, #111 100%);
     border: 1px solid var(--card-border-color);
     border-left: 4px solid var(--card-border-color);
     padding: 1.8rem 2.5rem;
     margin: 1.5rem 0;
     border-radius: 12px;
     box-shadow: 0 0 15px var(--card-shadow-color);
-    text-align: left;
-    transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+    transition: all 0.3s ease-in-out;
 }
-
 .card:hover {
-    box-shadow: 0 0 25px var(--card-shadow-color), 0 0 5px var(--primary-color); /* Enhanced glow on hover */
-    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 0 25px var(--card-shadow-color), 0 0 5px var(--primary-color);
+    transform: translateY(-3px);
 }
-
 .card h3 {
-    color: var(--text-color); /* Title color */
-    font-size: 2.2rem; /* Slightly larger title */
-    margin-bottom: 1.5rem; /* Space below title */
-    padding-bottom: 0.5rem; /* Small padding for potential underline */
-    border-bottom: 2px solid var(--primary-color); /* Subtle underline for titles */
-    letter-spacing: 0.05em; /* Slightly spaced letters */
+    color: var(--text-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    letter-spacing: .05em;
     width: fit-content;
 }
-
 .card ul {
-    list-style: none; /* Remove default list bullets */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
-
 .card li:hover {
-    color: var(--text-color); /* Text brightens on hover */
+    color: var(--text-color);
 }
 
 /* -------------------------------------------------
-   Base list-item styling
+   List item base
    ------------------------------------------------- */
 .card li {
-    margin-bottom: 0.8rem;               /* space between items */
+    margin-bottom: .8rem;
     color: var(--subtle-text-color);
-    line-height: 1.6;                    /* readable height */
+    line-height: 1.6;               /* <- important for bullet centering */
     position: relative;
-    padding-left: 1.8rem;                /* room for the custom bullet */
+    padding-left: 1.8rem;
     font-size: 1.1rem;
-    transition: color 0.2s ease;
+    transition: color .2s ease;
 }
 
 /* -------------------------------------------------
    Custom bullet (›)
    ------------------------------------------------- */
 .card li::before {
-    content: '\203A';                    /* › */
+    content: '\203A';               /* › */
     color: var(--primary-color);
     font-weight: bold;
     font-size: clamp(1.6rem, 4.5vw, 2.8rem);
     position: absolute;
     left: 0;
-    top: 0;                              /* align with the first line */
-    line-height: inherit;                /* same line-height as the text */
-    transition: transform 0.2s ease, color 0.2s ease;
+    top: 50%;                       /* centre vertically */
+    transform: translateY(-50%);
+    line-height: inherit;           /* match the li line-height */
+    transition: transform .2s ease, color .2s ease;
 }
-
-/* tiny right-shift on hover */
 .card li:hover::before {
-    transform: translateX(3px);
+    transform: translateY(-50%) translateX(3px);
     color: var(--text-color);
 }
 
 /* -------------------------------------------------
-   Hidden details (data-details attribute)
+   Hover-details block (data-details)
    ------------------------------------------------- */
 .card li::after {
     content: attr(data-details);
     display: block;
-    margin-left: 1.8rem;                 /* indent under the bullet */
-    margin-top: 0.35em;                  /* tiny gap from the main line */
+    margin-left: 1.8rem;            /* align under the bullet */
+    margin-top: .35em;              /* gap – same in both states */
     padding: 5px 10px;
     background: var(--primary-color);
     color: #111;
     border-radius: 4px;
-    font-size: 0.95rem;
+    font-size: .95rem;
     line-height: 1.4;
-    max-height: 0;                       /* collapsed */
+
+    /* collapsed */
+    max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition:
-        max-height 0.3s ease,
-        opacity   0.3s ease,
-        margin-top 0.3s ease;            /* keep the gap smooth */
-}
 
-/* show on hover */
+    /* smooth expand **and** collapse */
+    transition:
+        max-height .3s ease,
+        opacity    .3s ease,
+        margin-top .3s ease;
+}
 .card li:hover::after {
-    max-height: 500px;                   /* any value larger than content */
+    max-height: 500px;              /* larger than any real content */
     opacity: 1;
-    margin-top: 0.35em;                  /* same gap when expanded */
+    margin-top: .35em;              /* keep the same gap */
 }
 
 .warning-icon {

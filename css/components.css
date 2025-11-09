@@ -288,30 +288,24 @@ nav a:hover {
     opacity: 1;
 }
 
-
-
-/* 1. Set the initial 'hovered' state for the first card */
-.card-container .card:first-child {
-    /* Use the same styles as your existing .card:hover */
+/* Make the FIRST card look hovered by default */
+.card-container > .card:nth-child(1),
+.card-container > .card:first-child {
     box-shadow: 0 0 25px var(--card-shadow-color, rgba(0,0,0,.5)), 0 0 5px var(--primary-color, #00d8ff);
     transform: translateY(-3px);
 }
 
-/* 2. When the mouse hovers over the card container, remove the default hover state from the first card */
-.card-container:hover .card:first-child {
-    /* Reset to the normal state of the card */
-    box-shadow: 0 0 15px var(--card-shadow-color, rgba(0,0,0,.5));
-    transform: none;
+/* Optional: Also apply hover effects to list items inside the first card */
+.card-container > .card:nth-child(1) li,
+.card-container > .card:first-child li {
+    color: var(--text-color, #fff);
 }
 
-/* 3. Re-apply the hover state to the currently hovered card */
-/* NOTE: Your existing .card:hover rule already does this, but we redefine it
-   here to ensure it overrides the container:hover rule for *this* element. */
-.card-container .card:hover {
-    box-shadow: 0 0 25px var(--card-shadow-color, rgba(0,0,0,.5)), 0 0 5px var(--primary-color, #00d8ff);
-    transform: translateY(-3px);
+.card-container > .card:nth-child(1) li::before,
+.card-container > .card:first-child li::before {
+    transform: translateX(4px);
+    color: var(--text-color);
 }
-
 .warning-icon {
     color: var(--warning-color); /* Yellow for the warning icon */
     margin-left: 0 rem;

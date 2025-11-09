@@ -58,7 +58,7 @@ figcaption {
     color: var(--subtle-text-color);
     /* Sets the maximum comfortable reading width */
     max-width: min(90%, 1000px);
-    margin: 0.2 auto 1.5rem;
+    margin: 0.3 auto 1.5rem;
 }
 
 /* ==================================== */

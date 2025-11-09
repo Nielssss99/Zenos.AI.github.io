@@ -186,35 +186,59 @@ nav a:hover {
     border-radius: 12px;
     box-shadow: 0 0 15px var(--card-shadow-color);
     text-align: left;
+    transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+}
+
+.card:hover {
+    box-shadow: 0 0 25px var(--card-shadow-color), 0 0 5px var(--primary-color); /* Enhanced glow on hover */
+    transform: translateY(-3px); /* Slight lift effect */
 }
 
 .card h3 {
-    color: var(--text-color);
-    margin-top: 0;
+    color: var(--primary-color); /* Title color */
+    font-size: 2.2rem; /* Slightly larger title */
+    margin-bottom: 1.5rem; /* Space below title */
+    padding-bottom: 0.5rem; /* Small padding for potential underline */
+    border-bottom: 2px solid rgba(0, 230, 230, 0.3); /* Subtle underline for titles */
+    letter-spacing: 0.05em; /* Slightly spaced letters */
 }
 
 .card ul {
-    padding-left: 1.2rem;
-    list-style-type: none;
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+    margin: 0;
 }
 
 .card li {
+    margin-bottom: 0.8rem; /* Slightly more space between list items */
     color: var(--subtle-text-color);
-    line-height: 1.8;
+    line-height: 1.6; /* Increased line height for readability */
     position: relative;
-    margin: 0 auto 0.5rem;
+    padding-left: 1.8rem; /* Make space for the custom bullet */
+    font-size: 1.1rem; /* Clearer text size for content */
+    transition: color 0.2s ease; /* Smooth color transition on hover */
+}
+
+.card li:hover {
+    color: var(--text-color); /* Text brightens on hover */
 }
 
 .card li::before {
-    content: '\203A';
+    content: '\203A'; /* Angle bracket bullet */
     color: var(--primary-color);
     font-weight: bold;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.6rem, 4.5vw, 2.8rem); /* Slightly larger and more responsive bullet */
     position: absolute;
-    left: -1.2rem;
+    left: 0; /* Align bullet to the very left of the li */
     top: 50%;
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
     line-height: 1;
+    transition: transform 0.2s ease; /* Smooth transition for bullet hover */
+}
+
+.card li:hover::before {
+    transform: translateY(-50%) translateX(3px); /* Bullet moves slightly right on li hover */
+    color: var(--text-color); /* Bullet also brightens */
 }
 
 /* --- Section Grid Layout (.section-grid) --- */

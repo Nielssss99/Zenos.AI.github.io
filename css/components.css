@@ -259,12 +259,28 @@ nav a:hover {
    ------------------------------------------------- */
 /* CSS to control the internal element */
 .details-content {
-    /* Styles for the detail box */
-    /* ... your background, padding, color styles ... */
+    /* Spacing and Positioning */
+    margin-top: 0.8em;        /* Space between main list item and details */
+    margin-left: 1.5rem;      /* Indent to separate from the main list bullet */
+    padding: 12px 18px;       /* Good inner padding */
+
+    /* Look & Feel */
+    background: var(--detail-bg);
+    color: var(--detail-text);
+    border-left: 4px solid var(--primary-color); /* Strong vertical accent line */
+    border-radius: 0 6px 6px 0; /* Smooth, modern look */
+    box-shadow: var(--detail-shadow); /* Gives it a clean "pop-out" effect */
+
+    /* Typography */
+    font-size: 0.95rem; 
+    line-height: 1.6;        /* Increased line height for better readability of text blocks */
+
+    /* Inherited from your initial structure (Control for hover effect) */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height .3s ease, opacity .3s ease;
+    /* Clean transition on height, opacity, and margin */
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
 }
 
 .has-details:hover .details-content {

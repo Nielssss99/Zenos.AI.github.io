@@ -295,34 +295,55 @@ nav a:hover {
 /* -------------------------------------------------
    DEFAULT "HOVERED" STATE FOR FIRST LIST ITEM
    ------------------------------------------------- */
-.card li:first-child {
-    color: var(--text-color, #fff); /* Same as hover */
+@media (min-width: 768px) {
+    .card li:first-child {
+        color: var(--text-color, #fff);
+    }
+    .card li:first-child::before {
+        transform: translateX(4px);
+        color: var(--text-color);
+    }
+    .card li:first-child .details-content {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: 0.8em;
+    }
+}
+/* -------------------------------------------------
+   MOBILE: No default selection
+   ------------------------------------------------- */
+@media (max-width: 767px) {
+    .card li:first-child {
+        color: var(--subtle-text-color); /* Reset to subtle */
+    }
+    .card li:first-child::before {
+        transform: none;
+        color: var(--primary-color);
+    }
+    .card li:first-child .details-content {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+    }
 }
 
-.card li:first-child::before {
-    transform: translateX(4px); /* Same as hover */
-    color: var(--text-color); /* Same as hover */
-}
-
-/* Show details-content by default for the first item */
-.card li:first-child .details-content {
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-}
-
-/* Optional: Keep hover behavior for OTHER items */
+/* Hover works on desktop AND mobile */
+.card li:hover,
 .card li:not(:first-child):hover {
     color: var(--text-color, #fff);
 }
-
+.card li:hover::before,
 .card li:not(:first-child):hover::before {
     transform: translateX(4px);
     color: var(--text-color);
 }
-
+.has-details:hover .details-content,
 .card li:not(:first-child):hover .details-content {
     max-height: 500px;
     opacity: 1;
+    margin-top: 0.8em;
 }
+
 /* --- Section Grid Layout (.section-grid) --- */
 .section-grid {
     display: grid;

@@ -217,6 +217,10 @@ nav a:hover {
     margin: 0;
 }
 
+.card li:hover {
+    color: var(--text-color); /* Text brightens on hover */
+}
+
 .card li {
     margin-bottom: 0.8rem; /* Slightly more space between list items */
     color: var(--subtle-text-color);
@@ -227,8 +231,35 @@ nav a:hover {
     transition: color 0.2s ease; /* Smooth color transition on hover */
 }
 
-.card li:hover {
-    color: var(--text-color); /* Text brightens on hover */
+.card li::after {
+    /* Pull the text from the new HTML attribute */
+    content: attr(data-details); 
+    
+    /* Styling for the tooltip/hover box */
+    position: absolute;
+    top: 50%; /* Start vertical positioning at the middle */
+    left: 100%; /* Position the box just to the right of the list item */
+    transform: translateY(-50%) translateX(10px); /* Adjust position slightly */
+    
+    /* Visual styles */
+    background-color: var(--primary-color);
+    color: #111;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap; /* Keep the text on one line */
+    z-index: 10; /* Ensure it appears above other elements */
+    
+    /* Hiding the element */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0s 0.3s; /* Smooth fade-in/out */
+}
+
+card li:hover::after {
+    visibility: visible;
+    opacity: 1;
+    /* Reverse the transition delay for a snappy appearance */
+    transition-delay: 0s; 
 }
 
 .card li::before {
@@ -263,7 +294,7 @@ nav a:hover {
     border-top: 1px dashed rgba(255, 204, 0, 0.3); /* Subtle dashed line above warning */
     color: var(--warning-color); /* Make the text itself yellow */
     font-size: 1.1rem; /* Clearer text size for content */
-    line-height: 1.4;
+    line-height: 1.6;
     font-style: italic; /* Emphasize the detail */
 }
 

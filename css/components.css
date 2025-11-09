@@ -216,7 +216,7 @@ nav a:hover {
 .card li {
     position: relative;
     padding-left: 2.2rem;          /* space for the bullet */
-    margin-bottom: 0rem;
+    margin-bottom: 0.15rem;
     line-height: 1.6;              /* the line-height of the text */
     color: var(--subtle-text-color);
     font-size: 1.1rem;
@@ -260,7 +260,7 @@ nav a:hover {
 /* CSS to control the internal element */
 .details-content {
     /* Spacing and Positioning */
-    margin-top: 0.8em;        /* Space between main list item and details */
+    margin-top: 0em;        /* Space between main list item and details */
     margin-left: 1.5rem;      /* Indent to separate from the main list bullet */
     padding: 12px 18px;       /* Good inner padding */
 
@@ -283,9 +283,12 @@ nav a:hover {
     transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
 }
 
-.has-details:hover .details-content {
-    max-height: 500px; /* Expands on hover */
+/* Only add spacing when visible */
+.has-details:hover .details-content,
+.card li:first-child .details-content {
+    max-height: 500px;
     opacity: 1;
+    margin-top: 0.8em;   /* Only now */
 }
 
 
@@ -303,16 +306,12 @@ nav a:hover {
 
 /* Show details-content by default for the first item */
 .card li:first-child .details-content {
-    max-height: 500px;   /* Fully expanded */
-    opacity: 1;          /* Fully visible */
-    margin-top: 0.8em;   /* Keep spacing consistent */
     transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
 }
 
 /* Optional: Keep hover behavior for OTHER items */
 .card li:not(:first-child):hover {
     color: var(--text-color, #fff);
-    margin-bottom: 0.22rem;
 }
 
 .card li:not(:first-child):hover::before {

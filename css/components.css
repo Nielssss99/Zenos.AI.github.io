@@ -259,6 +259,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    word-wrap: break-word;
     transition: transform .2s ease, color .2s ease;
 }
 

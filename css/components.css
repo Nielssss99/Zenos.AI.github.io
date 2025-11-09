@@ -241,6 +241,28 @@ nav a:hover {
     color: var(--text-color); /* Bullet also brightens */
 }
 
+.warning-icon {
+    color: var(--warning-color); /* Yellow for the warning icon */
+    margin-left: 0.5rem;
+    font-size: 1.2em; /* Slightly larger than surrounding text */
+    vertical-align: middle; /* Align nicely with text */
+}
+
+.warning-detail {
+    margin-top: 1.5rem; /* More space above this specific warning item */
+    padding-top: 1rem; /* Padding for separation */
+    border-top: 1px dashed rgba(255, 204, 0, 0.3); /* Subtle dashed line above warning */
+    color: var(--warning-color); /* Make the text itself yellow */
+    font-size: 1rem; /* Maintain clarity */
+    line-height: 1.4;
+    font-style: italic; /* Emphasize the detail */
+}
+
+.warning-detail .warning-icon {
+    font-size: 1.3em; /* Slightly larger icon for this detail */
+    margin-right: 0.5rem;
+    vertical-align: top; /* Adjust alignment if needed for larger icon */
+}
 /* --- Section Grid Layout (.section-grid) --- */
 .section-grid {
     display: grid;

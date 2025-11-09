@@ -48,6 +48,9 @@ p {
     line-height: 1.5;
 }
 
+.card li {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
 /* ==================================== */
 /* 03. Text Utility/Modifier Classes */
 /* ==================================== */

@@ -301,6 +301,7 @@ nav a:hover {
     transition: max-height .4s ease-out,
                 opacity .4s ease-out,
                 margin-top .4s ease-out;
+    text-align: justify;
     word-wrap: break-word;
 }
 

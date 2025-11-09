@@ -53,16 +53,16 @@
             <div class="card">
                 <h3>Why is this a Problem?</h3>
                 <ul>
-                    <li data-details="The existence of non-measurable variables implies that models ⚠️cannot be fit on all subprocesses that underly
+                    <li id="scenario-item" data-details="The existence of non-measurable variables implies that models ⚠️cannot be fit on all subprocesses that underly
                         measurable phenomena⚠️. E.g. we cannot (yet) measure the neural mechanisms of sweat secretion. This is **highly problematic** 
                         when good data quality and quantity cannot be assured.">Some variables are non-measurable</li>
-                    <li data-details="Regarding the data quality, one aspect is the diversity. The diversity of experimental scenarios is low.
+                    <li id="scenario-item" data-details="Regarding the data quality, one aspect is the diversity. The diversity of experimental scenarios is low.
                         E.g. we do not have data at every possible combination of humidity, exercise intensity, and temperature. But most problematic 
                         is that data regarding extreme scenarios is super scarce or even absent.">Few scenarios are measured</li>
-                    <li data-details="Experiments often measure a few variables at a time on a very limited amount of participants. When one variable 
+                    <li id="scenario-item" data-details="Experiments often measure a few variables at a time on a very limited amount of participants. When one variable 
                         is measured, another variable is absent, and so on. The collected data is also inherently noisy, as the human body is 
                         non-deterministic.">Datasets are small and noisy</li>
-                    <li data-details="Human physiology is a function of trillions of cells that constantly interact. Therefore, 
+                    <li id="scenario-item" data-details="Human physiology is a function of trillions of cells that constantly interact. Therefore, 
                         describing physiological mechanisms in isolation might be too simplistic.">The body is complex and integrated</li>
                 </ul>
             </div>
@@ -70,14 +70,14 @@
             <div class="card">
                 <h3>The Consequences</h3>
                 <ul>
-                    <li data-details="Due to limited training data, and the use of non-mechanism based models, significant out of context errors 
+                    <li id="scenario-item" data-details="Due to limited training data, and the use of non-mechanism based models, significant out of context errors 
                         might be expected. For example, the literature reports a ⚠️1.7-2.8x⚠️ increase in error with 
                         ⚠️ONLY⚠️ slight shifts in exercise intensity (Psikuta et al., 2011).">
                         Low generalizability
                     </li>
-                    <li data-details="Scenarios that include manipulation of variables that are not included in the non-mechanism based models,
+                    <li id="scenario-item" data-details="Scenarios that include manipulation of variables that are not included in the non-mechanism based models,
                         cannot be modeled. An example is the thermophysiological response in case of high blood loss.">Scenarios cannot be modeled</li>
-                    <li data-details="As models are not based on real working mechanisms, no informative feedback can be provided. Important questions
+                    <li id="scenario-item" data-details="As models are not based on real working mechanisms, no informative feedback can be provided. Important questions
                         remain; Why are the results as observed? or How can we improve our product/strategy?">Limited actionable insights</li>
                 </ul>
     

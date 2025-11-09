@@ -251,7 +251,7 @@ nav a:hover {
 
 .warning-icon {
     color: var(--warning-color); /* Yellow for the warning icon */
-    margin-left: 0.5rem;
+    margin-left: 0 rem;
     font-size: 1.2em; /* Slightly larger than surrounding text */
     vertical-align: middle; /* Align nicely with text */
 }
@@ -259,9 +259,10 @@ nav a:hover {
 .warning-detail {
     margin-top: 1.5rem; /* More space above this specific warning item */
     padding-top: 1rem; /* Padding for separation */
+    padding-left: 1.8rem;
     border-top: 1px dashed rgba(255, 204, 0, 0.3); /* Subtle dashed line above warning */
     color: var(--warning-color); /* Make the text itself yellow */
-    font-size: 1rem; /* Maintain clarity */
+    font-size: 1.1rem; /* Clearer text size for content */
     line-height: 1.4;
     font-style: italic; /* Emphasize the detail */
 }

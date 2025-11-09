@@ -195,11 +195,11 @@ nav a:hover {
 }
 
 .card h3 {
-    color: var(--primary-color); /* Title color */
+    color: var(--text-color); /* Title color */
     font-size: 2.2rem; /* Slightly larger title */
     margin-bottom: 1.5rem; /* Space below title */
     padding-bottom: 0.5rem; /* Small padding for potential underline */
-    border-bottom: 2px solid rgba(0, 230, 230, 0.3); /* Subtle underline for titles */
+    border-bottom: 2px solid var(--primary-color); /* Subtle underline for titles */
     letter-spacing: 0.05em; /* Slightly spaced letters */
 }
 

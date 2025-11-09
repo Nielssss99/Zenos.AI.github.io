@@ -288,50 +288,40 @@ nav a:hover {
     opacity: 1;
 }
 
-/* Make the FIRST card look hovered by default */
-.card-container > .card:nth-child(1),
-.card-container > .card:first-child {
-    box-shadow: 0 0 25px var(--card-shadow-color, rgba(0,0,0,.5)), 0 0 5px var(--primary-color, #00d8ff);
-    transform: translateY(-3px);
+
+/* -------------------------------------------------
+   DEFAULT "HOVERED" STATE FOR FIRST LIST ITEM
+   ------------------------------------------------- */
+.card li:first-child {
+    color: var(--text-color, #fff); /* Same as hover */
 }
 
-/* Optional: Also apply hover effects to list items inside the first card */
-.card-container > .card:nth-child(1) li,
-.card-container > .card:first-child li {
+.card li:first-child::before {
+    transform: translateX(4px); /* Same as hover */
+    color: var(--text-color); /* Same as hover */
+}
+
+/* Show details-content by default for the first item */
+.card li:first-child .details-content {
+    max-height: 500px;   /* Fully expanded */
+    opacity: 1;          /* Fully visible */
+    margin-top: 0.8em;   /* Keep spacing consistent */
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+/* Optional: Keep hover behavior for OTHER items */
+.card li:not(:first-child):hover {
     color: var(--text-color, #fff);
 }
 
-.card-container > .card:nth-child(1) li::before,
-.card-container > .card:first-child li::before {
+.card li:not(:first-child):hover::before {
     transform: translateX(4px);
     color: var(--text-color);
 }
-.warning-icon {
-    color: var(--warning-color); /* Yellow for the warning icon */
-    margin-left: 0 rem;
-    font-size: 1.2em; /* Slightly larger than surrounding text */
-    vertical-align: middle; /* Align nicely with text */
-}
 
-.warning-detail {
-    margin-top: 1.5rem; /* More space above this specific warning item */
-    padding-top: 1rem; /* Padding for separation */
-    padding-left: 1.8rem;
-    border-top: 1px dashed rgba(255, 204, 0, 0.3); /* Subtle dashed line above warning */
-    color: var(--warning-color); /* Make the text itself yellow */
-    font-size: 1.1rem; /* Clearer text size for content */
-    line-height: 1.6;
-    font-style: italic; /* Emphasize the detail */
-}
-
-.warning-detail::before {
-    /* 💥 Fix 2: Explicitly remove the content/bullet */
-    **content: none;** }
-
-.warning-detail .warning-icon {
-    font-size: 1.3em; /* Slightly larger icon for this detail */
-    margin-right: 0.5rem;
-    vertical-align: top; /* Adjust alignment if needed for larger icon */
+.card li:not(:first-child):hover .details-content {
+    max-height: 500px;
+    opacity: 1;
 }
 /* --- Section Grid Layout (.section-grid) --- */
 .section-grid {

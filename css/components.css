@@ -281,8 +281,8 @@ nav a:hover {
     font-size: clamp(1.6rem, 4.5vw, 2.8rem); /* Slightly larger and more responsive bullet */
     position: absolute;
     left: 0; /* Align bullet to the very left of the li */
-    top: 0.1em;
-    transform: none;
+    top: 50%;
+    transform: translateY(-50%);
     line-height: 1.6;
     transition: transform 0.2s ease; /* Smooth transition for bullet hover */
 }

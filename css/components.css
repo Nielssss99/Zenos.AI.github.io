@@ -213,87 +213,77 @@ nav a:hover {
 /* -------------------------------------------------
    List item
    ------------------------------------------------- */
+/* -------------------------------------------------
+   List item – tight & consistent
+   ------------------------------------------------- */
 .card li {
     position: relative;
-    padding-left: 2.2rem;          /* space for the bullet */
+    padding-left: 2.2rem;
     margin-bottom: 0.15rem;
-    line-height: 1.6;              /* the line-height of the text */
+    line-height: 1.6;
     color: var(--subtle-text-color);
     font-size: 1.1rem;
     text-align: left;
     transition: color .2s ease;
 }
-.card li:hover {
-    color: var(--text-color, #fff);
-}
 
 /* -------------------------------------------------
-   Bullet – sits on the same line as the text
+   Bullet
    ------------------------------------------------- */
 .card li::before {
-    content: '\203A';              /* ›  (change to '-' if you want a dash) */
-    /* content: '-'; */            /* <-- dash version */
-
+    content: '\203A';
     position: absolute;
     left: 0;
-    top: 0;                        /* align with the text baseline */
-    height: 0.8em;                 /* EXACTLY the same height as one line */
-    line-height: 1.6;              /* SAME line-height as the <li> */
+    top: 0;
+    height: 0.8em;
+    line-height: 1.6;
     font-size: clamp(1.6rem, 4.5vw, 2.4rem);
     color: var(--primary-color);
     font-weight: bold;
-
-    display: flex;                 /* flex makes vertical centering trivial */
-    align-items: center;           /* centre the › inside its own line box */
+    display: flex;
+    align-items: center;
     justify-content: center;
-
     transition: transform .2s ease, color .2s ease;
+}
+
+/* -------------------------------------------------
+   HOVER (TAP) – Works on ALL items, ALL devices
+   ------------------------------------------------- */
+.card li:hover {
+    color: var(--text-color, #fff);
 }
 .card li:hover::before {
     transform: translateX(4px);
     color: var(--text-color);
 }
+.has-details:hover .details-content {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 0.8em;
+}
 
 /* -------------------------------------------------
-   Hover-details – unchanged, just kept for completeness
+   Details – hidden by default
    ------------------------------------------------- */
-/* CSS to control the internal element */
 .details-content {
-    /* Spacing and Positioning */
-    margin-top: 0em;        /* Space between main list item and details */
-    margin-left: 1.5rem;      /* Indent to separate from the main list bullet */
-    padding: 12px 18px;       /* Good inner padding */
-
-    /* Look & Feel */
+    margin-top: 0;
+    margin-left: 1.5rem;
+    padding: 12px 18px;
     background: var(--detail-bg);
     color: var(--detail-text);
-    border-left: 4px solid var(--primary-color); /* Strong vertical accent line */
-    border-radius: 0 6px 6px 0; /* Smooth, modern look */
-    box-shadow: var(--detail-shadow); /* Gives it a clean "pop-out" effect */
-
-    /* Typography */
-    font-size: 0.95rem; 
-    line-height: 1.8;        /* Increased line height for better readability of text blocks */
-
-    /* Inherited from your initial structure (Control for hover effect) */
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 6px 6px 0;
+    box-shadow: var(--detail-shadow);
+    font-size: 0.95rem;
+    line-height: 1.8;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    /* Clean transition on height, opacity, and margin */
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, margin-top 0.4s ease-out;
 }
-
-/* Only add spacing when visible */
-.has-details:hover .details-content,
-.card li:first-child .details-content {
-    max-height: 500px;
-    opacity: 1;
-    margin-top: 0.8em;   /* Only now */
-}
-
 
 /* -------------------------------------------------
-   DEFAULT "HOVERED" STATE FOR FIRST LIST ITEM
+   DEFAULT ACTIVE: Desktop ONLY
    ------------------------------------------------- */
 @media (min-width: 768px) {
     .card li:first-child {
@@ -309,12 +299,13 @@ nav a:hover {
         margin-top: 0.8em;
     }
 }
+
 /* -------------------------------------------------
-   MOBILE: No default selection
+   MOBILE: Reset first-child to normal (but hover still works!)
    ------------------------------------------------- */
 @media (max-width: 767px) {
     .card li:first-child {
-        color: var(--subtle-text-color); /* Reset to subtle */
+        color: var(--subtle-text-color);
     }
     .card li:first-child::before {
         transform: none;
@@ -325,23 +316,6 @@ nav a:hover {
         opacity: 0;
         margin-top: 0;
     }
-}
-
-/* Hover works on desktop AND mobile */
-.card li:hover,
-.card li:not(:first-child):hover {
-    color: var(--text-color, #fff);
-}
-.card li:hover::before,
-.card li:not(:first-child):hover::before {
-    transform: translateX(4px);
-    color: var(--text-color);
-}
-.has-details:hover .details-content,
-.card li:not(:first-child):hover .details-content {
-    max-height: 500px;
-    opacity: 1;
-    margin-top: 0.8em;
 }
 
 /* --- Section Grid Layout (.section-grid) --- */

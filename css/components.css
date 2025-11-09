@@ -283,7 +283,7 @@ nav a:hover {
     left: 0; /* Align bullet to the very left of the li */
     top: 50%;
     transform: translateY(-50%);
-    line-height: 1;
+    line-height: 1.6;
     transition: transform 0.2s ease; /* Smooth transition for bullet hover */
 }
 

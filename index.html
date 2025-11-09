@@ -18,7 +18,6 @@
 <div id="nav-placeholder"></div>
 <script src="js/component-loader.js"></script>
 <script src="js/nav.js"></script> 
-<script src="js/show-details.js"></script> 
     
 <header class="hero-section">
     <img src="/Zenos.AI.github.io/Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">
@@ -54,35 +53,71 @@
             <div class="card">
                 <h3>Why is this a Problem?</h3>
                 <ul>
-                    <li id="scenario-item" data-details="The existence of non-measurable variables implies that models <strong>cannot be fit on all subprocesses that underly
-                        measurable phenomena</strong>. E.g. we cannot (yet) measure the neural mechanisms of sweat secretion. This is <strong>highly problematic</strong> 
-                        when good data quality and quantity cannot be assured.">Some variables are non-measurable</li>
-                    <li id="scenario-item" data-details="Regarding the data quality, one aspect is the diversity. <strong>The diversity of experimental scenarios is low.</strong>
-                        E.g. we do not have data at every possible combination of humidity, exercise intensity, and temperature. But most problematic 
-                        is that <strong>data regarding extreme scenarios is super scarce or even absent.</strong>">Few scenarios are measured</li>
-                    <li id="scenario-item" data-details="Experiments often measure a <strong>few variables at a time on a very limited amount of participants.</strong> When one variable 
-                        is measured, another variable is absent, and so on. The <strong>collected data is also inherently noisy</strong>, as the human body is 
-                        non-deterministic.">Datasets are small and noisy</li>
-                    <li id="scenario-item" data-details="Human physiology is a function of trillions of cells that constantly interact. Therefore, 
-                        <strong>describing physiological mechanisms in isolation might be too simplistic.</strong>">The body is complex and integrated</li>
+                    <li class="has-details">
+                        Some variables are non-measurable
+                        <div class="details-content">
+                            The existence of non-measurable variables implies that models <strong>cannot be fit on all subprocesses that underly
+                            measurable phenomena</strong>. E.g. we cannot (yet) measure the neural mechanisms of sweat secretion. This is <strong>highly problematic</strong> 
+                            when good data quality and quantity cannot be assured.
+                        </div>
+                    </li>
+
+                    <li class="has-details">
+                        Few scenarios are measured
+                        <div class="details-content">
+                            Regarding the data quality, one aspect is the diversity. <strong>The diversity of experimental scenarios is low.</strong>
+                            E.g. we do not have data at every possible combination of humidity, exercise intensity, and temperature. But most problematic 
+                            is that <strong>data regarding extreme scenarios is super scarce or even absent.
+                        </div>
+                    </li>
+
+                    <li class="has-details">
+                        Datasets are small and noisy
+                        <div class="details-content">
+                            Experiments often measure a <strong>few variables at a time on a very limited amount of participants.</strong> When one variable 
+                            is measured, another variable is absent, and so on. The <strong>collected data is also inherently noisy</strong>, as the human body is 
+                            non-deterministic.
+                        </div>
+                    </li>
+
+                    <li class="has-details">
+                        The body is complex and integrated
+                        <div class="details-content">
+                            Human physiology is a function of trillions of cells that constantly interact. Therefore, 
+                            <strong>describing physiological mechanisms in isolation might be too simplistic.
+                        </div>
+                    </li>
                 </ul>
-                <div id="details-output"></div>
             </div>
             
             <div class="card">
                 <h3>The Consequences</h3>
                 <ul>
-                    <li id="scenario-item" data-details="Due to limited training data, and the use of non-mechanism based models, <strong>significant out of context errors 
-                        might be expected.</strong> For example, the literature reports a <strong>1.7-2.8x</strong> increase in error with 
-                        <strong>ONLY</strong> slight shifts in exercise intensity (Psikuta et al., 2011).">
+                    <li class="has-details">
                         Low generalizability
+                        <div class="details-content">
+                            Due to limited training data, and the use of non-mechanism based models, <strong>significant out of context errors 
+                            might be expected.</strong> For example, the literature reports a <strong>1.7-2.8x</strong> increase in error with 
+                            <strong>ONLY</strong> slight shifts in exercise intensity (Psikuta et al., 2011).
+                        </div>
                     </li>
-                    <li id="scenario-item" data-details="Scenarios that include manipulation of variables that are not included in the non-mechanism based models,
-                        <strong>cannot be modeled.</strong> An example is the thermophysiological response in case of high blood loss.">Scenarios cannot be modeled</li>
-                    <li id="scenario-item" data-details="As models are not based on real working mechanisms, <strong>no informative feedback can be provided.</strong> 
-                        Important questions remain; Why are the results as observed? or How can we improve our product/strategy?">Limited actionable insights</li>
+
+                    <li class="has-details">
+                        Scenarios cannot be modeled
+                        <div class="details-content">
+                        Scenarios that include manipulation of variables that are not included in the non-mechanism based models,
+                        <strong>cannot be modeled.</strong> An example is the thermophysiological response in case of high blood loss.
+                        </div>
+                    </li>
+
+                    <li class="has-details">
+                        Limited actionable insights
+                        <div class="details-content">
+                        As models are not based on real working mechanisms, <strong>no informative feedback can be provided.</strong> 
+                        Important questions remain; Why are the results as observed? or How can we improve our product/strategy?
+                        </div>
+                    </li>
                 </ul>
-                <div id="details-output"></div>
             </div>
     </div>
 

@@ -273,7 +273,7 @@ nav a:hover {
 
     /* Typography */
     font-size: 0.95rem; 
-    line-height: 1.6;        /* Increased line height for better readability of text blocks */
+    line-height: 1.8;        /* Increased line height for better readability of text blocks */
 
     /* Inherited from your initial structure (Control for hover effect) */
     max-height: 0;

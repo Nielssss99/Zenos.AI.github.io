@@ -51,6 +51,16 @@ p {
 .card li {
     font-size: clamp(1rem, 2vw, 1.2rem);
 }
+
+figcaption {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--subtle-text-color);
+    /* Sets the maximum comfortable reading width */
+    max-width: min(90%, 1000px);
+    margin: 0 auto 1.5rem;
+}
+
 /* ==================================== */
 /* 03. Text Utility/Modifier Classes */
 /* ==================================== */

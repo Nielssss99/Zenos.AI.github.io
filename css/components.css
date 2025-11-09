@@ -199,10 +199,10 @@ nav a:hover {
 }
 
 .card li {
-    margin-bottom: 0.5rem;
     color: var(--subtle-text-color);
     line-height: 1.5;
     position: relative;
+    margin: 0 auto 1.5rem;
 }
 
 .card li::before {

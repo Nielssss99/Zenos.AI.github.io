@@ -221,75 +221,68 @@ nav a:hover {
     color: var(--text-color); /* Text brightens on hover */
 }
 
+/* -------------------------------------------------
+   Base list-item styling
+   ------------------------------------------------- */
 .card li {
-    margin-bottom: 0.8rem; /* Slightly more space between list items */
+    margin-bottom: 0.8rem;               /* space between items */
     color: var(--subtle-text-color);
-    line-height: 1.6; /* Increased line height for readability */
+    line-height: 1.6;                    /* readable height */
     position: relative;
-    padding-left: 1.8rem; /* Make space for the custom bullet */
-    font-size: 1.1rem; /* Clearer text size for content */
-    transition: color 0.2s ease; /* Smooth color transition on hover */
+    padding-left: 1.8rem;                /* room for the custom bullet */
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
 }
 
-.card li::after {
-    /* Pull the text from the new HTML attribute */
-    content: attr(data-details); 
-    
-    /* 💥 CHANGE: Reset absolute positioning to allow it to flow with text */
-    position: static; 
-    
-    /* 💥 CHANGE: Make it a block element so it takes up its own line */
-    display: block; 
-    
-    /* Reset old absolute position properties */
-    left: auto;
-    top: auto;
-    transform: none; 
-    white-space: normal; /* Allow text wrapping */
-    
-    /* Visual styles */
-    background-color: var(--primary-color);
-    color: #111;
-    padding: 5px 10px;
-    border-radius: 4px;
-    
-    /* Style for the new line */
-    margin-top: 5px; /* Space from the line above */
-    margin-left: 1.8rem; /* Align text under the content, past the bullet */
-    font-size: 0.95rem; /* Make it slightly smaller than the main text */
-    
-    /* Hiding the element */
-    max-height: 0; /* Use max-height for a smooth vertical reveal */
-    overflow: hidden;
-    opacity: 0;
-    
-    /* Use a transition for a smooth collapse/expand effect */
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.card li:hover::after {
-    /* 💥 CHANGE: Show the element by giving it a fixed height */
-    max-height: 500px; /* Needs to be larger than the content's height */
-    opacity: 1;
-    transition-delay: 0s; 
-}
-
+/* -------------------------------------------------
+   Custom bullet (›)
+   ------------------------------------------------- */
 .card li::before {
-    content: '\203A'; /* Angle bracket bullet */
+    content: '\203A';                    /* › */
     color: var(--primary-color);
     font-weight: bold;
-    font-size: clamp(1.6rem, 4.5vw, 2.8rem); /* Slightly larger and more responsive bullet */
+    font-size: clamp(1.6rem, 4.5vw, 2.8rem);
     position: absolute;
-    left: 0; /* Align bullet to the very left of the li */
-    top: 50%;
-    transform: translateY(-50%);
-    line-height: 1.6;
-    transition: transform 0.2s ease; /* Smooth transition for bullet hover */
+    left: 0;
+    top: 0;                              /* align with the first line */
+    line-height: inherit;                /* same line-height as the text */
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
+/* tiny right-shift on hover */
 .card li:hover::before {
-    transform: translateY(-50%) translateX(3px); /* Bullet moves slightly right on li hover */
-    color: var(--text-color); /* Bullet also brightens */
+    transform: translateX(3px);
+    color: var(--text-color);
+}
+
+/* -------------------------------------------------
+   Hidden details (data-details attribute)
+   ------------------------------------------------- */
+.card li::after {
+    content: attr(data-details);
+    display: block;
+    margin-left: 1.8rem;                 /* indent under the bullet */
+    margin-top: 0.35em;                  /* tiny gap from the main line */
+    padding: 5px 10px;
+    background: var(--primary-color);
+    color: #111;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-height: 0;                       /* collapsed */
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        max-height 0.3s ease,
+        opacity   0.3s ease,
+        margin-top 0.3s ease;            /* keep the gap smooth */
+}
+
+/* show on hover */
+.card li:hover::after {
+    max-height: 500px;                   /* any value larger than content */
+    opacity: 1;
+    margin-top: 0.35em;                  /* same gap when expanded */
 }
 
 .warning-icon {

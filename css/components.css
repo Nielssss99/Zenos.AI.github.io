@@ -255,7 +255,7 @@ nav a:hover {
     transition: opacity 0.3s, visibility 0s 0.3s; /* Smooth fade-in/out */
 }
 
-card li:hover::after {
+.card li:hover::after {
     visibility: visible;
     opacity: 1;
     /* Reverse the transition delay for a snappy appearance */

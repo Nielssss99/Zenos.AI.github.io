@@ -406,14 +406,14 @@ video
   display: block; /* To treat the video as a block element for better layout control */
   margin: 0 auto; /* To center the video horizontally */
   border-radius: 50%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .logo-video
     {
         max-width: 30%;
-        padding-bottom: 0rem;
+        margin-bottom: 0rem;
     }
 
 /* ==================================== */

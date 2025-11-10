@@ -400,7 +400,9 @@ nav a:hover {
 /* 06. Videos */
 /* ==================================== */
 
-video {
+video,
+.logo-video
+{
   max-width: 50%; /* For a video that scales well on different screen sizes */
   display: block; /* To treat the video as a block element for better layout control */
   margin: 0 auto; /* To center the video horizontally */

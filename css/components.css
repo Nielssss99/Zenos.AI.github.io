@@ -476,13 +476,13 @@ video
 /* 09. Images */
 /* ==================================== */
 .aligned-figure {
-    display: block;
+    display: flex; /* 1. Use Flexbox */
+    flex-direction: column; /* 2. Stack elements vertically (image then caption) */
+    align-items: center; /* 3. Center all items horizontally within the figure */
     max-width: 100%;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
 }
-.Roadmap-image, .Allocation-image {
+.Roadmap-image, .Allocation-image, .VDistribution-image {
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);

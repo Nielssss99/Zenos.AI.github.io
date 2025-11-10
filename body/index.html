@@ -42,8 +42,8 @@
     <section class="content-section">
         <h2>The Duke Model</h2>
         <p class="pjust">
-            The Duke model consists of 610 x 310 x 1860 voxels of 1mm, which are labeled for the
-            tissue types. In order to preprocess the model, a boundary detection algorithm is applied to
+            The Duke model consists of 610 x 310 x 1860 voxels of 1mm, which are labeled for 
+            77 tissue types. In order to preprocess the model, a boundary detection algorithm is applied to
             detect any missing labels. Upon subjective manual confirmation, the missing voxels are 
             imputed based on the surrounding labels.
         </p>
@@ -54,15 +54,15 @@
     <section class="content-section">
         <h2>Segmentation</h2>
         <p class="pjust">
-            Subsequently, the voxels are allocated to various body segments, namely: Feet, Legs, Thighs, Pelvis, Abdomen, Thorax, 
-            Hands, Fore Arms, Arms, Neck, Lower Head, and Upper Head. The allocation is performed by a combination of
+            Subsequently, the voxels are allocated to various body segments, namely: feet, legs, thighs, pelvis, abdomen, thorax, 
+            hands, fore arms, arms, neck, lower head, and upper head. The allocation is performed by a combination of
             automatic processing (boundary detection) and manual seperation.
         </p>
     </section>
 
     <figure class="aligned-figure">
       <img src="/Zenos.AI.github.io/Images/Allocation.png" alt="Allocation of Segments" class="Allocation-image">
-      <figcaption>Figure 1: The left side shows a MRI slice with tissues, and the right side the labeling for the abdomen (blue) and fore arms (red).</figcaption>
+      <figcaption>Figure 1: The left side shows a MRI slice, and the right side the clustering for the abdomen (blue) and fore arms (red).</figcaption>
     </figure>
 
     <div class="section-separator"></div>
@@ -71,7 +71,7 @@
         <h2>Surface Extraction</h2>
         <p class="pjust">
             After the segmentation has been performed (Figure 2), the marching cube algorithm is applied 
-            to the 3D voxel model. The produced triangle surfaces are allocated to the segment of the neirest voxel.
+            to the 3D voxel model. The produced triangular surfaces are allocated to the segment of the neirest voxel.
         </p>
     </section>
 
@@ -87,15 +87,18 @@
         <h2>Analysis of the Retrieved Data</h2>
         <p class="pjust">
             Based on the segmentation and the provided tissue labels, we can visualize the segmental distribution of tissues.
-            The number of tissues per segment ranges from 6 for the hands to 37 for the lower half of the head. 
-            Figure 3 gives an illustration of the distribution for the feet.
+            The number of tissues per segment ranges from six for the hands to 37 for the lower half of the head. 
+            Figure 3 provides an example for one of the more homogenous segments; the feet.
         </p>
     </section>
 
     <figure class="aligned-figure">
       <img src="/Zenos.AI.github.io/Images/VolumeDistributionFeet.png" alt="Tissues of the Feet" class="VDistribution-image">
-      <figcaption>Figure 3: The tissues present in the feet.</figcaption>
+      <figcaption>Figure 3: The tissues that are label for the feet.</figcaption>
     </figure>
+
+
+    <p>More information coming soon .... 🚀 </p>
     
 </main>
 

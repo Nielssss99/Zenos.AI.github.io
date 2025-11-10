@@ -493,10 +493,13 @@ video
 }
 
 .Roadmap-image{
-    width: 80%;
+    width: 60%;
 }
 
-.Allocation-image,
+.Allocation-image
+{
+    width: 60%
+}
 .VDistribution-image
 {
     width: 80%;

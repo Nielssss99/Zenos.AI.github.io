@@ -475,6 +475,12 @@ video
 /* ==================================== */
 /* 09. Images */
 /* ==================================== */
+.aligned-figure {
+  margin: 1em 0;
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+}
 .Roadmap-image, .allo-image {
     height: auto;
     border-radius: 15px;
@@ -489,14 +495,15 @@ video
     width: 90%;
 }
 
-.allo-image {
+.Allocation-image,
+.VDistribution-image
+{
     width: 50%;
 }
 
-figcaption {
-      margin-top: 0.5em;       /* Space between image and caption */
-      font-style: italic;      /* Optional: typical caption style */
-      text-align: left;        /* Align text to left of figure */
-      width: 100%;             /* Matches image width */
-      box-sizing: border-box;  /* Includes padding in width */
-    }
+.aligned-figure figcaption {
+  margin-top: 0.5em;
+  font-style: italic;
+  text-align: left;
+  width: 100%;
+}

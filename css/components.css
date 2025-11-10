@@ -146,7 +146,7 @@ nav a:hover {
     align-items: center; /* THIS CENTERS THEM HORIZONTALLY */
 }
 
-.hero-image, .Roadmap-image, .allo-image {
+.hero-image {
     max-width: 90%;
     height: auto;
     border-radius: 15px;
@@ -158,21 +158,8 @@ nav a:hover {
 }
 
 .hero-image {
-    width: 300px;
+    width: 22%;
 }
-
-
-.allo-image {
-    width: 90%;
-}
-
-figcaption {
-      margin-top: 0.5em;       /* Space between image and caption */
-      font-style: italic;      /* Optional: typical caption style */
-      text-align: left;        /* Align text to left of figure */
-      width: 100%;             /* Matches image width */
-      box-sizing: border-box;  /* Includes padding in width */
-    }
 
 .content-section {
     padding: 0.625rem 1.25rem 1.25rem;
@@ -488,3 +475,32 @@ video
     height: 100%;
     border: none; /* Optional: removes the default iframe border */
   }
+
+/* ==================================== */
+/* 09. Images */
+/* ==================================== */
+.Roadmap-image, .allo-image {
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: block; /* Ensure it behaves as a block element */
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+.Roadmap-image{
+    width: 90%;
+}
+
+.allo-image {
+    width: 50%;
+}
+
+figcaption {
+      margin-top: 0.5em;       /* Space between image and caption */
+      font-style: italic;      /* Optional: typical caption style */
+      text-align: left;        /* Align text to left of figure */
+      width: 100%;             /* Matches image width */
+      box-sizing: border-box;  /* Includes padding in width */
+    }

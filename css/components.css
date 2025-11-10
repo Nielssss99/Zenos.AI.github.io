@@ -476,10 +476,9 @@ video
 /* 09. Images */
 /* ==================================== */
 .aligned-figure {
-  margin: 1em 0;
-  padding: 0;
-  display: inline-block;
-  text-align: left;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 .Roadmap-image, .allo-image {
     height: auto;

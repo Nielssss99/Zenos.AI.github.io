@@ -410,14 +410,16 @@ video
   margin-bottom: 1.5rem;
 }
 
-.logo-video
+.logo-video,
+.Voxel3D-video
     {
         max-width: 60%;
         margin-bottom: 0rem;
     }
 
 @media (min-width: 768px) {
-    .logo-video
+    .logo-video, 
+    Voxel3D-video
     {
         max-width: 50%;
     }

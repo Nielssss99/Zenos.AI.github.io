@@ -412,9 +412,13 @@ video
 
 .logo-video
     {
-        max-width: 40%;
+        max-width: 60%;
         margin-bottom: 0rem;
     }
+
+@media (min-width: 768px) {
+    max-width: 40%;
+}
 
 /* ==================================== */
 /* 07. Media Queries (Desktop Overrides) */

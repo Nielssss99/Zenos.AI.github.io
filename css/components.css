@@ -166,7 +166,7 @@ nav a:hover {
 }
 
 .content-section {
-    padding: 10px 20px 20px;
+    padding: 0.625rem 1.25rem 1.25rem;
     max-width: min(90%, 1000px);
     width: 100%;
 }
@@ -406,8 +406,8 @@ video
   display: block; /* To treat the video as a block element for better layout control */
   margin: 0 auto; /* To center the video horizontally */
   border-radius: 50%;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2.125rem;
+  margin-bottom: 2.125rem;
 }
 
 .logo-video

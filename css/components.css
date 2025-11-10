@@ -493,13 +493,13 @@ video
 }
 
 .Roadmap-image{
-    width: 90%;
+    width: 80%;
 }
 
 .Allocation-image,
 .VDistribution-image
 {
-    width: 50%;
+    width: 80%;
 }
 
 .aligned-figure figcaption {

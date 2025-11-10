@@ -441,3 +441,23 @@ video {
         padding-top: 0;
     }
 }
+
+/* ==================================== */
+/* 08. Pdf */
+/* ==================================== */
+
+/* 1. Style the container for the iframe */
+  .pdf-container {
+    /* Use a responsive height */
+    height: 80vh; 
+    /* Or, if you want it to be 100% of the parent (which is 100% of the screen now) */
+    /* height: 100%; */
+  }
+
+  /* 2. Style the iframe itself */
+  .pdf-viewer {
+    width: 100%;
+    /* The iframe must fill its parent container */
+    height: 100%;
+    border: none; /* Optional: removes the default iframe border */
+  }

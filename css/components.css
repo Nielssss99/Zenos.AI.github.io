@@ -482,7 +482,7 @@ video
     margin-left: auto;
     margin-right: auto;
 }
-.Roadmap-image, .allo-image {
+.Roadmap-image, .Allocation-image {
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);

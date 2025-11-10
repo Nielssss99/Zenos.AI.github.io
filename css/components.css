@@ -413,6 +413,7 @@ video
 .logo-video
     {
         max-width: 30%;
+        padding-bottom: 0rem;
     }
 
 /* ==================================== */

@@ -451,7 +451,7 @@ video {
     width: 100vw; 
     position: absolute; 
     left: 0;
-    height: 80vh; 
+    height: 100vh; 
   }
 
   /* 2. Style the iframe itself */

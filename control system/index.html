@@ -1,224 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenos.AI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/typography.css">
-<link rel="stylesheet" href="css/components.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page Not Ready Yet</title>
+  <style>
+    :root {
+      --bg: #f4f7fa;
+      --text: #2c3e50;
+      --accent: #3498db;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #2980b9;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 3rem; }
+      p { font-size: 1rem; }
+    }
+  </style>
 </head>
-    
 <body>
-<div id="nav-placeholder"></div>
-<script src="js/component-loader.js"></script>
-<script src="js/nav.js"></script> 
-    
-<header class="hero-section">
-    <img src="/Zenos.AI.github.io/Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">
-    <h1><span class="main-text">Zenos</span><span class="accent">.AI</span></h1>
-    <p class="tagline">
-        Computational Physiology Without Limits
-    </p>
-</header>
-
-<main>
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Models of Physiology</h2>
-        <p class="pjust">
-            Whether it's engineering the next generation of human-centric products, developing safer protective gear, or designing more efficient 
-            physical training programs, models of human physiology can provide you with <span class="white-bold">new insights</span>, while <span class="white-bold">limiting the need for resource-intensive 
-            experimental testing</span>.
-        </p>
-    </section>
-
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Lack of Alternatives</h2>
-        <p class="pjust">
-            Unfortunately, current methods for modeling human physiology are <span class="white-bold">severely limited</span>. 
-            They often rely on <span class="white-bold">purely statistically derived</span>, 
-            and <span class="white-bold">isolated</span> physiological mechanisms.
-        </p>
-
-        <div class="card-container">
-            <div class="card">
-                <h3>Why is this a Problem?</h3>
-                <ul>
-                    <li class="has-details">
-                        Some variables are non-measurable
-                        <div class="details-content">
-                            The existence of non-measurable variables implies that models <strong>cannot be fit on all underlying subprocesses</strong>. 
-                            E.g. we cannot (yet) measure the neural mechanisms of sweat secretion. This is <strong>highly problematic</strong> 
-                            when good data quality and quantity cannot be assured.
-                        </div>
-                    </li>
-
-                    <li class="has-details">
-                        Few scenarios are measured
-                        <div class="details-content">
-                            Regarding the data quality, one aspect is the diversity. <strong>The diversity of experimental scenarios is low.</strong>
-                            E.g. we do not have data at every possible combination of humidity, exercise intensity, and temperature. But most problematic 
-                            is that <strong>data regarding extreme scenarios is super scarce, or even absent.</strong>
-                        </div>
-                    </li>
-
-                    <li class="has-details">
-                        Datasets are small and noisy
-                        <div class="details-content">
-                            Experiments often measure a <strong>few variables at a time on a very limited amount of participants.</strong> When one variable 
-                            is measured, another variable is absent, and so on. The <strong>collected data is also inherently noisy</strong>, as the human body is 
-                            non-deterministic.
-                        </div>
-                    </li>
-
-                    <li class="has-details">
-                        The body is complex and integrated
-                        <div class="details-content">
-                            Human physiology is a function of trillions of cells that constantly interact. Therefore, 
-                            <strong>describing physiological mechanisms in isolation might be too simplistic.</strong>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>What are the Consequences?</h3>
-                <ul>
-                    <li class="has-details">
-                        Low generalizability
-                        <div class="details-content">
-                            Due to limited and flawed training data in addition to the use of non-mechanism based models, <strong>significant out of 
-                            context errors might be expected.</strong> For example, the literature reports a <strong>1.7 - 2.8x</strong> increase in error 
-                            with <strong>ONLY</strong> slight shifts in exercise intensity (Psikuta et al., 2011).
-                        </div>
-                    </li>
-
-                    <li class="has-details">
-                        Scenarios cannot be modeled
-                        <div class="details-content">
-                        Scenarios that include manipulation of variables that are not included in the non-mechanism based models,
-                        <strong>cannot be modeled.</strong> An example is the thermophysiological response in case of high blood loss.
-                        </div>
-                    </li>
-
-                    <li class="has-details">
-                        Limited actionable insights
-                        <div class="details-content">
-                        As models are not based on real working mechanisms, <strong>no informative feedback can be provided.</strong> 
-                        Important questions remain; <em>Why are the results as observed?</em> and <em>How can we improve our product/strategy?</em>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+  <div class="container">
+    <h1>Oops!</h1>
+    <p>This page isn't ready yet. We're working on it!</p>
+    <p><a href="/" class="btn">Go Home</a></p>
+    <div class="footer">
+      &copy; <span id="year"></span> Zenos.AI &bull; Krimpen aan den IJssel
     </div>
-    </section>
-    
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2> <i class="fa-solid fa-bolt blue-icon"></i> Our Solution <i class="fa-solid fa-bolt blue-icon"></i> </h2>
-        <p class="pjust">
-            <span class="white-bold">Zenos.AI will offer a model that changes the game</span>. We will combine statistical methods, multidimensional data, and 
-            huge amounts of domain knowledge to create a <span class="white-bold">more informative and better generalizable model</span> of the human body. 
-            <br>
-            <br>
-            In this way <span class="white-bold">Zenos.AI</span> will not just become another mediocre research tool, but a 
-            <span class="white-bold">holistic framework</span> that gives you a complete and accurate picture of human physiology.
-        </p>
-    </section>
+  </div>
 
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Key Features</h2>
-        <div class="section-grid">
-            <div class="grid-item">
-                <img src="Images/Arrow.png" alt="Arrow Icon">
-                <h3>Improved Accuracy</h3>
-                <p>Enjoy more stable model performance across conditions.</p>
-            </div>
-            
-            <div class="grid-item">
-                <img src="Images/SwissKnife.png" alt="SwissKnife Icon">
-                <h3>Wider Application Domain</h3>
-                <p>Play with and manipulate components of the human body, and watch their effects unfold in real time.</p>
-            </div>
-
-            <div class="grid-item">
-                <img src="Images/Insights.png" alt="Insights">
-                <h3>Actionable Insights</h3>
-                <p>Have access to unprecedented information on underlying processes. </p>
-            </div>
-
-            <div class="grid-item">
-                <img src="Images/Save.png" alt="Save">
-                <h3>Save Resources</h3>
-                <p>Test new hypotheses, and save resources by optimizing products, and plans in simulation. </p>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Who Is This For?</h2>
-        <div class="section-grid">
-            <div class="grid-item">
-                <img src="Images/Engineer.png" alt="Engineer Icon">
-                <h3>Engineers</h3>
-                <p>Ensure that the product has the intended effect on the user, or does not negatively impact the user.</p>
-            </div>
-            <div class="grid-item">
-                <img src="Images/Organizer.png" alt="Organizer Icon">
-                <h3>Event Organizers</h3>
-                <p>Minimize health-related risks by performing simulations for the expected environmental conditions.</p>
-            </div>
-            <div class="grid-item">
-                <img src="Images/Physical.png" alt="Physical Icon">
-                <h3>Physical Training</h3>
-                <p>Increase the accuracy of training load quantification, the design of training sessions, and pacing strategies.</p>
-            </div>
-            <div class="grid-item">
-                <img src="Images/HealthCare.png" alt="Health Care Icon">
-                <h3>Health Care</h3>
-                <p>Evaluate the impacts of surgery or improvement of function (e.g. cardiac output) on the physiological system, and assess the risks of exercise and environmental conditions for patients.</p>
-            </div>
-            <div class="grid-item">
-                <img src="Images/Researcher.png" alt="Researcher Icon">
-                <h3>Researchers</h3>
-                <p>Develop and test hypotheses, (pre-)simulate experiments, and build models on top of a whole body model.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Roadmap</h2>
-    </section>
-    
-    <img src="Images/TimeLine.png" alt="Timeline" class="Roadmap-image">
-
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Be the First to Know</h2>
-        <p>Join our early access list to get updates and be notified when we launch.</p>
-        <form class="notify-container" action="https://formspree.io/f/xzzvnayy" method="POST">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Notify Me</button>
-        </form>
-    </section>
-</main>
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

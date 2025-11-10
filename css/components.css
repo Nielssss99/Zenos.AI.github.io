@@ -402,7 +402,7 @@ nav a:hover {
 
 video
 {
-  max-width: 50%; /* For a video that scales well on different screen sizes */
+  max-width: 40%; /* For a video that scales well on different screen sizes */
   display: block; /* To treat the video as a block element for better layout control */
   margin: 0 auto; /* To center the video horizontally */
   border-radius: 50%;
@@ -417,7 +417,10 @@ video
     }
 
 @media (min-width: 768px) {
-    max-width: 40%;
+    .logo-video
+    {
+        max-width: 50%;
+    }
 }
 
 /* ==================================== */

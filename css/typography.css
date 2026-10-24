@@ -34,6 +34,16 @@ p {
     text-wrap: pretty;
 }
 
+/* Body text: left-aligned inside a centered column, so every line starts at the same point */
+.content-section > p {
+    text-align: left;
+}
+
+/* Short one-line intros can stay centered */
+.content-section > p.text-center {
+    text-align: center;
+}
+
 .pjust {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.8;

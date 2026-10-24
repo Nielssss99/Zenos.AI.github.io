@@ -17,8 +17,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/base.css?v=1.0.1">
-<link rel="stylesheet" href="css/typography.css?v=1.0.2">
-<link rel="stylesheet" href="css/components.css?v=1.0.6">
+<link rel="stylesheet" href="css/typography.css?v=1.0.3">
+<link rel="stylesheet" href="css/components.css?v=1.0.7">
 
 </head>
 
@@ -31,7 +31,7 @@
     <img src="Images/Logo.png" alt="Zenos.AI Logo" class="hero-image" width="1778" height="1780">
     <h1><span class="main-text">Zenos</span><span class="accent">.AI</span></h1>
     <p class="tagline">
-        Computational Physiology Without Limits
+        Computational physiology without limits
     </p>
     <p class="hero-subline">
         We are building an integrated model of the human body that simulates how humans respond to heat, exercise and stress, including in conditions that are hard or unsafe to measure.
@@ -46,28 +46,28 @@
     <div class="section-separator"></div>
 
     <section class="content-section">
-        <h2>Why model the human body?</h2>
+        <h2>Modeling the human body</h2>
         <p>
             Many questions about the body are slow, expensive or unsafe to answer with human experiments.
             A reliable physiological model makes it possible to <span class="white-bold">explore those questions in-silico first</span>.
-            Thereby, significantly speeding up research and development processes.
+            Thereby, reducing costs and significantly speeding up research and development processes.
         </p>
     </section>
 
     <div class="section-separator"></div>
 
     <section class="content-section">
-        <h2>Today's models fall short</h2>
+        <h2>Existing solutions</h2>
         <p>
-            Today's models of human physiology are mostly a patchwork of <span class="white-bold">statistical models of isolated mechanisms</span>.
+            Today's models of human physiology are mostly a collection of <span class="white-bold">statistical models of isolated mechanisms</span>.
             They miss variables that matter and only work within the conditions they were fitted on.
             That is hardly surprising: many variables cannot be measured, data from extreme conditions is scarce,
-            and every measurement is noisy because people differ so much from one another.
-            Together, this makes it nearly impossible to predict <span class="white-bold">a system of trillions of interacting cells</span> outside familiar conditions with data alone.
+            and every measurement is inherently noisy.
+            Together, this makes it nearly impossible to predict <span class="white-bold">a system of trillions of interacting cells</span> outside familiar conditions with a purely statistical approach.
         </p>
         <div class="card-container">
             <div class="card">
-                <h3>What That Means</h3>
+                <h3>Consequences</h3>
                 <ul>
                     <li class="has-details" tabindex="0">
                         Low generalizability
@@ -97,7 +97,7 @@
     <div class="section-separator"></div>
 
     <section class="content-section" id="approach">
-        <h2>Our Approach</h2>
+        <h2>Zenos' approach</h2>
         <p>
             Instead of learning patterns from limited data, we build a <span class="white-bold">mechanistic model</span>:
             a model based on the physical and physiological laws that govern the body, such as pressure laws, the laws of heat transfer, and thermoregulatory control pathways.
@@ -147,11 +147,11 @@
             </li>
             <li>
                 <span class="timeline-date">Nov 2027</span>
-                <span class="timeline-text">V1.5: model validated and refined against published literature</span>
+                <span class="timeline-text">V1.5: model refined against published literature</span>
             </li>
             <li>
                 <span class="timeline-date">May 2028</span>
-                <span class="timeline-text">V2.0: model refined with experimental measurements</span>
+                <span class="timeline-text">V2.0: model refined with specific experimental measurements</span>
             </li>
             <li>
                 <span class="timeline-date">Nov 2028</span>
@@ -167,8 +167,8 @@
     <div class="section-separator"></div>
 
     <section class="content-section" id="signup">
-        <h2>Follow Our Progress</h2>
-        <p>Get an occasional update when we reach a milestone on the roadmap.</p>
+        <h2>Follow our progress</h2>
+        <p class="text-center">Get an occasional update when we reach a milestone on the roadmap.</p>
         <div class="notify-container">
             <form action="https://formspree.io/f/xzzvnayy" method="POST">
                 <label for="signup-email" class="sr-only">Email address</label>
@@ -176,7 +176,7 @@
                 <button type="submit">Keep me updated</button>
             </form>
         </div>
-        <p id="signup-status" class="form-status" role="status" aria-live="polite"></p>
+        <p id="signup-status" class="form-status text-center"role="status" aria-live="polite"></p>
     </section>
 </main>
 

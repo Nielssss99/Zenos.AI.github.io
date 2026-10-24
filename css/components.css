@@ -50,10 +50,13 @@ nav.full-width-nav,
     letter-spacing: 0.02em;
 }
 
+.brand-accent {
+    color: var(--primary-color);
+}
+
 .nav-image {
     height: 2.25rem;
     width: auto;
-    border-radius: 6px;
 }
 
 /* --- FULL-WIDTH NAVIGATION BAR (Desktop) --- */

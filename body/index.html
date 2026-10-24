@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenos.AI</title>
+<title>The Human Body | Zenos.AI</title>
+<meta name="description" content="How the Duke whole-body model is segmented, processed and analysed for the Zenos.AI proof of concept.">
+<meta property="og:title" content="The Human Body | Zenos.AI">
+<meta property="og:description" content="How the Duke whole-body model is segmented, processed and analysed for the Zenos.AI proof of concept.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../Images/Logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -11,16 +16,15 @@
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/typography.css">
 <link rel="stylesheet" href="../css/components.css">
-    
 </head>
-    
+
 <body>
 <div id="nav-placeholder"></div>
 <script src="../js/component-loader.js"></script>
-<script src="../js/nav.js"></script> 
+<script src="../js/nav.js"></script>
 
 <header class="hero-section">
-    <h1><span class="main-text">The Human </span><span class="accent">Body</h1>
+    <h1><span class="main-text">The Human </span><span class="accent">Body</span></h1>
     <p class="tagline">
         Balancing Realism and Computational Feasibility
     </p>
@@ -28,11 +32,11 @@
 
 <main>
     <div class="section-separator"></div>
-    
+
     <section class="content-section">
         <p class="pjust">
-            For the modeled body to be accurate we can derive our data from modern imaging techniques such as 
-            Magnetic Resonance Imaging (MRI). The IT'IS foundation has such models available for researchers, namely Duke, 
+            For the modeled body to be accurate we can derive our data from modern imaging techniques such as
+            Magnetic Resonance Imaging (MRI). The IT'IS foundation has such models available for researchers, namely Duke,
             Billie, Thelonious and Ella. For our Proof of Concept we make use of Duke.
         </p>
     </section>
@@ -42,9 +46,9 @@
     <section class="content-section">
         <h2>The Duke Model</h2>
         <p class="pjust">
-            The Duke model consists of 610 x 310 x 1860 voxels of 1mm, which are labeled for 
+            The Duke model consists of 610 x 310 x 1860 voxels of 1mm, which are labeled for
             77 tissue types. In order to preprocess the model, a boundary detection algorithm is applied to
-            detect any missing labels. Upon subjective manual confirmation, the missing voxels are 
+            detect any missing labels. Upon subjective manual confirmation, the missing voxels are
             imputed based on the surrounding labels.
         </p>
     </section>
@@ -54,52 +58,52 @@
     <section class="content-section">
         <h2>Segmentation</h2>
         <p class="pjust">
-            Subsequently, the voxels are allocated to various body segments, namely: feet, legs, thighs, pelvis, abdomen, thorax, 
+            Subsequently, the voxels are allocated to various body segments, namely: feet, legs, thighs, pelvis, abdomen, thorax,
             hands, fore arms, arms, neck, lower head, and upper head. The allocation is performed by a combination of
-            automatic processing (boundary detection) and manual seperation.
+            automatic processing (boundary detection) and manual separation.
         </p>
     </section>
 
     <figure class="aligned-figure">
-      <img src="/Zenos.AI.github.io/Images/Allocation.png" alt="Allocation of Segments" class="Allocation-image">
+      <img src="../Images/Allocation.png" alt="MRI slice beside its segment clustering, with the abdomen in blue and the fore arms in red" class="Allocation-image">
       <figcaption>Figure 1: The left side shows a MRI slice, and the right side the clustering for the abdomen (blue) and fore arms (red).</figcaption>
     </figure>
 
     <div class="section-separator"></div>
-    
+
     <section class="content-section">
         <h2>Surface Extraction</h2>
         <p class="pjust">
-            After the segmentation has been performed (Figure 2), the marching cube algorithm is applied 
-            to the 3D voxel model. The produced triangular surfaces are allocated to the segment of the neirest voxel.
+            After the segmentation has been performed (Figure 2), the marching cube algorithm is applied
+            to the 3D voxel model. The produced triangular surfaces are allocated to the segment of the nearest voxel.
         </p>
     </section>
 
     <figure class="aligned-figure">
-        <video autoplay loop muted playsinline class = "Voxel3D-video">
-            <source src="/Zenos.AI.github.io/Images/Voxel3D.mp4" type="video/mp4">
+        <video autoplay loop muted playsinline class="Voxel3D-video">
+            <source src="../Images/Voxel3D.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <figcaption>Figure 2: The surface of the 3D voxel model with segmentation in grey scale.
+        <figcaption>Figure 2: The surface of the 3D voxel model with segmentation in grey scale.</figcaption>
     </figure>
 
      <section class="content-section">
         <h2>Analysis of the Retrieved Data</h2>
         <p class="pjust">
             Based on the segmentation and the provided tissue labels, we can visualize the segmental distribution of tissues.
-            The number of tissues per segment ranges from six for the hands to 37 for the lower half of the head. 
+            The number of tissues per segment ranges from six for the hands to 37 for the lower half of the head.
             Figure 3 provides an example for one of the more homogenous segments; the feet.
         </p>
     </section>
 
     <figure class="aligned-figure">
-      <img src="/Zenos.AI.github.io/Images/VolumeDistributionFeet.png" alt="Tissues of the Feet" class="VDistribution-image">
+      <img src="../Images/VolumeDistributionFeet.png" alt="Tissues labeled for the feet" class="VDistribution-image">
       <figcaption>Figure 3: The tissues that are labeled for the feet.</figcaption>
     </figure>
 
     <div class="section-separator"></div>
     <p>More information coming soon .... 🚀 </p>
-    
+
 </main>
 
 </body>

@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenos.AI</title>
+<title>Zenos.AI | Computational Physiology Without Limits</title>
+<meta name="description" content="Zenos.AI builds computational models of human physiology that reduce the need for resource-intensive experimental testing.">
+<meta property="og:title" content="Zenos.AI | Computational Physiology Without Limits">
+<meta property="og:description" content="Computational models of human physiology that reduce the need for resource-intensive experimental testing.">
+<meta property="og:type" content="website">
+<link rel="icon" href="Images/Logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -20,7 +25,7 @@
 <script src="js/nav.js"></script> 
     
 <header class="hero-section">
-    <img src="/Zenos.AI.github.io/Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">
+    <img src="Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">
     <h1><span class="main-text">Zenos</span><span class="accent">.AI</span></h1>
     <p class="tagline">
         Computational Physiology Without Limits
@@ -206,7 +211,7 @@
         <h2>Roadmap</h2>
     </section>
     
-    <img src="Images/TimeLine.png" alt="Timeline" class="Roadmap-image">
+    <img src="Images/TimeLine.png" alt="Roadmap timeline. Sep 2024: thesis on predicting body temperature. August 2025: model development restarts with a broader focus on physiology. Sep 2025: research and code on tissue distribution, tissue properties and scaling laws; existing code is reused where possible. 2025: base algorithm optimized for speed and memory. 2026: database created, models trained and evaluated, and tested on external data. Around 2030: a physiological simulation platform for when human welfare or performance matters." class="Roadmap-image">
 
     <div class="section-separator"></div>
     
@@ -214,11 +219,14 @@
         <h2>Be the First to Know</h2>
         <p>Join our early access list to get updates and be notified when we launch.</p>
         <form class="notify-container" action="https://formspree.io/f/xzzvnayy" method="POST">
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <label for="signup-email" class="sr-only">Email address</label>
+            <input type="email" id="signup-email" name="email" placeholder="Enter your email" autocomplete="email" required>
             <button type="submit">Notify Me</button>
         </form>
+        <p id="signup-status" class="form-status" role="status" aria-live="polite"></p>
     </section>
 </main>
 
+<script src="js/signup.js"></script>
 </body>
 </html>

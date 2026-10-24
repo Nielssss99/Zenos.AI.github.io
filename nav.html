@@ -1,4 +1,6 @@
-<div id="mySidebar" class="sidebar">
+<div id="sidebarOverlay" class="sidebar-overlay" onclick="closeNav()"></div>
+
+<div id="mySidebar" class="sidebar" aria-hidden="true">
     <button type="button" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</button>
     <a href="./">Home</a>
     <a href="zenos/">Why Zenos?</a>
@@ -6,23 +8,31 @@
     <a href="scaling/">Scaling</a>
     <a href="heat equation/">Heat Equation</a>
     <a href="control system/">Control System</a>
-    <a href="learn more/">Learn more</a>
+    <a href="learn more/" class="nav-cta">Learn more</a>
 </div>
 
-<nav class="full-width-nav">
+<nav class="full-width-nav" aria-label="Main navigation">
     <div class="nav-content-wrapper">
-        <img src="Images/Logo.png" alt="Zenos.AI Logo" class="nav-image">
-        <a href="./">Home</a>
-        <a href="zenos/">Why Zenos?</a>
-        <a href="body/">Body</a>
-        <a href="scaling/">Scaling</a>
-        <a href="heat equation/">Heat Equation</a>
-        <a href="control system/">Control System</a>
-        <a href="learn more/">Learn more</a>
+        <a href="./" class="nav-brand">
+            <img src="Images/Logo.png" alt="" class="nav-image">
+            <span>Zenos.AI</span>
+        </a>
+        <div class="nav-links">
+            <a href="./">Home</a>
+            <a href="zenos/">Why Zenos?</a>
+            <a href="body/">Body</a>
+            <a href="scaling/">Scaling</a>
+            <a href="heat equation/">Heat Equation</a>
+            <a href="control system/">Control System</a>
+            <a href="learn more/" class="nav-cta">Learn more</a>
+        </div>
     </div>
 </nav>
 
 <div class="mobile-nav-bar">
-    <button class="openbtn" onclick="openNav()" aria-label="Open menu">&#9776;</button>
-    <img src="Images/Logo.png" alt="Zenos.AI Logo" class="nav-image">
+    <a href="./" class="nav-brand">
+        <img src="Images/Logo.png" alt="" class="nav-image">
+        <span>Zenos.AI</span>
+    </a>
+    <button type="button" class="openbtn" onclick="openNav()" aria-label="Open menu" aria-controls="mySidebar" aria-expanded="false">&#9776;</button>
 </div>

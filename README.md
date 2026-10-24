@@ -12,13 +12,8 @@ https://nielssss99.github.io/Zenos.AI.github.io/
 
 | Path | Page | Status |
 | --- | --- | --- |
-| `/` (`index.html`) | Landing page: motivation, solution, key features, target audiences, roadmap, early-access signup | Live |
-| `/zenos/` | "Why Zenos?" | Live |
-| `/body/` | "The Human Body" | Live |
-| `/learn more/` | Learn more | Live |
-| `/scaling/` | Scaling | Placeholder ("Coming soon") |
-| `/heat equation/` | Heat Equation | Placeholder ("Coming soon") |
-| `/control system/` | Control System | Placeholder ("Coming soon") |
+| `/` (`index.html`) | Landing page: motivation, limits of current models, approach, roadmap, updates signup | Live |
+| `/zenos/` | "Zenos" | Live |
 
 ## Project structure
 
@@ -26,12 +21,7 @@ https://nielssss99.github.io/Zenos.AI.github.io/
 .
 ├── index.html          # Landing page
 ├── nav.html            # Shared navigation markup (sidebar + top bar), injected at runtime
-├── body/               # "The Human Body" page
-├── zenos/              # "Why Zenos?" page
-├── learn more/         # Learn more page
-├── scaling/            # Placeholder page
-├── heat equation/      # Placeholder page
-├── control system/     # Placeholder page
+├── zenos/              # "Zenos" page
 ├── css/
 │   ├── base.css        # Base/global styles
 │   ├── typography.css  # Fonts and text styles
@@ -39,9 +29,8 @@ https://nielssss99.github.io/Zenos.AI.github.io/
 ├── js/
 │   ├── component-loader.js  # Fetches nav.html, injects it into #nav-placeholder, highlights the current page
 │   ├── nav.js               # Mobile sidebar open/close (openNav / closeNav)
-│   └── signup.js            # Submits the early-access form in the background (index page only)
-├── Images/             # Logos, icons, roadmap timeline, and media
-└── Pdf/                # CV (PDF)
+│   └── signup.js            # Submits the updates signup form in the background (index page only)
+└── Images/             # Logos and media
 ```
 
 ## How it works
@@ -64,4 +53,3 @@ Then open http://localhost:8000/.
 ## Known issues
 
 - Because the navigation is loaded with `fetch()`, it does not appear when a page is opened directly as a `file://` URL. Serve the site over HTTP (see above).
-- Folder names with spaces (`heat equation/`, `control system/`, `learn more/`) are kept so existing links keep working. Their URLs contain `%20`.

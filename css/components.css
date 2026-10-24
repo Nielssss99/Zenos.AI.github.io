@@ -106,25 +106,6 @@ nav.full-width-nav {
     background-color: var(--primary-color);
 }
 
-/* "Learn more" call-to-action button */
-.nav-links a.nav-cta {
-    color: var(--light-background);
-    background-color: var(--primary-color);
-    font-weight: 700;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: background-color 0.2s, box-shadow 0.2s;
-}
-
-.nav-links a.nav-cta:hover {
-    color: var(--light-background);
-    box-shadow: 0 0 12px var(--card-shadow-color);
-}
-
-.nav-links a.nav-cta.active::after {
-    display: none;
-}
-
 /* --- MOBILE NAVIGATION BAR --- */
 .mobile-nav-bar {
     display: flex; /* SHOW the mobile nav by default */
@@ -201,17 +182,6 @@ nav.full-width-nav {
 .sidebar a.active {
     color: var(--text-color);
     border-left-color: var(--primary-color);
-}
-
-.sidebar a.nav-cta {
-    margin: 1.25rem 1.75rem 0;
-    padding: 0.75rem 1rem;
-    text-align: center;
-    font-weight: 700;
-    color: var(--light-background);
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 6px;
 }
 
 .sidebar .closebtn {
@@ -367,7 +337,7 @@ nav.full-width-nav {
     color: var(--text-color);
 }
 .has-details:hover .details-content,
-.has-details:focus-visible .details-content {
+.has-details:focus .details-content {
     max-height: 500px;
     opacity: 1;
     margin-top: 0.8em;
@@ -395,24 +365,6 @@ nav.full-width-nav {
                 margin-top .4s ease-out;
     text-align: justify;
     word-wrap: break-word;
-}
-
-/* -------------------------------------------------
-   5. DEFAULT ACTIVE – **DESKTOP ONLY**
-   ------------------------------------------------- */
-@media (min-width: 768px) {
-    .card li:first-child {
-        color: var(--text-color, #fff);
-    }
-    .card li:first-child::before {
-        transform: translateX(4px);
-        color: var(--text-color);
-    }
-    .card li:first-child .details-content {
-        max-height: 500px;
-        opacity: 1;
-        margin-top: 0.8em;
-    }
 }
 
 /* --- Section Grid Layout (.section-grid) --- */
@@ -528,17 +480,13 @@ video
   margin-bottom: 1.5rem;
 }
 
-.logo-video,
-.Voxel3D-video
-    {
-        max-width: 60%;
-        margin-bottom: 0rem;
-    }
+.logo-video {
+    max-width: 60%;
+    margin-bottom: 0rem;
+}
 
 @media (min-width: 768px) {
-    .logo-video, 
-    Voxel3D-video
-    {
+    .logo-video {
         max-width: 50%;
     }
 }
@@ -562,8 +510,7 @@ video
 }
 
 /* --- Navigation Bar Switch --- */
-/* The full link row needs ~1000px, so switch later than the content grid */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .mobile-nav-bar {
         display: none !important;
     }
@@ -578,60 +525,324 @@ video
 }
 
 /* ==================================== */
-/* 08. Pdf */
+/* 08. Homepage additions */
 /* ==================================== */
 
-/* 1. Style the container for the iframe */
-  .pdf-container {
-    width: min(90%, 1000px);
-    height: 80vh;
-    min-height: 500px;
-  }
+html {
+    scroll-behavior: smooth;
+}
 
-  /* 2. Style the iframe itself */
-  .pdf-viewer {
+/* Keep anchored sections clear of the sticky nav */
+[id] {
+    scroll-margin-top: 5rem;
+}
+
+.hero-subline {
+    margin-top: 0.5rem;
+    max-width: 720px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+}
+
+.cta-secondary {
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 0.9rem 0.5rem;
+}
+
+.cta-secondary:hover,
+.cta-secondary:focus-visible {
+    text-decoration: underline;
+}
+
+/* --- Feature grid: short titled blocks --- */
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1rem 0 2rem;
+    text-align: left;
+}
+
+.feature {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+}
+
+.feature h3 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem;
+    color: var(--text-color);
+}
+
+.feature p {
+    max-width: none;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* --- Highlighted statistic --- */
+.stat-callout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    max-width: 600px;
+    margin: 0.5rem auto 1.5rem;
+}
+
+.stat-value {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    color: var(--subtle-text-color);
+    line-height: 1.6;
+}
+
+.stat-label cite {
+    font-style: normal;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.cta-button {
+    display: inline-block;
+    margin: 0.5rem 0 1rem;
+    padding: 0.9rem 2.2rem;
+    background-color: var(--primary-color);
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+    transform: scale(1.05);
+    background-color: #00b3cc;
+}
+
+.bolt-icon {
+    display: inline-block;
+    height: 0.9em;
+    width: auto;
+    vertical-align: -0.1em;
+}
+
+.status-note {
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+}
+
+.text-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* --- Roadmap timeline --- */
+.timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    border-left: 2px solid var(--primary-color);
+    list-style: none;
+    padding: 0;
+}
+
+.timeline li {
+    position: relative;
+    padding: 1rem 0 2.5rem 2.5rem;
+    transition: padding-left 0.2s ease;
+}
+
+.timeline li:hover {
+    padding-left: 2.75rem;
+}
+
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 1.2rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 0 3px rgba(0, 216, 255, 0.1);
+}
+
+/* Future events - grey dots */
+.timeline li::before {
+    background-color: var(--card-background, #1a1a1a);
+    border: 2px solid var(--card-background, #1a1a1a);
+}
+
+/* Completed events - filled blue dots */
+.timeline li.done::before {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Next event - blue ring */
+.timeline li.next::before {
+    border-color: var(--primary-color);
+}
+
+.timeline-status {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.05rem 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    vertical-align: 0.1em;
+}
+
+.timeline li.done .timeline-status {
+    color: #000;
+    background-color: var(--primary-color);
+}
+
+.timeline li:hover::before {
+    width: 18px;
+    height: 18px;
+    left: -11px;
+    box-shadow: 0 0 12px rgba(0, 216, 255, 0.4);
+}
+
+.timeline-date {
+    display: block;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.02em;
+}
+
+.timeline-text {
+    color: var(--subtle-text-color);
+    line-height: 1.7;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.timeline li:hover .timeline-text {
+    color: var(--text-color);
+}
+
+/* --- Story steps (Zenos page) --- */
+.step-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* --- Converging series bar: 1/2 + 1/4 + 1/8 + ... = 1 --- */
+.series-figure {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+.series-bar {
+    display: flex;
+    gap: 3px;
+    height: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.series-bar span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #000;
+    font-weight: 700;
+}
+
+.series-bar span:nth-child(2) { opacity: 0.8; }
+.series-bar span:nth-child(3) { opacity: 0.6; }
+.series-bar span:nth-child(4) { opacity: 0.45; }
+.series-bar span:nth-child(5) { opacity: 0.3; }
+.series-bar span:nth-child(6) { opacity: 0.15; }
+
+.series-figure figcaption {
+    margin: 0 auto;
+    font-size: 0.95rem;
+}
+
+/* --- Pull quote --- */
+.pull-quote {
+    max-width: 700px;
+    margin: 1rem auto 2rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 0 10px 10px 0;
+    color: var(--text-color);
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* --- Footer --- */
+.site-footer {
     width: 100%;
-    /* The iframe must fill its parent container */
-    height: 100%;
-    border: none; /* Optional: removes the default iframe border */
-  }
-
-/* ==================================== */
-/* 09. Images */
-/* ==================================== */
-.aligned-figure {
-    display: flex; /* 1. Use Flexbox */
-    flex-direction: column; /* 2. Stack elements vertically (image then caption) */
-    align-items: center; /* 3. Center all items horizontally within the figure */
-    max-width: 100%;
-    height: auto;
-}
-.Roadmap-image, .Allocation-image, .VDistribution-image {
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    display: block; /* Ensure it behaves as a block element */
-    margin-left: auto; 
-    margin-right: auto;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    padding: 1.5rem 1rem;
+    border-top: 1px solid rgba(176, 176, 176, 0.5);
 }
 
-.Roadmap-image{
-    width: 60%;
+.site-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.Allocation-image
-{
-    width: 60%
-}
-.VDistribution-image
-{
-    width: 80%;
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--primary-color);
 }
 
-.aligned-figure figcaption {
-  margin-top: 0.5em;
-  font-style: italic;
-  text-align: center;
-  width: 100%;
+.site-footer p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
 }

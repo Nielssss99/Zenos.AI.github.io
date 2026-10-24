@@ -28,9 +28,10 @@ p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.8;
     color: var(--subtle-text-color);
-    /* Sets the maximum comfortable reading width */
-    max-width: min(90%, 1000px);
+    /* Sets the maximum comfortable reading width (~70 characters per line) */
+    max-width: min(90%, 70ch);
     margin: 0 auto 1.5rem;
+    text-wrap: pretty;
 }
 
 .pjust {

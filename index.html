@@ -4,228 +4,192 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zenos.AI | Computational Physiology Without Limits</title>
-<meta name="description" content="Zenos.AI builds computational models of human physiology that reduce the need for resource-intensive experimental testing.">
+<meta name="description" content="Zenos.AI is building an integrated, mechanistic model of human physiology to simulate how the body responds to heat, exercise and stress, including conditions that are hard or unsafe to measure.">
+<link rel="canonical" href="https://nielssss99.github.io/Zenos.AI.github.io/">
 <meta property="og:title" content="Zenos.AI | Computational Physiology Without Limits">
-<meta property="og:description" content="Computational models of human physiology that reduce the need for resource-intensive experimental testing.">
+<meta property="og:description" content="An integrated, mechanistic model of human physiology, built to work beyond the conditions we can measure.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://nielssss99.github.io/Zenos.AI.github.io/">
+<meta property="og:image" content="https://nielssss99.github.io/Zenos.AI.github.io/Images/Logo.png">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="Images/Logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/typography.css">
-<link rel="stylesheet" href="css/components.css">
-    
+<link rel="stylesheet" href="css/base.css?v=1.0.1">
+<link rel="stylesheet" href="css/typography.css?v=1.0.1">
+<link rel="stylesheet" href="css/components.css?v=1.0.6">
+
 </head>
-    
+
 <body>
 <div id="nav-placeholder"></div>
 <script src="js/component-loader.js"></script>
-<script src="js/nav.js"></script> 
-    
+<script src="js/nav.js"></script>
+
 <header class="hero-section">
-    <img src="Images/Logo.png" alt="Zenos.AI Logo" class="hero-image">
+    <img src="Images/Logo.png" alt="Zenos.AI Logo" class="hero-image" width="1778" height="1780">
     <h1><span class="main-text">Zenos</span><span class="accent">.AI</span></h1>
     <p class="tagline">
         Computational Physiology Without Limits
     </p>
+    <p class="hero-subline">
+        We are building an integrated model of the human body that simulates how humans respond to heat, exercise and stress, including in conditions that are hard or unsafe to measure.
+    </p>
+    <div class="hero-actions">
+        <a href="#approach" class="cta-button">See our approach</a>
+        <a href="#signup" class="cta-secondary">Follow our progress</a>
+    </div>
 </header>
 
 <main>
     <div class="section-separator"></div>
-    
+
     <section class="content-section">
-        <h2>Models of Physiology</h2>
-        <p class="pjust">
-            Whether it's engineering the next generation of human-centric products, developing safer protective gear, or designing more efficient 
-            physical training programs, models of human physiology can provide you with <span class="white-bold">new insights</span>, while <span class="white-bold">limiting the need for resource-intensive 
-            experimental testing</span>.
+        <h2>Why model the human body?</h2>
+        <p>
+            Many questions about the body are slow, expensive or unsafe to answer with human experiments.
+            A reliable physiological model makes it possible to <span class="white-bold">explore those questions in-silico first</span>.
+            Thereby, significantly speeding up research and development processes.
         </p>
     </section>
 
     <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Lack of Alternatives</h2>
-        <p class="pjust">
-            Unfortunately, current methods for modeling human physiology are <span class="white-bold">severely limited</span>. 
-            They often rely on <span class="white-bold">purely statistically derived</span>, 
-            and <span class="white-bold">isolated</span> physiological mechanisms.
-        </p>
 
+    <section class="content-section">
+        <h2>Today's models fall short</h2>
+        <p>
+            Most current models of human physiology are <span class="white-bold">statistical models of isolated mechanisms</span>.
+            They work within the conditions they were fitted on, but break down as soon as those conditions change.
+            That is no surprise: key variables, such as the neural signals that drive sweating, cannot be measured;
+            data from extreme conditions, where predictions matter most, barely exists; and the datasets that do exist are small, noisy and vary widely between individuals.
+            On top of that, the body is <span class="white-bold">one integrated system</span>, and modelling its parts in isolation ignores how they affect each other.
+        </p>
         <div class="card-container">
             <div class="card">
-                <h3>Why is this a Problem?</h3>
+                <h3>What That Means</h3>
                 <ul>
-                    <li class="has-details">
-                        Some variables are non-measurable
-                        <div class="details-content">
-                            The existence of non-measurable variables implies that models <strong>cannot be fit on all underlying subprocesses</strong>. 
-                            E.g. we cannot (yet) measure the neural mechanisms of sweat secretion. This is <strong>highly problematic</strong> 
-                            when good data quality and quantity cannot be assured.
-                        </div>
-                    </li>
-
-                    <li class="has-details">
-                        Few scenarios are measured
-                        <div class="details-content">
-                            Regarding the data quality, one aspect is the diversity. <strong>The diversity of experimental scenarios is low.</strong>
-                            E.g. we do not have data at every possible combination of humidity, exercise intensity, and temperature. But most problematic 
-                            is that <strong>data regarding extreme scenarios is super scarce, or even absent.</strong>
-                        </div>
-                    </li>
-
-                    <li class="has-details">
-                        Datasets are small and noisy
-                        <div class="details-content">
-                            Experiments often measure a <strong>few variables at a time on a very limited amount of participants.</strong> When one variable 
-                            is measured, another variable is absent, and so on. The <strong>collected data is also inherently noisy</strong>, as the human body is 
-                            non-deterministic.
-                        </div>
-                    </li>
-
-                    <li class="has-details">
-                        The body is complex and integrated
-                        <div class="details-content">
-                            Human physiology is a function of trillions of cells that constantly interact. Therefore, 
-                            <strong>describing physiological mechanisms in isolation might be too simplistic.</strong>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>What are the Consequences?</h3>
-                <ul>
-                    <li class="has-details">
+                    <li class="has-details" tabindex="0">
                         Low generalizability
                         <div class="details-content">
-                            Due to limited and flawed training data in addition to the use of non-mechanism based models, <strong>significant out of 
-                            context errors might be expected.</strong> For example, the literature reports a <strong>1.7 - 2.8x</strong> increase in error 
-                            with <strong>ONLY</strong> slight shifts in exercise intensity (Psikuta et al., 2011).
+                            Limited data combined with purely statistical models leads to <strong>large errors outside the training context.</strong> Research shows a <strong>1.7&ndash;2.8&times; increase in error</strong> with only a slight shift in exercise intensity (Psikuta et al., 2011).
                         </div>
                     </li>
 
-                    <li class="has-details">
-                        Scenarios cannot be modeled
+                    <li class="has-details" tabindex="0">
+                        New scenarios cannot be modelled
                         <div class="details-content">
-                        Scenarios that include manipulation of variables that are not included in the non-mechanism based models,
-                        <strong>cannot be modeled.</strong> An example is the thermophysiological response in case of high blood loss.
+                            <strong>Combinations of conditions that were never measured cannot be predicted.</strong> A model fitted on standard conditions has no way to predict thermophysiological responses during, for example, severe blood loss.
                         </div>
                     </li>
 
-                    <li class="has-details">
-                        Limited actionable insights
+                    <li class="has-details" tabindex="0">
+                        Limited understanding
                         <div class="details-content">
-                        As models are not based on real working mechanisms, <strong>no informative feedback can be provided.</strong> 
-                        Important questions remain; <em>Why are the results as observed?</em> and <em>How can we improve our product/strategy?</em>
+                            Statistical models can predict, but they do not explain. <strong>It stays unclear why a result occurs</strong> or what would change it. Questions like <em>Why did the model predict this?</em> and <em>What should we change to improve the outcome?</em> remain unanswered.
                         </div>
                     </li>
                 </ul>
             </div>
-    </div>
+        </div>
     </section>
-    
+
     <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2> <i class="fa-solid fa-bolt blue-icon"></i> Our Solution <i class="fa-solid fa-bolt blue-icon"></i> </h2>
-        <p class="pjust">
-            <span class="white-bold">Zenos.AI will offer a model that changes the game</span>. We will combine statistical methods, multidimensional data, and 
-            huge amounts of domain knowledge to create a <span class="white-bold">more informative and better generalizable model</span> of the human body. 
-            <br>
-            <br>
-            In this way <span class="white-bold">Zenos.AI</span> will not just become another mediocre research tool, but a 
-            <span class="white-bold">holistic framework</span> that gives you a complete and accurate picture of human physiology.
+
+    <section class="content-section" id="approach">
+        <h2>Our Approach</h2>
+        <p>
+            Instead of learning patterns from limited data, we build a <span class="white-bold">mechanistic model</span>:
+            a model based on the physical and physiological laws that govern the body, such as heat transfer, blood flow and thermoregulatory control.
+            It combines three ingredients:
+        </p>
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>Mechanistic models</h3>
+                <p>Physical and physiological laws hold in every condition, so the model keeps working beyond the data it was built on.</p>
+            </div>
+            <div class="feature">
+                <h3>Domain knowledge</h3>
+                <p>Decades of physiological research describe how the body's systems interact, so we model them as one whole, not in isolation.</p>
+            </div>
+            <div class="feature">
+                <h3>Machine learning</h3>
+                <p>Where mechanisms are still unknown or unmeasurable, data-driven methods fill the gaps within a physically consistent model.</p>
+            </div>
+        </div>
+        <p>
+            Curious where our name comes from? <a href="zenos/" class="text-link">Read why we are called Zenos</a>.
         </p>
     </section>
+        
 
     <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Key Features</h2>
-        <div class="section-grid">
-            <div class="grid-item">
-                <img src="Images/Arrow.png" alt="Arrow Icon">
-                <h3>Improved Accuracy</h3>
-                <p>Enjoy more stable model performance across conditions.</p>
-            </div>
-            
-            <div class="grid-item">
-                <img src="Images/SwissKnife.png" alt="SwissKnife Icon">
-                <h3>Wider Application Domain</h3>
-                <p>Play with and manipulate components of the human body, and watch their effects unfold in real time.</p>
-            </div>
 
-            <div class="grid-item">
-                <img src="Images/Insights.png" alt="Insights">
-                <h3>Actionable Insights</h3>
-                <p>Have access to unprecedented information on underlying processes. </p>
-            </div>
-
-            <div class="grid-item">
-                <img src="Images/Save.png" alt="Save">
-                <h3>Save Resources</h3>
-                <p>Test new hypotheses, and save resources by optimizing products, and plans in simulation. </p>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Who Is This For?</h2>
-        <div class="section-grid">
-            <div class="grid-item">
-                <img src="Images/Engineer.png" alt="Engineer Icon">
-                <h3>Engineers</h3>
-                <p>Ensure that the product has the intended effect on the user, or does not negatively impact the user.</p>
-            </div>
-            <div class="grid-item">
-                <img src="Images/Organizer.png" alt="Organizer Icon">
-                <h3>Event Organizers</h3>
-                <p>Minimize health-related risks by performing simulations for the expected environmental conditions.</p>
-            </div>
-            <div class="grid-item">
-                <img src="Images/Physical.png" alt="Physical Icon">
-                <h3>Physical Training</h3>
-                <p>Increase the accuracy of training load quantification, the design of training sessions, and pacing strategies.</p>
-            </div>
-            <div class="grid-item">
-                <img src="Images/HealthCare.png" alt="Health Care Icon">
-                <h3>Health Care</h3>
-                <p>Evaluate the impacts of surgery or improvement of function (e.g. cardiac output) on the physiological system, and assess the risks of exercise and environmental conditions for patients.</p>
-            </div>
-            <div class="grid-item">
-                <img src="Images/Researcher.png" alt="Researcher Icon">
-                <h3>Researchers</h3>
-                <p>Develop and test hypotheses, (pre-)simulate experiments, and build models on top of a whole body model.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-separator"></div>
-    
-    <section class="content-section">
+    <section class="content-section" id="roadmap">
         <h2>Roadmap</h2>
+        <ol class="timeline">
+            <li class="done">
+                <span class="timeline-date">Sep 2024 <span class="timeline-status">Done</span></span>
+                <span class="timeline-text">Thesis on predicting body temperatures</span>
+            </li>
+            <li class="done">
+                <span class="timeline-date">Oct 2026 <span class="timeline-status">Done</span></span>
+                <span class="timeline-text">Funding secured</span>
+            </li>
+            <li class="next">
+                <span class="timeline-date">Nov 2026 <span class="timeline-status">Next</span></span>
+                <span class="timeline-text">Full-time model development begins</span>
+            </li>
+            <li>
+                <span class="timeline-date">Feb 2027</span>
+                <span class="timeline-text">V0.5: first mechanistic physiology model</span>
+            </li>
+            <li>
+                <span class="timeline-date">May 2027</span>
+                <span class="timeline-text">V1.0: integrated whole-body model</span>
+            </li>
+            <li>
+                <span class="timeline-date">Nov 2027</span>
+                <span class="timeline-text">V1.5: model validated and refined against published literature</span>
+            </li>
+            <li>
+                <span class="timeline-date">May 2028</span>
+                <span class="timeline-text">V2.0: model refined with experimental measurements</span>
+            </li>
+            <li>
+                <span class="timeline-date">Nov 2028</span>
+                <span class="timeline-text">Model ready for use in research and development</span>
+            </li>
+            <li>
+                <span class="timeline-date">2030</span>
+                <span class="timeline-text">Physiological simulation platform for human health, safety and performance</span>
+            </li>
+        </ol>
     </section>
-    
-    <img src="Images/TimeLine.png" alt="Roadmap timeline. Sep 2024: thesis on predicting body temperature. August 2025: model development restarts with a broader focus on physiology. Sep 2025: research and code on tissue distribution, tissue properties and scaling laws; existing code is reused where possible. 2025: base algorithm optimized for speed and memory. 2026: database created, models trained and evaluated, and tested on external data. Around 2030: a physiological simulation platform for when human welfare or performance matters." class="Roadmap-image">
 
     <div class="section-separator"></div>
-    
-    <section class="content-section">
-        <h2>Be the First to Know</h2>
-        <p>Join our early access list to get updates and be notified when we launch.</p>
-        <form class="notify-container" action="https://formspree.io/f/xzzvnayy" method="POST">
-            <label for="signup-email" class="sr-only">Email address</label>
-            <input type="email" id="signup-email" name="email" placeholder="Enter your email" autocomplete="email" required>
-            <button type="submit">Notify Me</button>
-        </form>
+
+    <section class="content-section" id="signup">
+        <h2>Follow Our Progress</h2>
+        <p>Get an occasional update when we reach a milestone on the roadmap.</p>
+        <div class="notify-container">
+            <form action="https://formspree.io/f/xzzvnayy" method="POST">
+                <label for="signup-email" class="sr-only">Email address</label>
+                <input type="email" id="signup-email" name="email" placeholder="Enter your email" autocomplete="email" required>
+                <button type="submit">Keep me updated</button>
+            </form>
+        </div>
         <p id="signup-status" class="form-status" role="status" aria-live="polite"></p>
     </section>
 </main>
+
+<footer class="site-footer">
+    <nav aria-label="Footer navigation">
+        <a href="zenos/">Zenos</a>
+        <a href="https://github.com/Nielssss99/Zenos.AI.github.io" rel="noopener">GitHub</a>
+    </nav>
+    <p>&copy; Zenos.AI</p>
+</footer>
 
 <script src="js/signup.js"></script>
 </body>

@@ -20,7 +20,7 @@ signupForm.addEventListener('submit', async (event) => {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         signupForm.reset();
-        signupStatus.textContent = 'Thanks! You are on the early access list.';
+        signupStatus.textContent = 'Thanks! You are on our email list.';
     } catch (e) {
         console.error('Could not submit the signup form:', e);
         signupStatus.textContent = 'Something went wrong. Please try again.';

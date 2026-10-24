@@ -2,7 +2,7 @@
 // This keeps the navigation working on any hosting path and any page depth.
 const SITE_ROOT = new URL('../', document.currentScript.src);
 
-// Strip index.html and trailing slashes so "/body/" and "/body/index.html" compare equal
+// Strip index.html and trailing slashes so "/zenos/" and "/zenos/index.html" compare equal
 function normalizePath(path) {
     return decodeURIComponent(path).replace(/index\.html$/, '').replace(/\/?$/, '/');
 }

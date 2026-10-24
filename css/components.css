@@ -591,6 +591,49 @@ html {
     line-height: 1.6;
 }
 
+/* --- Expandable "Read more" inside a feature card --- */
+.feature-more {
+    margin-top: 0.75rem;
+}
+
+.feature-more summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.feature-more summary::-webkit-details-marker {
+    display: none;
+}
+
+.feature-more summary::after {
+    content: "+";
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.feature-more[open] summary::after {
+    content: "\2212";
+}
+
+.feature-more summary:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.feature-more p {
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.95rem;
+}
+
 @media (min-width: 768px) {
     .feature-grid {
         grid-template-columns: repeat(3, 1fr);

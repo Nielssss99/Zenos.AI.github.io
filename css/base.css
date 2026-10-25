@@ -1,41 +1,39 @@
 /* --- CSS Variables --- */
 :root {
     --primary-color: #00d8ff;
+    --primary-hover-color: #00b3cc;
     --dark-background: #1a1a1a;
     --light-background: #0d0d0d;
     --card-background: #222;
     --text-color: #fff;
     --subtle-text-color: #ccc;
-    
+    --divider-color: rgba(176, 176, 176, 0.5);
+
     --card-shadow-color: rgba(0, 230, 230, 0.4);
     --card-border-color: #00d8ff;
 }
 
-/* --- CSS Reset/Normalization (Eric Meyer's or similar is often used) --- */
-/* 1. Basic Reset - Simplifies cross-browser consistency */
+/* --- Reset --- */
+/* Consistent box model and no default spacing */
 *,
 *::before,
 *::after {
-    /* Critical for consistent layout calculations */
-    box-sizing: border-box; 
-    /* Remove default margins/paddings from all elements */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* 2. Remove default list styles */
 ul, ol {
     list-style: none;
 }
 
-/* 3. Better default for images */
 img {
     display: block;
     max-width: 100%;
     height: auto;
 }
 
-/* 4. Inheritance for form elements */
+/* Form elements inherit the page font */
 input,
 button,
 textarea,
@@ -43,50 +41,33 @@ select {
     font: inherit;
 }
 
-/* 5. Accessibility and Performance */
-/* Allows easy keyboard focus management */
+/* Only show focus outlines for keyboard focus */
 :focus:not(:focus-visible) {
     outline: none;
 }
 
-/* --- Base Typography and Body Styles (Fonts) --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Keep anchored sections clear of the sticky nav */
+[id] {
+    scroll-margin-top: 5rem;
+}
+
+/* --- Body --- */
 body {
-    /* The font is loaded via the HTML <link> tag */
-    font-family: 'Roboto', sans-serif; 
-    
-    /* Apply background and text colors from variables */
+    /* Roboto is loaded via the HTML <link> tag */
+    font-family: 'Roboto', sans-serif;
     background: linear-gradient(135deg, var(--dark-background), var(--light-background));
     color: var(--text-color);
-    
-    /* Essential layout properties */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
-    /* Remove padding/margin/box-sizing already handled in the reset
-       You can keep the flex-related styles if they are truly global
-       and not just for a specific layout on the home page.
-    */
-    align-items: center; 
-    text-align: center; 
-    
-    /* Only keep padding-top if the mobile-nav-bar is NOT a fixed/sticky
-       navigation, otherwise, this should be removed and handled by
-       a header/main tag padding. Since you have a sticky nav,
-       you might adjust this. For a simple base, keep only the essentials.
-    */
-    padding: 0; 
-    margin: 0; 
+    align-items: center;
+    text-align: center;
 }
 
-/* --- Base Heading and Paragraph Styles --- */
-/* Set a consistent line-height and color for general text */
-p {
-    line-height: 1.8;
-    color: var(--subtle-text-color);
-}
-
-/* Remove default link styles */
 a {
     text-decoration: none;
     color: inherit;

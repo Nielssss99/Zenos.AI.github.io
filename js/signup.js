@@ -1,4 +1,4 @@
-// Submits the early-access form in the background so visitors stay on the page
+// Submits the updates signup form in the background so visitors stay on the page
 // and see a confirmation or error message.
 const signupForm = document.querySelector('.notify-container form');
 const signupStatus = document.getElementById('signup-status');

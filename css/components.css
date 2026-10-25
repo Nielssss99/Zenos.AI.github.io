@@ -2,7 +2,6 @@
 /* 01. Main Layout & Separators */
 /* ==================================== */
 
-/* Global container for main content structure */
 main {
     display: flex;
     flex-direction: column;
@@ -10,18 +9,17 @@ main {
 }
 
 .section-separator {
-    border: none;
     height: 1px;
-    background-color: #b0b0b0;
-    opacity: 0.5;
+    background-color: var(--divider-color);
     margin: 1rem 0;
     width: 100%;
     max-width: min(90%, 1000px);
 }
 
 /* ==================================== */
-/* 02. Navigation & Sidebar Components */
+/* 02. Navigation & Sidebar */
 /* ==================================== */
+
 /* The placeholder itself is sticky, so both the desktop and mobile bar stay on top */
 #nav-placeholder {
     width: 100%;
@@ -30,7 +28,7 @@ main {
     z-index: 50;
 }
 
-/* --- SHARED BAR STYLES --- */
+/* --- Shared bar styles --- */
 nav.full-width-nav,
 .mobile-nav-bar {
     width: 100%;
@@ -59,14 +57,14 @@ nav.full-width-nav,
     width: auto;
 }
 
-/* --- FULL-WIDTH NAVIGATION BAR (Desktop) --- */
+/* --- Full-width navigation bar (desktop, shown from 768px) --- */
 nav.full-width-nav {
-    display: none; /* Mobile default */
+    display: none;
     min-height: 4rem;
 }
 
 .nav-content-wrapper {
-    display: none; /* Mobile default */
+    display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -106,9 +104,9 @@ nav.full-width-nav {
     background-color: var(--primary-color);
 }
 
-/* --- MOBILE NAVIGATION BAR --- */
+/* --- Mobile navigation bar (hidden from 768px) --- */
 .mobile-nav-bar {
-    display: flex; /* SHOW the mobile nav by default */
+    display: flex;
     align-items: center;
     justify-content: space-between;
     height: 4rem;
@@ -125,7 +123,7 @@ nav.full-width-nav {
     cursor: pointer;
 }
 
-/* --- SIDEBAR --- */
+/* --- Sidebar --- */
 .sidebar-overlay {
     position: fixed;
     inset: 0;
@@ -193,8 +191,6 @@ nav.full-width-nav {
     line-height: 1;
     background: none;
     border: none;
-    padding: 0;
-    font-family: inherit;
     cursor: pointer;
 }
 
@@ -203,7 +199,7 @@ nav.full-width-nav {
 }
 
 /* ==================================== */
-/* 03. Section and Hero Components */
+/* 03. Hero & Content Sections */
 /* ==================================== */
 
 .hero-section {
@@ -211,20 +207,29 @@ nav.full-width-nav {
     width: 100%;
     max-width: min(90%, 1000px);
     margin: 0 auto;
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Stack the items vertically (logo, h1, p) */
-    align-items: center; /* THIS CENTERS THEM HORIZONTALLY */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-image {
     max-width: 22%;
-    height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    display: block; /* Ensure it behaves as a block element */
-    margin-left: auto; 
-    margin-right: auto;
     margin-bottom: 1rem;
+}
+
+/* Animated logo on the Zenos page */
+.logo-video {
+    display: block;
+    max-width: 60%;
+    margin: 2.125rem auto 1.5rem;
+    border-radius: 50%;
+}
+
+.hero-subline {
+    margin-top: 0.5rem;
+    max-width: 720px;
 }
 
 .content-section {
@@ -233,9 +238,55 @@ nav.full-width-nav {
     width: 100%;
 }
 
-/* -------------------------------------------------
-   Card & container
-   ------------------------------------------------- */
+/* ==================================== */
+/* 04. Buttons & Calls to Action */
+/* ==================================== */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+}
+
+.cta-button,
+.notify-container button {
+    background-color: var(--primary-color);
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button {
+    display: inline-block;
+    margin: 0.5rem 0 1rem;
+    padding: 0.9rem 2.2rem;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible,
+.notify-container button:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-hover-color);
+}
+
+.cta-secondary {
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 0.9rem 0.5rem;
+}
+
+.cta-secondary:hover,
+.cta-secondary:focus-visible {
+    text-decoration: underline;
+}
+
+/* ==================================== */
+/* 05. Cards with expandable details */
+/* ==================================== */
+
 .card-container {
     display: flex;
     flex-direction: column;
@@ -243,76 +294,50 @@ nav.full-width-nav {
     max-width: 800px;
     margin: 0 auto;
 }
+
 .card {
-    background: linear-gradient(145deg, var(--card-background, #1a1a1a) 0%, #111 100%);
-    border: 1px solid var(--card-border-color, #333);
-    border-left: 4px solid var(--card-border-color, #333);
+    background: linear-gradient(145deg, var(--card-background) 0%, #111 100%);
+    border: 1px solid var(--card-border-color);
+    border-left: 4px solid var(--card-border-color);
     padding: 1.8rem 2.5rem;
     margin: 1.5rem 0;
     border-radius: 12px;
-    box-shadow: 0 0 15px var(--card-shadow-color, rgba(0,0,0,.5));
-    transition: all .3s ease;
-}
-.card:hover {
-    box-shadow: 0 0 25px var(--card-shadow-color, rgba(0,0,0,.5)), 0 0 5px var(--primary-color, #00d8ff);
-    transform: translateY(-3px);
-}
-.card h3 {
-    color: var(--text-color, #fff);
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: .5rem;
-    border-bottom: 2px solid var(--primary-color, #00d8ff);
-    letter-spacing: .05em;
-    width: fit-content;
-}
-.card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    box-shadow: 0 0 15px var(--card-shadow-color);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* -------------------------------------------------
-   List item
-   ------------------------------------------------- */
-/* -------------------------------------------------
-   List item – tight & consistent
-   ------------------------------------------------- */
+.card:hover {
+    box-shadow: 0 0 25px var(--card-shadow-color), 0 0 5px var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    color: var(--text-color);
+    font-size: clamp(1.3rem, 1rem + 1vw, 1.75rem);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    letter-spacing: 0.05em;
+    width: fit-content;
+}
+
 .card li {
     position: relative;
-    padding-left: 2.2rem;
+    padding-left: 2.2rem; /* room for the bullet */
     margin-bottom: 0.15rem;
     line-height: 1.6;
     color: var(--subtle-text-color);
     font-size: 1.1rem;
     text-align: left;
-    transition: color .2s ease;
+    transition: color 0.2s ease;
 }
 
-/* -------------------------------------------------
-   Bullet
-   ------------------------------------------------- */
-/* -------------------------------------------------
-   1. Base list item – tight spacing
-   ------------------------------------------------- */
-.card li {
-    position: relative;
-    padding-left: 2.2rem;          /* bullet space */
-    margin-bottom: 0.15rem;        /* tight gap */
-    line-height: 1.6;
-    color: var(--subtle-text-color);
-    font-size: 1.1rem;
-    text-align: left;
-    transition: color .2s ease;
-}
-
-/* -------------------------------------------------
-   2. Bullet
-   ------------------------------------------------- */
+/* Chevron bullet */
 .card li::before {
     content: '\203A';
     position: absolute;
-    left: 0; top: 0;
+    left: 0;
+    top: 0;
     height: 0.8em;
     line-height: 1.6;
     font-size: clamp(1.6rem, 4.5vw, 2.4rem);
@@ -321,21 +346,40 @@ nav.full-width-nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform .2s ease, color .2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-/* -------------------------------------------------
-   3. HOVER / TAP – works on **every** item, every device
-   ------------------------------------------------- */
+/* Hover, keyboard focus and tap all highlight the item */
 .card li:hover,
-.card li:focus-visible {          /* keyboard / touch */
-    color: var(--text-color, #fff);
+.card li:focus-visible {
+    color: var(--text-color);
 }
+
 .card li:hover::before,
 .card li:focus-visible::before {
     transform: translateX(4px);
     color: var(--text-color);
 }
+
+/* Details are collapsed by default and expand on hover/focus */
+.details-content {
+    margin-top: 0;
+    margin-left: 1.5rem;
+    padding: 12px 18px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-out,
+                opacity 0.4s ease-out,
+                margin-top 0.4s ease-out;
+    text-align: justify;
+    overflow-wrap: break-word;
+}
+
 .has-details:hover .details-content,
 .has-details:focus .details-content {
     max-height: 500px;
@@ -343,56 +387,160 @@ nav.full-width-nav {
     margin-top: 0.8em;
 }
 
-/* -------------------------------------------------
-   4. Details – hidden by default (no layout impact)
-   ------------------------------------------------- */
-.details-content {
-    margin-top: 0;
-    margin-left: 1.5rem;
-    padding: 12px 18px;
-    background: var(--detail-bg);
-    color: var(--detail-text);
-    border-left: 4px solid var(--primary-color);
-    border-radius: 0 6px 6px 0;
-    box-shadow: var(--detail-shadow);
-    font-size: .95rem;
-    line-height: 1.8;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height .4s ease-out,
-                opacity .4s ease-out,
-                margin-top .4s ease-out;
-    text-align: justify;
-    word-wrap: break-word;
-}
+/* ==================================== */
+/* 06. Feature Grid */
+/* ==================================== */
 
-/* --- Section Grid Layout (.section-grid) --- */
-.section-grid {
+.feature-grid {
     display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr; /* Default: 1 column for mobile */
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1rem 0 2rem;
+    text-align: left;
 }
 
-.grid-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.feature {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
 }
 
-.grid-item img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
+.feature h3 {
+    font-size: clamp(1.15rem, 1rem + 0.4vw, 1.3rem);
+    margin: 0 0 0.5rem;
+    color: var(--text-color);
 }
 
-.grid-item h3 {
+.feature p {
+    max-width: none;
     margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Numbered step labels (Zenos page) */
+.step-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 /* ==================================== */
-/* 05. Call to Action (CTA) Component */
+/* 07. Roadmap Timeline */
+/* ==================================== */
+
+.timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    border-left: 2px solid var(--primary-color);
+}
+
+.timeline li {
+    position: relative;
+    padding: 1rem 0 2.5rem 2.5rem;
+    transition: padding-left 0.2s ease;
+}
+
+.timeline li:hover {
+    padding-left: 2.75rem;
+}
+
+/* Dot on the line; future events are grey */
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 1.2rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--card-background);
+    border: 2px solid var(--card-background);
+    box-shadow: 0 0 0 3px rgba(0, 216, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+/* Completed events: filled blue dot */
+.timeline li.done::before {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Next event: blue ring */
+.timeline li.next::before {
+    border-color: var(--primary-color);
+}
+
+.timeline li:hover::before {
+    width: 18px;
+    height: 18px;
+    left: -11px;
+    box-shadow: 0 0 12px rgba(0, 216, 255, 0.4);
+}
+
+.timeline-date {
+    display: block;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.02em;
+}
+
+.timeline-status {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.05rem 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    vertical-align: 0.1em;
+}
+
+.timeline li.done .timeline-status {
+    color: #000;
+    background-color: var(--primary-color);
+}
+
+.timeline-text {
+    color: var(--subtle-text-color);
+    line-height: 1.7;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.timeline li:hover .timeline-text {
+    color: var(--text-color);
+}
+
+/* ==================================== */
+/* 08. Pull Quote */
+/* ==================================== */
+
+.pull-quote {
+    max-width: 700px;
+    margin: 1rem auto 2rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 0 10px 10px 0;
+    color: var(--text-color);
+    font-size: clamp(1.15rem, 1rem + 0.8vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* ==================================== */
+/* 09. Signup Form */
 /* ==================================== */
 
 .notify-container {
@@ -419,27 +567,18 @@ nav.full-width-nav {
     font-size: clamp(1rem, 2vw, 1.2rem);
     margin-bottom: 1rem;
     background-color: #333;
-    color: #fff;
+    color: var(--text-color);
     text-align: center;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .notify-container button {
     padding: 1rem 2.5rem;
-    background-color: #00d8ff;
-    color: #000;
-    font-weight: bold;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
 }
 
-.notify-container button:hover {
-    transform: scale(1.05);
-    background-color: #00b3cc;
-}
-
+/* Must follow the :hover rule so a disabled button does not grow */
 .notify-container button:disabled {
     opacity: 0.6;
     cursor: wait;
@@ -453,423 +592,15 @@ nav.full-width-nav {
     color: var(--subtle-text-color);
 }
 
-/* Visually hidden but still read by screen readers */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
 /* ==================================== */
-/* 06. Videos */
+/* 10. Footer */
 /* ==================================== */
 
-video
-{
-  max-width: 40%; /* For a video that scales well on different screen sizes */
-  display: block; /* To treat the video as a block element for better layout control */
-  margin: 0 auto; /* To center the video horizontally */
-  border-radius: 50%;
-  margin-top: 2.125rem;
-  margin-bottom: 1.5rem;
-}
-
-.logo-video {
-    max-width: 60%;
-    margin-bottom: 0rem;
-}
-
-@media (min-width: 768px) {
-    .logo-video {
-        max-width: 50%;
-    }
-}
-
-/* ==================================== */
-/* 07. Media Queries (Desktop Overrides) */
-/* ==================================== */
-
-@media (min-width: 768px) {
-    /* --- Grid Layout Adjustment --- */
-    .section-grid {
-        grid-template-columns: 1fr 1fr; /* 2 columns for desktop */
-        gap: 40px;
-    }
-
-    /* --- Layout Adjustment --- */
-    /* Reset body padding for desktop (since the desktop nav isn't sticky by default) */
-    body {
-        padding-top: 0;
-    }
-}
-
-/* --- Navigation Bar Switch --- */
-@media (min-width: 768px) {
-    .mobile-nav-bar {
-        display: none !important;
-    }
-
-    nav.full-width-nav {
-        display: flex !important;
-    }
-
-    .nav-content-wrapper {
-        display: flex !important;
-    }
-}
-
-/* ==================================== */
-/* 08. Homepage additions */
-/* ==================================== */
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* Keep anchored sections clear of the sticky nav */
-[id] {
-    scroll-margin-top: 5rem;
-}
-
-.hero-subline {
-    margin-top: 0.5rem;
-    max-width: 720px;
-}
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem 1.5rem;
-}
-
-.cta-secondary {
-    color: var(--primary-color);
-    font-weight: bold;
-    padding: 0.9rem 0.5rem;
-}
-
-.cta-secondary:hover,
-.cta-secondary:focus-visible {
-    text-decoration: underline;
-}
-
-/* --- Feature grid: short titled blocks --- */
-.feature-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin: 1rem 0 2rem;
-    text-align: left;
-}
-
-.feature {
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 3px solid var(--primary-color);
-    border-radius: 10px;
-    padding: 1.25rem 1.5rem;
-}
-
-.feature h3 {
-    font-size: 1.2rem;
-    margin: 0 0 0.5rem;
-    color: var(--text-color);
-}
-
-.feature p {
-    max-width: none;
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* --- Expandable "Read more" inside a feature card --- */
-.feature-more {
-    margin-top: 0.75rem;
-}
-
-.feature-more summary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--primary-color);
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    list-style: none;
-}
-
-.feature-more summary::-webkit-details-marker {
-    display: none;
-}
-
-.feature-more summary::after {
-    content: "+";
-    font-size: 1.1rem;
-    line-height: 1;
-}
-
-.feature-more[open] summary::after {
-    content: "\2212";
-}
-
-.feature-more summary:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 3px;
-    border-radius: 4px;
-}
-
-.feature-more p {
-    margin-top: 0.6rem;
-    padding-top: 0.6rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.95rem;
-}
-
-@media (min-width: 768px) {
-    .feature-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .feature-grid-2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .feature h3 {
-        font-size: 1.25rem;
-    }
-}
-
-/* --- Highlighted statistic --- */
-.stat-callout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    max-width: 600px;
-    margin: 0.5rem auto 1.5rem;
-}
-
-.stat-value {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    font-weight: 700;
-    line-height: 1.1;
-    color: var(--primary-color);
-}
-
-.stat-label {
-    color: var(--subtle-text-color);
-    line-height: 1.6;
-}
-
-.stat-label cite {
-    font-style: normal;
-    font-size: 0.9em;
-    opacity: 0.8;
-}
-
-.cta-button {
-    display: inline-block;
-    margin: 0.5rem 0 1rem;
-    padding: 0.9rem 2.2rem;
-    background-color: var(--primary-color);
-    color: #000;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.cta-button:hover,
-.cta-button:focus-visible {
-    transform: scale(1.05);
-    background-color: #00b3cc;
-}
-
-.bolt-icon {
-    display: inline-block;
-    height: 0.9em;
-    width: auto;
-    vertical-align: -0.1em;
-}
-
-.status-note {
-    border: 1px solid var(--card-border-color);
-    border-radius: 8px;
-    padding: 0.8rem 1.2rem;
-}
-
-.text-link {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-/* --- Roadmap timeline --- */
-.timeline {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: left;
-    border-left: 2px solid var(--primary-color);
-    list-style: none;
-    padding: 0;
-}
-
-.timeline li {
-    position: relative;
-    padding: 1rem 0 2.5rem 2.5rem;
-    transition: padding-left 0.2s ease;
-}
-
-.timeline li:hover {
-    padding-left: 2.75rem;
-}
-
-.timeline li::before {
-    content: "";
-    position: absolute;
-    left: -9px;
-    top: 1.2rem;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    transition: all 0.2s ease;
-    box-shadow: 0 0 0 3px rgba(0, 216, 255, 0.1);
-}
-
-/* Future events - grey dots */
-.timeline li::before {
-    background-color: var(--card-background, #1a1a1a);
-    border: 2px solid var(--card-background, #1a1a1a);
-}
-
-/* Completed events - filled blue dots */
-.timeline li.done::before {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-/* Next event - blue ring */
-.timeline li.next::before {
-    border-color: var(--primary-color);
-}
-
-.timeline-status {
-    display: inline-block;
-    margin-left: 0.5rem;
-    padding: 0.05rem 0.5rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 400;
-    vertical-align: 0.1em;
-}
-
-.timeline li.done .timeline-status {
-    color: #000;
-    background-color: var(--primary-color);
-}
-
-.timeline li:hover::before {
-    width: 18px;
-    height: 18px;
-    left: -11px;
-    box-shadow: 0 0 12px rgba(0, 216, 255, 0.4);
-}
-
-.timeline-date {
-    display: block;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-size: 0.95rem;
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.02em;
-}
-
-.timeline-text {
-    color: var(--subtle-text-color);
-    line-height: 1.7;
-    font-size: 1rem;
-    transition: color 0.2s ease;
-}
-
-.timeline li:hover .timeline-text {
-    color: var(--text-color);
-}
-
-/* --- Story steps (Zenos page) --- */
-.step-label {
-    display: block;
-    margin-bottom: 0.4rem;
-    color: var(--primary-color);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-/* --- Converging series bar: 1/2 + 1/4 + 1/8 + ... = 1 --- */
-.series-figure {
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
-}
-
-.series-bar {
-    display: flex;
-    gap: 3px;
-    height: 2.5rem;
-    margin-bottom: 0.75rem;
-}
-
-.series-bar span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    border-radius: 4px;
-    background-color: var(--primary-color);
-    color: #000;
-    font-weight: 700;
-}
-
-.series-bar span:nth-child(2) { opacity: 0.8; }
-.series-bar span:nth-child(3) { opacity: 0.6; }
-.series-bar span:nth-child(4) { opacity: 0.45; }
-.series-bar span:nth-child(5) { opacity: 0.3; }
-.series-bar span:nth-child(6) { opacity: 0.15; }
-
-.series-figure figcaption {
-    margin: 0 auto;
-    font-size: 0.95rem;
-}
-
-/* --- Pull quote --- */
-.pull-quote {
-    max-width: 700px;
-    margin: 1rem auto 2rem;
-    padding: 1.25rem 1.5rem;
-    border-left: 4px solid var(--primary-color);
-    background-color: rgba(255, 255, 255, 0.03);
-    border-radius: 0 10px 10px 0;
-    color: var(--text-color);
-    font-size: clamp(1.2rem, 3vw, 1.6rem);
-    font-weight: 700;
-    line-height: 1.5;
-    text-align: left;
-}
-
-/* --- Footer --- */
 .site-footer {
     width: 100%;
     margin-top: 3rem;
     padding: 1.5rem 1rem;
-    border-top: 1px solid rgba(176, 176, 176, 0.5);
+    border-top: 1px solid var(--divider-color);
 }
 
 .site-footer nav {
@@ -888,4 +619,115 @@ html {
 .site-footer p {
     margin-bottom: 0;
     font-size: 0.9rem;
+}
+
+/* ==================================== */
+/* 11. Utilities */
+/* ==================================== */
+
+/* Visually hidden but still read by screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==================================== */
+/* 12. Desktop Overrides (768px and up) */
+/* ==================================== */
+
+@media (min-width: 768px) {
+    .mobile-nav-bar {
+        display: none;
+    }
+
+    nav.full-width-nav {
+        display: flex;
+    }
+
+    .logo-video {
+        max-width: 50%;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==================================== */
+/* 13. Mobile Overrides (up to 767px) */
+/* ==================================== */
+
+@media (max-width: 767px) {
+    /* Use the full screen width; the 90% caps stacked with padding left very narrow text */
+    .hero-section,
+    .content-section {
+        max-width: 100%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .hero-section {
+        padding-top: 1rem;
+    }
+
+    .section-separator {
+        max-width: calc(100% - 2.5rem);
+        margin: 0.5rem 0;
+    }
+
+    .logo-video {
+        max-width: 55%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-grid {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature {
+        padding: 1rem 1.15rem;
+    }
+
+    .pull-quote {
+        margin: 1rem 0 1.5rem;
+        padding: 1rem 1.15rem;
+    }
+
+    /* Stack the call-to-action buttons and make them easy to tap */
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .hero-actions .cta-button {
+        width: 100%;
+        max-width: 320px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .timeline li {
+        padding: 0.75rem 0 1.75rem 1.75rem;
+    }
+
+    .timeline li:hover {
+        padding-left: 1.75rem;
+    }
+
+    .site-footer {
+        margin-top: 2rem;
+    }
 }

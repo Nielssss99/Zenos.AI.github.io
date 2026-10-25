@@ -28,15 +28,15 @@ https://nielssss99.github.io/Zenos.AI.github.io/
 │   └── components.css  # Layout and component styles (hero, cards, grid, nav, forms)
 ├── js/
 │   ├── component-loader.js  # Fetches nav.html, injects it into #nav-placeholder, highlights the current page
-│   ├── nav.js               # Mobile sidebar open/close (openNav / closeNav)
+│   ├── nav.js               # Mobile sidebar open/close (delegated click + Escape handlers)
 │   └── signup.js            # Submits the updates signup form in the background (index page only)
 └── Images/             # Logos and media
 ```
 
 ## How it works
 
-- **Shared navigation:** each page contains an empty `<div id="nav-placeholder"></div>`. `js/component-loader.js` fetches `nav.html` on `DOMContentLoaded` and inserts it into that placeholder. `js/nav.js` then drives the mobile sidebar (`openNav()` / `closeNav()`).
-- **Styling:** pages load `css/base.css`, `css/typography.css`, and `css/components.css`, plus Roboto from Google Fonts and Font Awesome 6.4.0 from cdnjs.
+- **Shared navigation:** each page contains an empty `<div id="nav-placeholder"></div>`. `js/component-loader.js` fetches `nav.html` on `DOMContentLoaded` and inserts it into that placeholder. `js/nav.js` then drives the mobile sidebar through delegated event listeners, so `nav.html` needs no inline handlers.
+- **Styling:** pages load `css/base.css`, `css/typography.css`, and `css/components.css`, plus Roboto from Google Fonts.
 - **Early-access signup:** the form on the landing page posts to Formspree (`formspree.io/f/xzzvnayy`).
 
 ## Running locally
